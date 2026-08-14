@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fantasy Football AI League Assistant</title>
+<meta name="description" content="A private, non-commercial fantasy football analytics project that turns Yahoo Fantasy data into automated league insights and Discord updates.">
+<style>
+:root{--bg:#0b1020;--card:#121a2e;--text:#eef3ff;--muted:#aeb9d4;--accent:#7c9cff;--accent2:#54d6c7}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:linear-gradient(145deg,#080d19,#111a30);color:var(--text);line-height:1.6}
+.wrap{max-width:920px;margin:auto;padding:72px 24px}.hero{padding:48px 0 36px}.tag{display:inline-block;padding:6px 12px;border:1px solid #334267;border-radius:999px;color:#b9c7ff;font-size:13px}
+h1{font-size:clamp(40px,7vw,70px);line-height:1.02;margin:20px 0 18px;letter-spacing:-2px}
+h2{font-size:26px;margin-top:0}.lead{font-size:20px;color:var(--muted);max-width:720px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin:34px 0}.card{background:rgba(18,26,46,.88);border:1px solid #263454;border-radius:18px;padding:24px}
+.icon{font-size:28px}.card p{color:var(--muted)}.flow{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:25px 0}.pill{background:#19243e;border:1px solid #304064;padding:10px 14px;border-radius:12px}.arrow{color:var(--accent2)}
+.notice{margin-top:36px;padding:20px 22px;border-left:4px solid var(--accent);background:rgba(124,156,255,.08);border-radius:10px;color:#d8e0f5}
+footer{margin-top:58px;padding-top:24px;border-top:1px solid #273452;color:#7f8ba8;font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<section class="hero">
+<span class="tag">Private • Non-commercial • Fantasy Football</span>
+<h1>Fantasy Football AI<br>League Assistant</h1>
+<p class="lead">An automated analytics and commentary project for a private Yahoo Fantasy Football league. The goal is to turn league data into useful, entertaining updates for our Discord community.</p>
+</section>
+
+<section class="grid">
+<div class="card"><div class="icon">🏈</div><h2>Live Matchup Updates</h2><p>Hourly Sunday updates highlighting score changes, projected outcomes, major performances, and meaningful swings between teams.</p></div>
+<div class="card"><div class="icon">📊</div><h2>League Analytics</h2><p>Position leaders, team power rankings, expected records, strength of schedule, efficiency, and other statistics beyond the standard standings.</p></div>
+<div class="card"><div class="icon">🔥</div><h2>Player Highlights</h2><p>Automatically surface top QB, RB, WR, and TE performances, breakout games, disappointments, and notable fantasy events.</p></div>
+<div class="card"><div class="icon">🤖</div><h2>AI Commentary</h2><p>Convert real league statistics into concise, sports-style commentary without inventing results or altering league data.</p></div>
+<div class="card"><div class="icon">💬</div><h2>Discord Delivery</h2><p>Publish selected updates automatically to a private Discord channel so league members can follow the action without manual reporting.</p></div>
+<div class="card"><div class="icon">🏆</div><h2>Weekly & Season Awards</h2><p>Generate weekly recaps and end-of-season awards such as MVP, best draft, waiver-wire steal, most unlucky team, and biggest collapse.</p></div>
+</section>
+
+<section class="card">
+<h2>How it works</h2>
+<div class="flow">
+<span class="pill">Yahoo Fantasy data</span><span class="arrow">→</span>
+<span class="pill">Analytics engine</span><span class="arrow">→</span>
+<span class="pill">AI analysis</span><span class="arrow">→</span>
+<span class="pill">Discord</span>
+</div>
+<p style="color:var(--muted)">The application is intended to use read-only Yahoo Fantasy Sports data for one private league of approximately 10–12 participants. It will not modify rosters, lineups, transactions, or Yahoo Fantasy settings.</p>
+</section>
+
+<div class="notice">
+<strong>Project status:</strong> Early development. Yahoo Fantasy Sports API access is being requested for this private project. No public commercial service is planned.
+</div>
+
+<footer>
+Fantasy Football AI League Assistant • Private league project • Read-only data use
+</footer>
+</div>
+</body>
+</html>
