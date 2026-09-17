@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Poi Bowl XII — Fantasy Football</title>
+<style>
+
+  :root{
+    --bg:#0a0d12;
+    --panel:#111722;
+    --panel-2:#151c28;
+    --line:#273142;
+    --text:#eef2f7;
+    --muted:#98a3b3;
+    --accent:#7c5cff;
+    --accent-2:#23c7a8;
+    --gold:#f4c95d;
+    --red:#ff6b7a;
+    --shadow:0 18px 50px rgba(0,0,0,.28);
+    --radius:18px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    background:
+      radial-gradient(circle at 10% 0%, rgba(124,92,255,.15), transparent 28%),
+      radial-gradient(circle at 90% 10%, rgba(35,199,168,.08), transparent 24%),
+      var(--bg);
+    color:var(--text);
+  }
+  .wrap{max-width:1320px;margin:0 auto;padding:28px 22px 56px}
+  header{
+    display:flex;justify-content:space-between;align-items:flex-end;gap:20px;
+    margin-bottom:26px;
+  }
+  .brand small{
+    color:var(--accent-2);font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+    font-size:11px;
+  }
+  .brand h1{margin:6px 0 4px;font-size:38px;line-height:1.05}
+  .brand p{margin:0;color:var(--muted)}
+  .week-pill{
+    border:1px solid var(--line);background:rgba(17,23,34,.9);
+    padding:12px 15px;border-radius:14px;box-shadow:var(--shadow);text-align:right;
+  }
+  .week-pill .label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}
+  .week-pill .value{font-size:20px;font-weight:800;margin-top:3px}
+  .stats{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px;
+  }
+  .stat{
+    background:linear-gradient(180deg,rgba(21,28,40,.96),rgba(17,23,34,.96));
+    border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow);
+  }
+  .stat .kicker{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.11em}
+  .stat .big{font-size:25px;font-weight:850;margin-top:5px}
+  .stat .sub{font-size:12px;color:var(--muted);margin-top:3px}
+  .stat .sub.matrix-team{
+    color:#39ff14;
+    font-weight:850;
+    text-shadow:0 0 7px rgba(57,255,20,.18);
+  }
+  .grid{
+    display:grid;grid-template-columns:1.12fr .88fr;gap:16px;align-items:start;
+  }
+  .panel{
+    background:rgba(17,23,34,.92);
+    border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);
+    overflow:hidden;
+  }
+  .panel-head{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:17px 19px;border-bottom:1px solid var(--line);
+  }
+  .panel-head h2{font-size:16px;margin:0}
+  .panel-head span{font-size:12px;color:var(--muted)}
+  .panel-body{padding:16px 18px}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th{
+    color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.09em;
+    font-weight:700;text-align:right;padding:5px 7px 9px;
+  }
+  th:first-child,th:nth-child(2){text-align:left}
+  td{padding:10px 7px;border-top:1px solid rgba(39,49,66,.62);text-align:right}
+  td:first-child,td:nth-child(2){text-align:left}
+  td:first-child{color:var(--muted);width:26px}
+  .team{font-weight:700}
+  .matrix-team{
+    color:#39ff14;
+    font-weight:850;
+    text-shadow:0 0 7px rgba(57,255,20,.18);
+  }
+  .movement.up{color:var(--accent-2)}
+  .movement.down{color:var(--red)}
+  .movement.flat{color:var(--muted)}
+  .leaders{
+    display:grid;grid-template-columns:1fr 1fr;gap:12px
+  }
+  .leader-card{
+    background:var(--panel-2);border:1px solid var(--line);border-radius:14px;padding:13px
+  }
+  .leader-card h3{font-size:12px;color:var(--muted);margin:0 0 10px;text-transform:uppercase;letter-spacing:.08em}
+  .leader{
+    display:flex;justify-content:space-between;align-items:center;gap:10px;
+    padding:8px 0;border-top:1px solid rgba(39,49,66,.55)
+  }
+  .leader:first-of-type{border-top:0}
+  .leader .name{font-weight:700}
+  .leader .meta{font-size:11px;color:var(--muted);margin-top:2px}
+  .leader .meta.matrix-owner{
+    color:#39ff14;
+    font-weight:800;
+    text-shadow:0 0 7px rgba(57,255,20,.18);
+  }
+  .pts{font-weight:850}
+  .best{margin-top:14px}
+  .lineup{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:10px
+  }
+  .slot{
+    border:1px solid var(--line);background:var(--panel-2);border-radius:13px;padding:12px
+  }
+  .slot .pos{font-size:10px;color:var(--muted);font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+  .slot .player{font-weight:800;margin-top:4px}
+  .slot .owner{font-size:11px;color:var(--muted);margin-top:2px}
+  .slot .points{margin-top:7px;font-size:17px;font-weight:900}
+  .total{
+    margin-top:12px;border:1px solid rgba(124,92,255,.45);
+    background:linear-gradient(180deg,rgba(124,92,255,.16),rgba(124,92,255,.08));
+    border-radius:13px;padding:14px 15px;display:flex;justify-content:space-between;align-items:center
+  }
+  .total .label{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.1em}
+  .total .value{font-size:26px;font-weight:900}
+  .matchups{display:grid;gap:10px}
+  .matchup{
+    display:grid;grid-template-columns:1fr auto 1fr;gap:9px;align-items:center;
+    border:1px solid var(--line);background:var(--panel-2);border-radius:13px;padding:12px
+  }
+  .matchup .side{font-weight:700}
+  .matchup .right{text-align:right}
+  .matchup .score{font-size:18px;font-weight:900}
+  .matchup .vs{font-size:10px;color:var(--muted);text-transform:uppercase}
+  footer{margin-top:18px;color:var(--muted);font-size:11px;text-align:center}
+  @media (max-width: 960px){
+    .grid{grid-template-columns:1fr}
+    .stats{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width: 640px){
+    .wrap{padding:20px 14px 40px}
+    .brand h1{font-size:31px}
+    .stats{grid-template-columns:1fr 1fr}
+    .leaders{grid-template-columns:1fr}
+    .lineup{grid-template-columns:1fr 1fr}
+    table{font-size:12px}
+    th:nth-child(5),td:nth-child(5){display:none}
+  }
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <small>Poi Bowl XII</small>
+      <h1>Fantasy Football League</h1>
+      <p>Week 1 dashboard · Yahoo Fantasy data</p>
+    </div>
+    <div class="week-pill">
+      <div class="label">Latest completed week</div>
+      <div class="value">Week 1</div>
+    </div>
+  </header>
+
+  <section class="stats">
+    <div class="stat">
+      <div class="kicker">Week 1 High Score</div>
+      <div class="big">181.20</div>
+      <div class="sub matrix-team">burnIN</div>
+    </div>
+    <div class="stat">
+      <div class="kicker">Week 1 Low Score</div>
+      <div class="big">111.71</div>
+      <div class="sub">Skip to Malu</div>
+    </div>
+    <div class="stat">
+      <div class="kicker">Best Possible Lineup</div>
+      <div class="big">294.89</div>
+      <div class="sub">Theoretical Week 1 maximum</div>
+    </div>
+    <div class="stat">
+      <div class="kicker">League Average</div>
+      <div class="big">144.24</div>
+      <div class="sub">12-team Week 1 average</div>
+    </div>
+  </section>
+
+  <section class="grid">
+    <div class="panel">
+      <div class="panel-head">
+        <h2>Standings</h2>
+        <span>W-L · PF · PA</span>
+      </div>
+      <div class="panel-body">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th><th>Team</th><th>W-L</th><th>PF</th><th>PA</th><th>MOV</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td class="team matrix-team">burnIN</td><td class="record">1-0</td><td>181.20</td><td>111.71</td><td class="movement flat">—</td></tr>
+            <tr><td>2</td><td class="team">De’Strip Club is Closed</td><td class="record">1-0</td><td>177.19</td><td>134.79</td><td class="movement flat">—</td></tr>
+            <tr><td>3</td><td class="team">In Mama We Trust</td><td class="record">1-0</td><td>164.56</td><td>129.49</td><td class="movement flat">—</td></tr>
+            <tr><td>4</td><td class="team">Heen Machine Poi</td><td class="record">1-0</td><td>141.63</td><td>124.89</td><td class="movement flat">—</td></tr>
+            <tr><td>5</td><td class="team">One90</td><td class="record">1-0</td><td>136.53</td><td>134.38</td><td class="movement flat">—</td></tr>
+            <tr><td>6</td><td class="team">Maye-N-Skweeze</td><td class="record">1-0</td><td>124.19</td><td>121.16</td><td class="movement flat">—</td></tr>
+            <tr><td>7</td><td class="team">Lisan Al-Caleb</td><td class="record">0-1</td><td>134.79</td><td>177.19</td><td class="movement flat">—</td></tr>
+            <tr><td>8</td><td class="team">Qook’D</td><td class="record">0-1</td><td>134.38</td><td>136.53</td><td class="movement flat">—</td></tr>
+            <tr><td>9</td><td class="team">Johnsama Binharbaugh</td><td class="record">0-1</td><td>129.49</td><td>164.56</td><td class="movement flat">—</td></tr>
+            <tr><td>10</td><td class="team">YOU ARE NOT THE FATHER</td><td class="record">0-1</td><td>124.89</td><td>141.63</td><td class="movement flat">—</td></tr>
+            <tr><td>11</td><td class="team">Diet Coke Zero</td><td class="record">0-1</td><td>121.16</td><td>124.19</td><td class="movement flat">—</td></tr>
+            <tr><td>12</td><td class="team">Skip to Malu</td><td class="record">0-1</td><td>111.71</td><td>181.20</td><td class="movement flat">—</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div>
+      <div class="panel">
+        <div class="panel-head">
+          <h2>Week 1 Leaders</h2>
+          <span>Top 3 at each position</span>
+        </div>
+        <div class="panel-body">
+          <div class="leaders">
+            <div class="leader-card">
+              <h3>QB</h3>
+              <div class="leader"><div><div class="name">Caleb Williams</div><div class="meta">Lisan Al-Caleb</div></div><div class="pts">41.26</div></div>
+              <div class="leader"><div><div class="name">Josh Allen</div><div class="meta">YOU ARE NOT THE FATHER</div></div><div class="pts">39.66</div></div>
+              <div class="leader"><div><div class="name">Bryce Young</div><div class="meta">FREE AGENT</div></div><div class="pts">37.44</div></div>
+            </div>
+            <div class="leader-card">
+              <h3>RB</h3>
+              <div class="leader"><div><div class="name">Derrick Henry</div><div class="meta">YOU ARE NOT THE FATHER</div></div><div class="pts">35.30</div></div>
+              <div class="leader"><div><div class="name">Kenneth Walker</div><div class="meta">De’Strip Club is Closed</div></div><div class="pts">34.10</div></div>
+              <div class="leader"><div><div class="name">Jahmyr Gibbs</div><div class="meta">Skip to Malu</div></div><div class="pts">33.60</div></div>
+            </div>
+            <div class="leader-card">
+              <h3>WR</h3>
+              <div class="leader"><div><div class="name">Jalen Coker</div><div class="meta">One90</div></div><div class="pts">33.80</div></div>
+              <div class="leader"><div><div class="name">Christian Watson</div><div class="meta">In Mama We Trust</div></div><div class="pts">32.70</div></div>
+              <div class="leader"><div><div class="name">Justin Jefferson</div><div class="meta">In Mama We Trust</div></div><div class="pts">31.20</div></div>
+            </div>
+            <div class="leader-card">
+              <h3>TE</h3>
+              <div class="leader"><div><div class="name">Isaiah Likely</div><div class="meta">De’Strip Club is Closed</div></div><div class="pts">27.80</div></div>
+              <div class="leader"><div><div class="name">Trey McBride</div><div class="meta matrix-owner">burnIN</div></div><div class="pts">24.50</div></div>
+              <div class="leader"><div><div class="name">Dallas Goedert</div><div class="meta matrix-owner">burnIN</div></div><div class="pts">23.70</div></div>
+            </div>
+            <div class="leader-card">
+              <h3>K</h3>
+              <div class="leader"><div><div class="name">Evan McPherson</div><div class="meta">De’Strip Club is Closed</div></div><div class="pts">22.00</div></div>
+              <div class="leader"><div><div class="name">Chad Ryland</div><div class="meta">FREE AGENT</div></div><div class="pts">19.00</div></div>
+              <div class="leader"><div><div class="name">Jason Sanders</div><div class="meta">FREE AGENT</div></div><div class="pts">18.00</div></div>
+            </div>
+            <div class="leader-card">
+              <h3>D/ST</h3>
+              <div class="leader"><div><div class="name">Raiders</div><div class="meta">FREE AGENT</div></div><div class="pts">34.33</div></div>
+              <div class="leader"><div><div class="name">Steelers</div><div class="meta">Qook’D</div></div><div class="pts">32.90</div></div>
+              <div class="leader"><div><div class="name">Vikings</div><div class="meta">Diet Coke Zero</div></div><div class="pts">32.40</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel best">
+        <div class="panel-head">
+          <h2>Best Possible Lineup</h2>
+          <span>Week 1 theoretical max</span>
+        </div>
+        <div class="panel-body">
+          <div class="lineup">
+            <div class="slot"><div class="pos">QB</div><div class="player">Caleb Williams</div><div class="owner">Lisan Al-Caleb</div><div class="points">41.26</div></div>
+            <div class="slot"><div class="pos">RB</div><div class="player">Derrick Henry</div><div class="owner">YOU ARE NOT THE FATHER</div><div class="points">35.30</div></div>
+            <div class="slot"><div class="pos">RB</div><div class="player">Kenneth Walker</div><div class="owner">De’Strip Club is Closed</div><div class="points">34.10</div></div>
+            <div class="slot"><div class="pos">WR</div><div class="player">Jalen Coker</div><div class="owner">One90</div><div class="points">33.80</div></div>
+            <div class="slot"><div class="pos">WR</div><div class="player">Christian Watson</div><div class="owner">In Mama We Trust</div><div class="points">32.70</div></div>
+            <div class="slot"><div class="pos">TE</div><div class="player">Isaiah Likely</div><div class="owner">De’Strip Club is Closed</div><div class="points">27.80</div></div>
+            <div class="slot"><div class="pos">FLEX</div><div class="player">Jahmyr Gibbs</div><div class="owner">Skip to Malu</div><div class="points">33.60</div></div>
+            <div class="slot"><div class="pos">K</div><div class="player">Evan McPherson</div><div class="owner">De’Strip Club is Closed</div><div class="points">22.00</div></div>
+            <div class="slot"><div class="pos">D/ST</div><div class="player">Raiders</div><div class="owner">FREE AGENT</div><div class="points">34.33</div></div>
+          </div>
+          <div class="total"><div><div class="label">Theoretical total</div><div style="margin-top:3px;color:var(--muted);font-size:12px">Highest-scoring legal lineup</div></div><div class="value">294.89</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="panel" style="margin-top:12px">
+    <div class="panel-head">
+      <h2>Week 1 Matchups</h2>
+      <span>Final scores</span>
+    </div>
+    <div class="panel-body">
+      <div class="matchups">
+        <div class="matchup"><div class="side matrix-team">burnIN</div><div class="score">181.20 <span class="vs">vs</span> 111.71</div><div class="side right">Skip to Malu</div></div>
+        <div class="matchup"><div class="side">De’Strip Club is Closed</div><div class="score">177.19 <span class="vs">vs</span> 134.79</div><div class="side right">Lisan Al-Caleb</div></div>
+        <div class="matchup"><div class="side">In Mama We Trust</div><div class="score">164.56 <span class="vs">vs</span> 129.49</div><div class="side right">Johnsama Binharbaugh</div></div>
+        <div class="matchup"><div class="side">Heen Machine Poi</div><div class="score">141.63 <span class="vs">vs</span> 124.89</div><div class="side right">YOU ARE NOT THE FATHER</div></div>
+        <div class="matchup"><div class="side">One90</div><div class="score">136.53 <span class="vs">vs</span> 134.38</div><div class="side right">Qook’D</div></div>
+        <div class="matchup"><div class="side">Maye-N-Skweeze</div><div class="score">124.19 <span class="vs">vs</span> 121.16</div><div class="side right">Diet Coke Zero</div></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>Poi Bowl XII · Prototype dashboard · Built from Yahoo Fantasy Week 1 data</footer>
+</div>
+</body>
+</html>
