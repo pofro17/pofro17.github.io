@@ -1,9 +1,318 @@
 {
   "week": 1,
+  "title": "Poi Bowl XII",
   "stats": {
     "high_score": {
-      "points": 200.00,
-      "team": "Test Team"
+      "points": 181.20,
+      "team": "burnIN"
+    },
+    "low_score": {
+      "points": 111.71,
+      "team": "Skip to Malu"
+    },
+    "best_lineup": {
+      "points": 294.89,
+      "description": "Theoretical Week 1 maximum"
+    },
+    "league_average": {
+      "points": 144.24,
+      "description": "12-team Week 1 average"
     }
-  }
+  },
+  "standings": [
+    {
+      "rank": 1,
+      "team": "burnIN",
+      "record": "1-0",
+      "pf": 181.20,
+      "pa": 111.71,
+      "movement": "—"
+    },
+    {
+      "rank": 2,
+      "team": "De’Strip Club is Closed",
+      "record": "1-0",
+      "pf": 177.19,
+      "pa": 134.79,
+      "movement": "—"
+    },
+    {
+      "rank": 3,
+      "team": "In Mama We Trust",
+      "record": "1-0",
+      "pf": 164.56,
+      "pa": 129.49,
+      "movement": "—"
+    },
+    {
+      "rank": 4,
+      "team": "Heen Machine Poi",
+      "record": "1-0",
+      "pf": 141.63,
+      "pa": 124.89,
+      "movement": "—"
+    },
+    {
+      "rank": 5,
+      "team": "One90",
+      "record": "1-0",
+      "pf": 136.53,
+      "pa": 134.38,
+      "movement": "—"
+    },
+    {
+      "rank": 6,
+      "team": "Maye-N-Skweeze",
+      "record": "1-0",
+      "pf": 124.19,
+      "pa": 121.16,
+      "movement": "—"
+    },
+    {
+      "rank": 7,
+      "team": "Lisan Al-Caleb",
+      "record": "0-1",
+      "pf": 134.79,
+      "pa": 177.19,
+      "movement": "—"
+    },
+    {
+      "rank": 8,
+      "team": "Qook’D",
+      "record": "0-1",
+      "pf": 134.38,
+      "pa": 136.53,
+      "movement": "—"
+    },
+    {
+      "rank": 9,
+      "team": "Johnsama Binharbaugh",
+      "record": "0-1",
+      "pf": 129.49,
+      "pa": 164.56,
+      "movement": "—"
+    },
+    {
+      "rank": 10,
+      "team": "YOU ARE NOT THE FATHER",
+      "record": "0-1",
+      "pf": 124.89,
+      "pa": 141.63,
+      "movement": "—"
+    },
+    {
+      "rank": 11,
+      "team": "Diet Coke Zero",
+      "record": "0-1",
+      "pf": 121.16,
+      "pa": 124.19,
+      "movement": "—"
+    },
+    {
+      "rank": 12,
+      "team": "Skip to Malu",
+      "record": "0-1",
+      "pf": 111.71,
+      "pa": 181.20,
+      "movement": "—"
+    }
+  ],
+  "leaders": {
+    "QB": [
+      [
+        "Caleb Williams",
+        41.26,
+        "Lisan Al-Caleb"
+      ],
+      [
+        "Josh Allen",
+        39.66,
+        "YOU ARE NOT THE FATHER"
+      ],
+      [
+        "Bryce Young",
+        37.44,
+        "FREE AGENT"
+      ]
+    ],
+    "RB": [
+      [
+        "Derrick Henry",
+        35.30,
+        "YOU ARE NOT THE FATHER"
+      ],
+      [
+        "Kenneth Walker",
+        34.10,
+        "De’Strip Club is Closed"
+      ],
+      [
+        "Jahmyr Gibbs",
+        33.60,
+        "Skip to Malu"
+      ]
+    ],
+    "WR": [
+      [
+        "Jalen Coker",
+        33.80,
+        "One90"
+      ],
+      [
+        "Christian Watson",
+        32.70,
+        "In Mama We Trust"
+      ],
+      [
+        "Justin Jefferson",
+        31.20,
+        "In Mama We Trust"
+      ]
+    ],
+    "TE": [
+      [
+        "Isaiah Likely",
+        27.80,
+        "De’Strip Club is Closed"
+      ],
+      [
+        "Trey McBride",
+        24.50,
+        "burnIN"
+      ],
+      [
+        "Dallas Goedert",
+        23.70,
+        "burnIN"
+      ]
+    ],
+    "K": [
+      [
+        "Evan McPherson",
+        22.00,
+        "De’Strip Club is Closed"
+      ],
+      [
+        "Chad Ryland",
+        19.00,
+        "FREE AGENT"
+      ],
+      [
+        "Jason Sanders",
+        18.00,
+        "FREE AGENT"
+      ]
+    ],
+    "D/ST": [
+      [
+        "Raiders",
+        34.33,
+        "FREE AGENT"
+      ],
+      [
+        "Steelers",
+        32.90,
+        "Qook’D"
+      ],
+      [
+        "Vikings",
+        32.40,
+        "Diet Coke Zero"
+      ]
+    ]
+  },
+  "best_lineup": [
+    [
+      "QB",
+      "Caleb Williams",
+      41.26,
+      "Lisan Al-Caleb"
+    ],
+    [
+      "RB",
+      "Derrick Henry",
+      35.30,
+      "YOU ARE NOT THE FATHER"
+    ],
+    [
+      "RB",
+      "Kenneth Walker",
+      34.10,
+      "De’Strip Club is Closed"
+    ],
+    [
+      "WR",
+      "Jalen Coker",
+      33.80,
+      "One90"
+    ],
+    [
+      "WR",
+      "Christian Watson",
+      32.70,
+      "In Mama We Trust"
+    ],
+    [
+      "TE",
+      "Isaiah Likely",
+      27.80,
+      "De’Strip Club is Closed"
+    ],
+    [
+      "FLEX",
+      "Jahmyr Gibbs",
+      33.60,
+      "Skip to Malu"
+    ],
+    [
+      "K",
+      "Evan McPherson",
+      22.00,
+      "De’Strip Club is Closed"
+    ],
+    [
+      "D/ST",
+      "Raiders",
+      34.33,
+      "FREE AGENT"
+    ]
+  ],
+  "matchups": [
+    [
+      "burnIN",
+      181.20,
+      "Skip to Malu",
+      111.71
+    ],
+    [
+      "De’Strip Club is Closed",
+      177.19,
+      "Lisan Al-Caleb",
+      134.79
+    ],
+    [
+      "In Mama We Trust",
+      164.56,
+      "Johnsama Binharbaugh",
+      129.49
+    ],
+    [
+      "Heen Machine Poi",
+      141.63,
+      "YOU ARE NOT THE FATHER",
+      124.89
+    ],
+    [
+      "One90",
+      136.53,
+      "Qook’D",
+      134.38
+    ],
+    [
+      "Maye-N-Skweeze",
+      124.19,
+      "Diet Coke Zero",
+      121.16
+    ]
+  ]
 }
