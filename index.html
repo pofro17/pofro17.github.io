@@ -309,22 +309,29 @@ function ownerClass(owner, topTeam) {
   return String(owner) === String(topTeam) ? " matrix-owner" : "";
 }
 
-function renderStats(data) {
+function trophyName(value, topTeam) {
+  const text = escapeHtml(value);
+  return String(value) === String(topTeam) ? `🏆 ${text}` : text;
+}
+
+function renderStats(data, topTeam) {
   const week = data.week;
 
   document.getElementById("highScoreLabel").textContent =
     `WEEK ${week} HIGH SCORE`;
   document.getElementById("highScoreValue").textContent =
     formatPoints(data.stats.high_score.points);
-  document.getElementById("highScoreTeam").textContent =
-    data.stats.high_score.team;
+  const highScoreTeam = document.getElementById("highScoreTeam");
+  highScoreTeam.innerHTML = trophyName(data.stats.high_score.team, topTeam);
+  highScoreTeam.className = `sub${teamClass(data.stats.high_score.team, topTeam)}`;
 
   document.getElementById("lowScoreLabel").textContent =
     `WEEK ${week} LOW SCORE`;
   document.getElementById("lowScoreValue").textContent =
     formatPoints(data.stats.low_score.points);
-  document.getElementById("lowScoreTeam").textContent =
-    data.stats.low_score.team;
+  const lowScoreTeam = document.getElementById("lowScoreTeam");
+  lowScoreTeam.innerHTML = trophyName(data.stats.low_score.team, topTeam);
+  lowScoreTeam.className = `sub${teamClass(data.stats.low_score.team, topTeam)}`;
 
   document.getElementById("bestLineupValue").textContent =
     formatPoints(data.stats.best_lineup.points);
@@ -343,7 +350,7 @@ function renderStandings(data, topTeam) {
   document.getElementById("standingsBody").innerHTML = rows.map(row => `
     <tr>
       <td>${escapeHtml(row.rank)}</td>
-      <td class="team${teamClass(row.team, topTeam)}">${escapeHtml(row.team)}</td>
+      <td class="team${teamClass(row.team, topTeam)}">${trophyName(row.team, topTeam)}</td>
       <td class="record">${escapeHtml(row.record)}</td>
       <td>${formatPoints(row.pf)}</td>
       <td>${formatPoints(row.pa)}</td>
@@ -371,7 +378,7 @@ function renderLeaders(data, topTeam) {
             <div class="leader">
               <div>
                 <div class="name">${escapeHtml(player)}</div>
-                <div class="meta${ownerClass(owner, topTeam)}">${escapeHtml(owner)}</div>
+                <div class="meta${ownerClass(owner, topTeam)}">${trophyName(owner, topTeam)}</div>
               </div>
               <div class="pts">${formatPoints(points)}</div>
             </div>
@@ -395,7 +402,7 @@ function renderBestLineup(data, topTeam) {
       <div class="slot">
         <div class="pos">${escapeHtml(position)}</div>
         <div class="player">${escapeHtml(player)}</div>
-        <div class="owner${ownerClass(owner, topTeam)}">${escapeHtml(owner)}</div>
+        <div class="owner${ownerClass(owner, topTeam)}">${trophyName(owner, topTeam)}</div>
         <div class="points">${formatPoints(points)}</div>
       </div>
     `;
@@ -419,13 +426,13 @@ function renderMatchups(data, topTeam) {
 
     return `
       <div class="matchup">
-        <div class="side${teamClass(team1, topTeam)}">${escapeHtml(team1)}</div>
+        <div class="side${teamClass(team1, topTeam)}">${trophyName(team1, topTeam)}</div>
         <div class="score">
           ${formatPoints(score1)}
           <span class="vs">vs</span>
           ${formatPoints(score2)}
         </div>
-        <div class="side right${teamClass(team2, topTeam)}">${escapeHtml(team2)}</div>
+        <div class="side right${teamClass(team2, topTeam)}">${trophyName(team2, topTeam)}</div>
       </div>
     `;
   }).join("");
@@ -480,7 +487,7 @@ function renderSelectedWeek(week) {
   document.getElementById("footerText").textContent =
     `${dashboardData.title || "Poi Bowl XII"} · Yahoo Fantasy data · Week ${week}`;
 
-  renderStats(snapshot);
+  renderStats(snapshot, topTeam);
   renderStandings(snapshot, topTeam);
   renderLeaders(snapshot, topTeam);
   renderBestLineup(snapshot, topTeam);
