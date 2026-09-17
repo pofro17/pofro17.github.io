@@ -120,6 +120,22 @@
   .lineup{
     display:grid;grid-template-columns:repeat(3,1fr);gap:10px
   }
+  .best-players{
+    display:grid;grid-template-columns:1fr 1fr;gap:8px 10px;
+  }
+  .best-player-row{
+    display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.5fr) auto;
+    gap:10px;align-items:center;
+    border:1px solid var(--line);background:var(--panel-2);
+    border-radius:12px;padding:10px 11px;
+  }
+  .best-player-team{font-size:12px;font-weight:800;min-width:0}
+  .best-player-name{font-size:12px;font-weight:700;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .best-player-meta{font-size:10px;color:var(--muted);margin-top:2px}
+  .best-player-points{font-size:15px;font-weight:900;text-align:right;white-space:nowrap}
+  @media (max-width: 760px){
+    .best-players{grid-template-columns:1fr}
+  }
   .slot{
     border:1px solid var(--line);background:var(--panel-2);border-radius:13px;padding:12px
   }
@@ -238,6 +254,16 @@
           </thead>
           <tbody id="standingsBody"></tbody>
         </table>
+      </div>
+
+      <div class="panel best" style="margin-top:12px">
+        <div class="panel-head">
+          <h2>Best Player by Team</h2>
+          <span>Top scorer on each roster</span>
+        </div>
+        <div class="panel-body">
+          <div class="best-players" id="bestPlayersGrid"></div>
+        </div>
       </div>
     </div>
 
@@ -389,6 +415,40 @@ function renderLeaders(data, topTeam) {
   }).join("");
 }
 
+function renderBestPlayers(data, topTeam) {
+  const players = Array.isArray(data.best_players) ? data.best_players : [];
+  const grid = document.getElementById("bestPlayersGrid");
+
+  if (!players.length) {
+    grid.innerHTML = `
+      <div style="grid-column:1/-1;color:var(--muted);font-size:12px">
+        No weekly player scoring data available yet.
+      </div>
+    `;
+    return;
+  }
+
+  grid.innerHTML = players.map(item => {
+    const team = item.team;
+    const player = item.player;
+    const position = item.position || "—";
+    const points = item.points;
+
+    return `
+      <div class="best-player-row">
+        <div class="best-player-team${teamClass(team, topTeam)}">
+          ${trophyName(team, topTeam)}
+        </div>
+        <div>
+          <div class="best-player-name">${escapeHtml(player)}</div>
+          <div class="best-player-meta">${escapeHtml(position)}</div>
+        </div>
+        <div class="best-player-points">${formatPoints(points)}</div>
+      </div>
+    `;
+  }).join("");
+}
+
 function renderBestLineup(data, topTeam) {
   const lineup = Array.isArray(data.best_lineup) ? data.best_lineup : [];
 
@@ -489,6 +549,7 @@ function renderSelectedWeek(week) {
 
   renderStats(snapshot, topTeam);
   renderStandings(snapshot, topTeam);
+  renderBestPlayers(snapshot, topTeam);
   renderLeaders(snapshot, topTeam);
   renderBestLineup(snapshot, topTeam);
   renderMatchups(snapshot, topTeam);
