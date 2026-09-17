@@ -169,7 +169,8 @@
     </div>
     <div class="week-pill">
       <div class="label">Latest completed week</div>
-      <div class="value">Week 1</div>
+      <div class="value" id="weekValue">Week 1</div>
+      <div id="dataStatus" style="font-size:10px;color:var(--muted);margin-top:4px">Loading live data…</div>
     </div>
   </header>
 
@@ -317,5 +318,38 @@
 
   <footer>Poi Bowl XII · Prototype dashboard · Built from Yahoo Fantasy Week 1 data</footer>
 </div>
+
+<script>
+async function loadLeagueData() {
+  const status = document.getElementById("dataStatus");
+  const weekValue = document.getElementById("weekValue");
+
+  try {
+    const response = await fetch("./data.json", { cache: "no-store" });
+
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    if (data.week !== undefined) {
+      weekValue.textContent = `Week ${data.week}`;
+    }
+
+    status.textContent = "Live data connected";
+    status.style.color = "#39ff14";
+
+    console.log("Loaded data.json:", data);
+  } catch (error) {
+    status.textContent = "Data connection failed";
+    status.style.color = "#ff6b7a";
+    console.error("Unable to load data.json:", error);
+  }
+}
+
+loadLeagueData();
+</script>
+
 </body>
 </html>
