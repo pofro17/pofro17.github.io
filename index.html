@@ -321,5 +321,78 @@
 
   <footer>Poi Bowl XII · Prototype dashboard · Built from Yahoo Fantasy Week 1 data</footer>
 </div>
+
+<script>
+async function loadData() {
+  const status = document.getElementById("dataStatus");
+
+  try {
+    const response = await fetch("./data.json?ts=" + Date.now(), {
+      cache: "no-store"
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    // Week
+    document.getElementById("weekValue").textContent =
+      `Week ${data.week}`;
+
+    document.querySelector(".brand p").textContent =
+      `Week ${data.week} dashboard · Yahoo Fantasy data`;
+
+    // High score
+    document.getElementById("highScoreLabel").textContent =
+      `WEEK ${data.week} HIGH SCORE`;
+
+    document.getElementById("highScoreValue").textContent =
+      Number(data.stats.high_score.points).toFixed(2);
+
+    document.getElementById("highScoreTeam").textContent =
+      data.stats.high_score.team;
+
+    // Low score
+    document.getElementById("lowScoreLabel").textContent =
+      `WEEK ${data.week} LOW SCORE`;
+
+    document.getElementById("lowScoreValue").textContent =
+      Number(data.stats.low_score.points).toFixed(2);
+
+    document.getElementById("lowScoreTeam").textContent =
+      data.stats.low_score.team;
+
+    // Best possible lineup
+    document.getElementById("bestLineupValue").textContent =
+      Number(data.stats.best_lineup.points).toFixed(2);
+
+    document.getElementById("bestLineupDescription").textContent =
+      data.stats.best_lineup.description;
+
+    // League average
+    document.getElementById("leagueAverageValue").textContent =
+      Number(data.stats.league_average.points).toFixed(2);
+
+    document.getElementById("leagueAverageDescription").textContent =
+      data.stats.league_average.description;
+
+    status.textContent = "Live data connected";
+    status.style.color = "#39ff14";
+
+    console.log("Loaded data.json:", data);
+
+  } catch (error) {
+    status.textContent = "Data connection failed";
+    status.style.color = "#ff6b7a";
+
+    console.error("Unable to load data.json:", error);
+  }
+}
+
+loadData();
+</script>
+
 </body>
 </html>
