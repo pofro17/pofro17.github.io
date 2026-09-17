@@ -1,4 +1,9 @@
-"high_score": {
-  "points": 200.00,
-  "team": "Test Team"
+{
+  "week": 1,
+  "stats": {
+    "high_score": {
+      "points": 200.00,
+      "team": "Test Team"
+    }
+  }
 }
