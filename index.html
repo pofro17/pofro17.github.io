@@ -176,24 +176,27 @@
 
   <section class="stats">
     <div class="stat">
-      <div class="kicker">Week 1 High Score</div>
-      <div class="big">181.20</div>
-      <div class="sub matrix-team">burnIN</div>
+      <div class="kicker" id="highScoreLabel">WEEK 1 HIGH SCORE</div>
+      <div class="big" id="highScoreValue">181.20</div>
+      <div class="sub matrix-team" id="highScoreTeam">burnIN</div>
     </div>
+
     <div class="stat">
-      <div class="kicker">Week 1 Low Score</div>
-      <div class="big">111.71</div>
-      <div class="sub">Skip to Malu</div>
+      <div class="kicker" id="lowScoreLabel">WEEK 1 LOW SCORE</div>
+      <div class="big" id="lowScoreValue">111.71</div>
+      <div class="sub" id="lowScoreTeam">Skip to Malu</div>
     </div>
+
     <div class="stat">
-      <div class="kicker">Best Possible Lineup</div>
-      <div class="big">294.89</div>
-      <div class="sub">Theoretical Week 1 maximum</div>
+      <div class="kicker">BEST POSSIBLE LINEUP</div>
+      <div class="big" id="bestLineupValue">294.89</div>
+      <div class="sub" id="bestLineupDescription">Theoretical Week 1 maximum</div>
     </div>
+
     <div class="stat">
-      <div class="kicker">League Average</div>
-      <div class="big">144.24</div>
-      <div class="sub">12-team Week 1 average</div>
+      <div class="kicker">LEAGUE AVERAGE</div>
+      <div class="big" id="leagueAverageValue">144.24</div>
+      <div class="sub" id="leagueAverageDescription">12-team Week 1 average</div>
     </div>
   </section>
 
@@ -318,38 +321,5 @@
 
   <footer>Poi Bowl XII · Prototype dashboard · Built from Yahoo Fantasy Week 1 data</footer>
 </div>
-
-<script>
-async function loadLeagueData() {
-  const status = document.getElementById("dataStatus");
-  const weekValue = document.getElementById("weekValue");
-
-  try {
-    const response = await fetch("./data.json", { cache: "no-store" });
-
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status}`);
-    }
-
-    const data = await response.json();
-
-    if (data.week !== undefined) {
-      weekValue.textContent = `Week ${data.week}`;
-    }
-
-    status.textContent = "Live data connected";
-    status.style.color = "#39ff14";
-
-    console.log("Loaded data.json:", data);
-  } catch (error) {
-    status.textContent = "Data connection failed";
-    status.style.color = "#ff6b7a";
-    console.error("Unable to load data.json:", error);
-  }
-}
-
-loadLeagueData();
-</script>
-
 </body>
 </html>
