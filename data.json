@@ -3,11 +3,13 @@
   "current_week": 2,
   "default_week": 1,
   "available_weeks": [
-    1
+    1,
+    2
   ],
   "weeks": {
     "1": {
       "week": 1,
+      "status": "complete",
       "stats": {
         "high_score": {
           "points": 181.2,
@@ -127,159 +129,159 @@
       "leaders": {
         "QB": [
           [
-            "Name({\n  \"ascii_first\": \"Caleb\",\n  \"ascii_last\": \"Williams\",\n  \"first\": \"Caleb\",\n  \"full\": \"Caleb Williams\",\n  \"last\": \"Williams\"\n})",
-            41.26,
-            "FREE AGENT"
+            "Caleb Williams",
+            "Lisan Al-Caleb",
+            41.26
           ],
           [
-            "Name({\n  \"ascii_first\": \"Josh\",\n  \"ascii_last\": \"Allen\",\n  \"first\": \"Josh\",\n  \"full\": \"Josh Allen\",\n  \"last\": \"Allen\"\n})",
-            39.66,
-            "FREE AGENT"
+            "Josh Allen",
+            "YOU ARE NOT THE FATHER",
+            39.66
           ],
           [
-            "Name({\n  \"ascii_first\": \"Bryce\",\n  \"ascii_last\": \"Young\",\n  \"first\": \"Bryce\",\n  \"full\": \"Bryce Young\",\n  \"last\": \"Young\"\n})",
-            37.44,
-            "FREE AGENT"
+            "Bryce Young",
+            "FREE AGENT",
+            37.44
           ]
         ],
         "RB": [
           [
-            "Name({\n  \"ascii_first\": \"Derrick\",\n  \"ascii_last\": \"Henry\",\n  \"first\": \"Derrick\",\n  \"full\": \"Derrick Henry\",\n  \"last\": \"Henry\"\n})",
-            35.3,
-            "FREE AGENT"
+            "Derrick Henry",
+            "YOU ARE NOT THE FATHER",
+            35.3
           ],
           [
-            "Name({\n  \"ascii_first\": \"Kenneth\",\n  \"ascii_last\": \"Walker\",\n  \"first\": \"Kenneth\",\n  \"full\": \"Kenneth Walker\",\n  \"last\": \"Walker\"\n})",
-            34.1,
-            "FREE AGENT"
+            "Kenneth Walker",
+            "De’Strib Club is Closed",
+            34.1
           ],
           [
-            "Name({\n  \"ascii_first\": \"Jahmyr\",\n  \"ascii_last\": \"Gibbs\",\n  \"first\": \"Jahmyr\",\n  \"full\": \"Jahmyr Gibbs\",\n  \"last\": \"Gibbs\"\n})",
-            33.6,
-            "FREE AGENT"
+            "Jahmyr Gibbs",
+            "Skip to Malu",
+            33.6
           ]
         ],
         "WR": [
           [
-            "Name({\n  \"ascii_first\": \"Jalen\",\n  \"ascii_last\": \"Coker\",\n  \"first\": \"Jalen\",\n  \"full\": \"Jalen Coker\",\n  \"last\": \"Coker\"\n})",
-            33.8,
-            "FREE AGENT"
+            "Jalen Coker",
+            "One90",
+            33.8
           ],
           [
-            "Name({\n  \"ascii_first\": \"Christian\",\n  \"ascii_last\": \"Watson\",\n  \"first\": \"Christian\",\n  \"full\": \"Christian Watson\",\n  \"last\": \"Watson\"\n})",
-            32.7,
-            "FREE AGENT"
+            "Christian Watson",
+            "In Mama We Trust",
+            32.7
           ],
           [
-            "Name({\n  \"ascii_first\": \"Justin\",\n  \"ascii_last\": \"Jefferson\",\n  \"first\": \"Justin\",\n  \"full\": \"Justin Jefferson\",\n  \"last\": \"Jefferson\"\n})",
-            31.2,
-            "FREE AGENT"
+            "Justin Jefferson",
+            "In Mama We Trust",
+            31.2
           ]
         ],
         "TE": [
           [
-            "Name({\n  \"ascii_first\": \"Isaiah\",\n  \"ascii_last\": \"Likely\",\n  \"first\": \"Isaiah\",\n  \"full\": \"Isaiah Likely\",\n  \"last\": \"Likely\"\n})",
-            27.8,
-            "FREE AGENT"
+            "Isaiah Likely",
+            "De’Strib Club is Closed",
+            27.8
           ],
           [
-            "Name({\n  \"ascii_first\": \"Trey\",\n  \"ascii_last\": \"McBride\",\n  \"first\": \"Trey\",\n  \"full\": \"Trey McBride\",\n  \"last\": \"McBride\"\n})",
-            24.5,
-            "FREE AGENT"
+            "Trey McBride",
+            "burnIN",
+            24.5
           ],
           [
-            "Name({\n  \"ascii_first\": \"Dallas\",\n  \"ascii_last\": \"Goedert\",\n  \"first\": \"Dallas\",\n  \"full\": \"Dallas Goedert\",\n  \"last\": \"Goedert\"\n})",
-            23.7,
-            "FREE AGENT"
+            "Dallas Goedert",
+            "burnIN",
+            23.7
           ]
         ],
         "K": [
           [
-            "Name({\n  \"ascii_first\": \"Evan\",\n  \"ascii_last\": \"McPherson\",\n  \"first\": \"Evan\",\n  \"full\": \"Evan McPherson\",\n  \"last\": \"McPherson\"\n})",
-            22.0,
-            "FREE AGENT"
+            "Evan McPherson",
+            "De’Strib Club is Closed",
+            22.0
           ],
           [
-            "Name({\n  \"ascii_first\": \"Chad\",\n  \"ascii_last\": \"Ryland\",\n  \"first\": \"Chad\",\n  \"full\": \"Chad Ryland\",\n  \"last\": \"Ryland\"\n})",
-            19.0,
-            "FREE AGENT"
+            "Chad Ryland",
+            "FREE AGENT",
+            19.0
           ],
           [
-            "Name({\n  \"ascii_first\": \"Jason\",\n  \"ascii_last\": \"Sanders\",\n  \"first\": \"Jason\",\n  \"full\": \"Jason Sanders\",\n  \"last\": \"Sanders\"\n})",
-            18.0,
-            "FREE AGENT"
+            "Jason Sanders",
+            "FREE AGENT",
+            18.0
           ]
         ],
         "D/ST": [
           [
-            "Name({\n  \"ascii_first\": \"Raiders\",\n  \"ascii_last\": null,\n  \"first\": \"Raiders\",\n  \"full\": \"Raiders\",\n  \"last\": null\n})",
-            34.33,
-            "FREE AGENT"
+            "Raiders",
+            "FREE AGENT",
+            34.33
           ],
           [
-            "Name({\n  \"ascii_first\": \"Steelers\",\n  \"ascii_last\": null,\n  \"first\": \"Steelers\",\n  \"full\": \"Steelers\",\n  \"last\": null\n})",
-            32.9,
-            "FREE AGENT"
+            "Steelers",
+            "Qook’D",
+            32.9
           ],
           [
-            "Name({\n  \"ascii_first\": \"Vikings\",\n  \"ascii_last\": null,\n  \"first\": \"Vikings\",\n  \"full\": \"Vikings\",\n  \"last\": null\n})",
-            32.4,
-            "FREE AGENT"
+            "Vikings",
+            "Diet Coke Zero",
+            32.4
           ]
         ]
       },
       "best_lineup": [
         [
           "QB",
-          "Name({\n  \"ascii_first\": \"Caleb\",\n  \"ascii_last\": \"Williams\",\n  \"first\": \"Caleb\",\n  \"full\": \"Caleb Williams\",\n  \"last\": \"Williams\"\n})",
+          "Caleb Williams",
           41.26,
-          "FREE AGENT"
+          "Lisan Al-Caleb"
         ],
         [
           "RB",
-          "Name({\n  \"ascii_first\": \"Derrick\",\n  \"ascii_last\": \"Henry\",\n  \"first\": \"Derrick\",\n  \"full\": \"Derrick Henry\",\n  \"last\": \"Henry\"\n})",
+          "Derrick Henry",
           35.3,
-          "FREE AGENT"
+          "YOU ARE NOT THE FATHER"
         ],
         [
           "RB",
-          "Name({\n  \"ascii_first\": \"Kenneth\",\n  \"ascii_last\": \"Walker\",\n  \"first\": \"Kenneth\",\n  \"full\": \"Kenneth Walker\",\n  \"last\": \"Walker\"\n})",
+          "Kenneth Walker",
           34.1,
-          "FREE AGENT"
+          "De’Strib Club is Closed"
         ],
         [
           "WR",
-          "Name({\n  \"ascii_first\": \"Jalen\",\n  \"ascii_last\": \"Coker\",\n  \"first\": \"Jalen\",\n  \"full\": \"Jalen Coker\",\n  \"last\": \"Coker\"\n})",
+          "Jalen Coker",
           33.8,
-          "FREE AGENT"
+          "One90"
         ],
         [
           "WR",
-          "Name({\n  \"ascii_first\": \"Christian\",\n  \"ascii_last\": \"Watson\",\n  \"first\": \"Christian\",\n  \"full\": \"Christian Watson\",\n  \"last\": \"Watson\"\n})",
+          "Christian Watson",
           32.7,
-          "FREE AGENT"
+          "In Mama We Trust"
         ],
         [
           "TE",
-          "Name({\n  \"ascii_first\": \"Isaiah\",\n  \"ascii_last\": \"Likely\",\n  \"first\": \"Isaiah\",\n  \"full\": \"Isaiah Likely\",\n  \"last\": \"Likely\"\n})",
+          "Isaiah Likely",
           27.8,
-          "FREE AGENT"
+          "De’Strib Club is Closed"
         ],
         [
           "FLEX",
-          "Name({\n  \"ascii_first\": \"Jahmyr\",\n  \"ascii_last\": \"Gibbs\",\n  \"first\": \"Jahmyr\",\n  \"full\": \"Jahmyr Gibbs\",\n  \"last\": \"Gibbs\"\n})",
+          "Jahmyr Gibbs",
           33.6,
-          "FREE AGENT"
+          "Skip to Malu"
         ],
         [
           "K",
-          "Name({\n  \"ascii_first\": \"Evan\",\n  \"ascii_last\": \"McPherson\",\n  \"first\": \"Evan\",\n  \"full\": \"Evan McPherson\",\n  \"last\": \"McPherson\"\n})",
+          "Evan McPherson",
           22.0,
-          "FREE AGENT"
+          "De’Strib Club is Closed"
         ],
         [
           "D/ST",
-          "Name({\n  \"ascii_first\": \"Raiders\",\n  \"ascii_last\": null,\n  \"first\": \"Raiders\",\n  \"full\": \"Raiders\",\n  \"last\": null\n})",
+          "Raiders",
           34.33,
           "FREE AGENT"
         ]
@@ -322,6 +324,39 @@
           134.79
         ]
       ]
+    },
+    "2": {
+      "week": 2,
+      "status": "pending",
+      "stats": {
+        "high_score": {
+          "points": 0.0,
+          "team": "—"
+        },
+        "low_score": {
+          "points": 0.0,
+          "team": "—"
+        },
+        "best_lineup": {
+          "points": 0.0,
+          "description": "Week 2 data not available yet"
+        },
+        "league_average": {
+          "points": 0.0,
+          "description": "12-team Week 2 average — awaiting scores"
+        }
+      },
+      "standings": [],
+      "leaders": {
+        "QB": [],
+        "RB": [],
+        "WR": [],
+        "TE": [],
+        "K": [],
+        "D/ST": []
+      },
+      "best_lineup": [],
+      "matchups": []
     }
   },
   "week": 1,
@@ -444,159 +479,159 @@
   "leaders": {
     "QB": [
       [
-        "Name({\n  \"ascii_first\": \"Caleb\",\n  \"ascii_last\": \"Williams\",\n  \"first\": \"Caleb\",\n  \"full\": \"Caleb Williams\",\n  \"last\": \"Williams\"\n})",
-        41.26,
-        "FREE AGENT"
+        "Caleb Williams",
+        "Lisan Al-Caleb",
+        41.26
       ],
       [
-        "Name({\n  \"ascii_first\": \"Josh\",\n  \"ascii_last\": \"Allen\",\n  \"first\": \"Josh\",\n  \"full\": \"Josh Allen\",\n  \"last\": \"Allen\"\n})",
-        39.66,
-        "FREE AGENT"
+        "Josh Allen",
+        "YOU ARE NOT THE FATHER",
+        39.66
       ],
       [
-        "Name({\n  \"ascii_first\": \"Bryce\",\n  \"ascii_last\": \"Young\",\n  \"first\": \"Bryce\",\n  \"full\": \"Bryce Young\",\n  \"last\": \"Young\"\n})",
-        37.44,
-        "FREE AGENT"
+        "Bryce Young",
+        "FREE AGENT",
+        37.44
       ]
     ],
     "RB": [
       [
-        "Name({\n  \"ascii_first\": \"Derrick\",\n  \"ascii_last\": \"Henry\",\n  \"first\": \"Derrick\",\n  \"full\": \"Derrick Henry\",\n  \"last\": \"Henry\"\n})",
-        35.3,
-        "FREE AGENT"
+        "Derrick Henry",
+        "YOU ARE NOT THE FATHER",
+        35.3
       ],
       [
-        "Name({\n  \"ascii_first\": \"Kenneth\",\n  \"ascii_last\": \"Walker\",\n  \"first\": \"Kenneth\",\n  \"full\": \"Kenneth Walker\",\n  \"last\": \"Walker\"\n})",
-        34.1,
-        "FREE AGENT"
+        "Kenneth Walker",
+        "De’Strib Club is Closed",
+        34.1
       ],
       [
-        "Name({\n  \"ascii_first\": \"Jahmyr\",\n  \"ascii_last\": \"Gibbs\",\n  \"first\": \"Jahmyr\",\n  \"full\": \"Jahmyr Gibbs\",\n  \"last\": \"Gibbs\"\n})",
-        33.6,
-        "FREE AGENT"
+        "Jahmyr Gibbs",
+        "Skip to Malu",
+        33.6
       ]
     ],
     "WR": [
       [
-        "Name({\n  \"ascii_first\": \"Jalen\",\n  \"ascii_last\": \"Coker\",\n  \"first\": \"Jalen\",\n  \"full\": \"Jalen Coker\",\n  \"last\": \"Coker\"\n})",
-        33.8,
-        "FREE AGENT"
+        "Jalen Coker",
+        "One90",
+        33.8
       ],
       [
-        "Name({\n  \"ascii_first\": \"Christian\",\n  \"ascii_last\": \"Watson\",\n  \"first\": \"Christian\",\n  \"full\": \"Christian Watson\",\n  \"last\": \"Watson\"\n})",
-        32.7,
-        "FREE AGENT"
+        "Christian Watson",
+        "In Mama We Trust",
+        32.7
       ],
       [
-        "Name({\n  \"ascii_first\": \"Justin\",\n  \"ascii_last\": \"Jefferson\",\n  \"first\": \"Justin\",\n  \"full\": \"Justin Jefferson\",\n  \"last\": \"Jefferson\"\n})",
-        31.2,
-        "FREE AGENT"
+        "Justin Jefferson",
+        "In Mama We Trust",
+        31.2
       ]
     ],
     "TE": [
       [
-        "Name({\n  \"ascii_first\": \"Isaiah\",\n  \"ascii_last\": \"Likely\",\n  \"first\": \"Isaiah\",\n  \"full\": \"Isaiah Likely\",\n  \"last\": \"Likely\"\n})",
-        27.8,
-        "FREE AGENT"
+        "Isaiah Likely",
+        "De’Strib Club is Closed",
+        27.8
       ],
       [
-        "Name({\n  \"ascii_first\": \"Trey\",\n  \"ascii_last\": \"McBride\",\n  \"first\": \"Trey\",\n  \"full\": \"Trey McBride\",\n  \"last\": \"McBride\"\n})",
-        24.5,
-        "FREE AGENT"
+        "Trey McBride",
+        "burnIN",
+        24.5
       ],
       [
-        "Name({\n  \"ascii_first\": \"Dallas\",\n  \"ascii_last\": \"Goedert\",\n  \"first\": \"Dallas\",\n  \"full\": \"Dallas Goedert\",\n  \"last\": \"Goedert\"\n})",
-        23.7,
-        "FREE AGENT"
+        "Dallas Goedert",
+        "burnIN",
+        23.7
       ]
     ],
     "K": [
       [
-        "Name({\n  \"ascii_first\": \"Evan\",\n  \"ascii_last\": \"McPherson\",\n  \"first\": \"Evan\",\n  \"full\": \"Evan McPherson\",\n  \"last\": \"McPherson\"\n})",
-        22.0,
-        "FREE AGENT"
+        "Evan McPherson",
+        "De’Strib Club is Closed",
+        22.0
       ],
       [
-        "Name({\n  \"ascii_first\": \"Chad\",\n  \"ascii_last\": \"Ryland\",\n  \"first\": \"Chad\",\n  \"full\": \"Chad Ryland\",\n  \"last\": \"Ryland\"\n})",
-        19.0,
-        "FREE AGENT"
+        "Chad Ryland",
+        "FREE AGENT",
+        19.0
       ],
       [
-        "Name({\n  \"ascii_first\": \"Jason\",\n  \"ascii_last\": \"Sanders\",\n  \"first\": \"Jason\",\n  \"full\": \"Jason Sanders\",\n  \"last\": \"Sanders\"\n})",
-        18.0,
-        "FREE AGENT"
+        "Jason Sanders",
+        "FREE AGENT",
+        18.0
       ]
     ],
     "D/ST": [
       [
-        "Name({\n  \"ascii_first\": \"Raiders\",\n  \"ascii_last\": null,\n  \"first\": \"Raiders\",\n  \"full\": \"Raiders\",\n  \"last\": null\n})",
-        34.33,
-        "FREE AGENT"
+        "Raiders",
+        "FREE AGENT",
+        34.33
       ],
       [
-        "Name({\n  \"ascii_first\": \"Steelers\",\n  \"ascii_last\": null,\n  \"first\": \"Steelers\",\n  \"full\": \"Steelers\",\n  \"last\": null\n})",
-        32.9,
-        "FREE AGENT"
+        "Steelers",
+        "Qook’D",
+        32.9
       ],
       [
-        "Name({\n  \"ascii_first\": \"Vikings\",\n  \"ascii_last\": null,\n  \"first\": \"Vikings\",\n  \"full\": \"Vikings\",\n  \"last\": null\n})",
-        32.4,
-        "FREE AGENT"
+        "Vikings",
+        "Diet Coke Zero",
+        32.4
       ]
     ]
   },
   "best_lineup": [
     [
       "QB",
-      "Name({\n  \"ascii_first\": \"Caleb\",\n  \"ascii_last\": \"Williams\",\n  \"first\": \"Caleb\",\n  \"full\": \"Caleb Williams\",\n  \"last\": \"Williams\"\n})",
+      "Caleb Williams",
       41.26,
-      "FREE AGENT"
+      "Lisan Al-Caleb"
     ],
     [
       "RB",
-      "Name({\n  \"ascii_first\": \"Derrick\",\n  \"ascii_last\": \"Henry\",\n  \"first\": \"Derrick\",\n  \"full\": \"Derrick Henry\",\n  \"last\": \"Henry\"\n})",
+      "Derrick Henry",
       35.3,
-      "FREE AGENT"
+      "YOU ARE NOT THE FATHER"
     ],
     [
       "RB",
-      "Name({\n  \"ascii_first\": \"Kenneth\",\n  \"ascii_last\": \"Walker\",\n  \"first\": \"Kenneth\",\n  \"full\": \"Kenneth Walker\",\n  \"last\": \"Walker\"\n})",
+      "Kenneth Walker",
       34.1,
-      "FREE AGENT"
+      "De’Strib Club is Closed"
     ],
     [
       "WR",
-      "Name({\n  \"ascii_first\": \"Jalen\",\n  \"ascii_last\": \"Coker\",\n  \"first\": \"Jalen\",\n  \"full\": \"Jalen Coker\",\n  \"last\": \"Coker\"\n})",
+      "Jalen Coker",
       33.8,
-      "FREE AGENT"
+      "One90"
     ],
     [
       "WR",
-      "Name({\n  \"ascii_first\": \"Christian\",\n  \"ascii_last\": \"Watson\",\n  \"first\": \"Christian\",\n  \"full\": \"Christian Watson\",\n  \"last\": \"Watson\"\n})",
+      "Christian Watson",
       32.7,
-      "FREE AGENT"
+      "In Mama We Trust"
     ],
     [
       "TE",
-      "Name({\n  \"ascii_first\": \"Isaiah\",\n  \"ascii_last\": \"Likely\",\n  \"first\": \"Isaiah\",\n  \"full\": \"Isaiah Likely\",\n  \"last\": \"Likely\"\n})",
+      "Isaiah Likely",
       27.8,
-      "FREE AGENT"
+      "De’Strib Club is Closed"
     ],
     [
       "FLEX",
-      "Name({\n  \"ascii_first\": \"Jahmyr\",\n  \"ascii_last\": \"Gibbs\",\n  \"first\": \"Jahmyr\",\n  \"full\": \"Jahmyr Gibbs\",\n  \"last\": \"Gibbs\"\n})",
+      "Jahmyr Gibbs",
       33.6,
-      "FREE AGENT"
+      "Skip to Malu"
     ],
     [
       "K",
-      "Name({\n  \"ascii_first\": \"Evan\",\n  \"ascii_last\": \"McPherson\",\n  \"first\": \"Evan\",\n  \"full\": \"Evan McPherson\",\n  \"last\": \"McPherson\"\n})",
+      "Evan McPherson",
       22.0,
-      "FREE AGENT"
+      "De’Strib Club is Closed"
     ],
     [
       "D/ST",
-      "Name({\n  \"ascii_first\": \"Raiders\",\n  \"ascii_last\": null,\n  \"first\": \"Raiders\",\n  \"full\": \"Raiders\",\n  \"last\": null\n})",
+      "Raiders",
       34.33,
       "FREE AGENT"
     ]
