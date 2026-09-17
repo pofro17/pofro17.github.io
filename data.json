@@ -230,6 +230,80 @@
           ]
         ]
       },
+      "best_players": [
+        {
+          "team": "One90",
+          "player": "Jalen Coker",
+          "position": "WR",
+          "points": 33.8
+        },
+        {
+          "team": "Qook’D",
+          "player": "Steelers",
+          "position": "DEF",
+          "points": 32.9
+        },
+        {
+          "team": "Diet Coke Zero",
+          "player": "Vikings",
+          "position": "DEF",
+          "points": 32.4
+        },
+        {
+          "team": "In Mama We Trust",
+          "player": "Christian Watson",
+          "position": "WR",
+          "points": 32.7
+        },
+        {
+          "team": "Heen Machine Poi",
+          "player": "Ashton Jeanty",
+          "position": "RB",
+          "points": 32.7
+        },
+        {
+          "team": "Johnsama Binharbaugh",
+          "player": "Amon-Ra St. Brown",
+          "position": "WR",
+          "points": 28.7
+        },
+        {
+          "team": "Skip to Malu",
+          "player": "Jahmyr Gibbs",
+          "position": "RB",
+          "points": 33.6
+        },
+        {
+          "team": "burnIN",
+          "player": "David Montgomery",
+          "position": "RB",
+          "points": 28.9
+        },
+        {
+          "team": "De’Strib Club is Closed",
+          "player": "Kenneth Walker",
+          "position": "RB",
+          "points": 34.1
+        },
+        {
+          "team": "Maye-N-Skweeze",
+          "player": "D'Andre Swift",
+          "position": "RB",
+          "points": 32.4
+        },
+        {
+          "team": "Lisan Al-Caleb",
+          "player": "Caleb Williams",
+          "position": "QB",
+          "points": 41.26
+        },
+        {
+          "team": "YOU ARE NOT THE FATHER",
+          "player": "Josh Allen",
+          "position": "QB",
+          "points": 39.66
+        }
+      ],
       "best_lineup": [
         [
           "QB",
@@ -355,6 +429,7 @@
         "K": [],
         "D/ST": []
       },
+      "best_players": [],
       "best_lineup": [],
       "matchups": []
     }
@@ -580,6 +655,80 @@
       ]
     ]
   },
+  "best_players": [
+    {
+      "team": "One90",
+      "player": "Jalen Coker",
+      "position": "WR",
+      "points": 33.8
+    },
+    {
+      "team": "Qook’D",
+      "player": "Steelers",
+      "position": "DEF",
+      "points": 32.9
+    },
+    {
+      "team": "Diet Coke Zero",
+      "player": "Vikings",
+      "position": "DEF",
+      "points": 32.4
+    },
+    {
+      "team": "In Mama We Trust",
+      "player": "Christian Watson",
+      "position": "WR",
+      "points": 32.7
+    },
+    {
+      "team": "Heen Machine Poi",
+      "player": "Ashton Jeanty",
+      "position": "RB",
+      "points": 32.7
+    },
+    {
+      "team": "Johnsama Binharbaugh",
+      "player": "Amon-Ra St. Brown",
+      "position": "WR",
+      "points": 28.7
+    },
+    {
+      "team": "Skip to Malu",
+      "player": "Jahmyr Gibbs",
+      "position": "RB",
+      "points": 33.6
+    },
+    {
+      "team": "burnIN",
+      "player": "David Montgomery",
+      "position": "RB",
+      "points": 28.9
+    },
+    {
+      "team": "De’Strib Club is Closed",
+      "player": "Kenneth Walker",
+      "position": "RB",
+      "points": 34.1
+    },
+    {
+      "team": "Maye-N-Skweeze",
+      "player": "D'Andre Swift",
+      "position": "RB",
+      "points": 32.4
+    },
+    {
+      "team": "Lisan Al-Caleb",
+      "player": "Caleb Williams",
+      "position": "QB",
+      "points": 41.26
+    },
+    {
+      "team": "YOU ARE NOT THE FATHER",
+      "player": "Josh Allen",
+      "position": "QB",
+      "points": 39.66
+    }
+  ],
   "best_lineup": [
     [
       "QB",
