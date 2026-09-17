@@ -18,7 +18,7 @@
           "team": "Skip to Malu"
         },
         "best_lineup": {
-          "points": 0,
+          "points": 0.0,
           "description": "Theoretical Week 1 maximum"
         },
         "league_average": {
@@ -125,14 +125,165 @@
         }
       ],
       "leaders": {
-        "QB": [],
-        "RB": [],
-        "WR": [],
-        "TE": [],
-        "K": [],
-        "D/ST": []
+        "QB": [
+          [
+            "Caleb Williams",
+            0.0,
+            "FREE AGENT"
+          ],
+          [
+            "Josh Allen",
+            0.0,
+            "FREE AGENT"
+          ],
+          [
+            "Bryce Young",
+            0.0,
+            "FREE AGENT"
+          ]
+        ],
+        "RB": [
+          [
+            "Derrick Henry",
+            0.0,
+            "FREE AGENT"
+          ],
+          [
+            "Kenneth Walker",
+            0.0,
+            "FREE AGENT"
+          ],
+          [
+            "Jahmyr Gibbs",
+            0.0,
+            "FREE AGENT"
+          ]
+        ],
+        "WR": [
+          [
+            "Jalen Coker",
+            0.0,
+            "FREE AGENT"
+          ],
+          [
+            "Christian Watson",
+            0.0,
+            "FREE AGENT"
+          ],
+          [
+            "Justin Jefferson",
+            0.0,
+            "FREE AGENT"
+          ]
+        ],
+        "TE": [
+          [
+            "Isaiah Likely",
+            0.0,
+            "FREE AGENT"
+          ],
+          [
+            "Trey McBride",
+            0.0,
+            "FREE AGENT"
+          ],
+          [
+            "Dallas Goedert",
+            0.0,
+            "FREE AGENT"
+          ]
+        ],
+        "K": [
+          [
+            "Evan McPherson",
+            0.0,
+            "FREE AGENT"
+          ],
+          [
+            "Chad Ryland",
+            0.0,
+            "FREE AGENT"
+          ],
+          [
+            "Jason Sanders",
+            0.0,
+            "FREE AGENT"
+          ]
+        ],
+        "D/ST": [
+          [
+            "Raiders",
+            0.0,
+            "FREE AGENT"
+          ],
+          [
+            "Steelers",
+            0.0,
+            "FREE AGENT"
+          ],
+          [
+            "Vikings",
+            0.0,
+            "FREE AGENT"
+          ]
+        ]
       },
-      "best_lineup": [],
+      "best_lineup": [
+        [
+          "QB",
+          "Caleb Williams",
+          0.0,
+          "FREE AGENT"
+        ],
+        [
+          "RB",
+          "Derrick Henry",
+          0.0,
+          "FREE AGENT"
+        ],
+        [
+          "RB",
+          "Kenneth Walker",
+          0.0,
+          "FREE AGENT"
+        ],
+        [
+          "WR",
+          "Jalen Coker",
+          0.0,
+          "FREE AGENT"
+        ],
+        [
+          "WR",
+          "Christian Watson",
+          0.0,
+          "FREE AGENT"
+        ],
+        [
+          "TE",
+          "Isaiah Likely",
+          0.0,
+          "FREE AGENT"
+        ],
+        [
+          "FLEX",
+          "Jahmyr Gibbs",
+          0.0,
+          "FREE AGENT"
+        ],
+        [
+          "K",
+          "Evan McPherson",
+          0.0,
+          "FREE AGENT"
+        ],
+        [
+          "D/ST",
+          "Raiders",
+          0.0,
+          "FREE AGENT"
+        ]
+      ],
       "matchups": [
         [
           "One90",
@@ -184,7 +335,7 @@
       "team": "Skip to Malu"
     },
     "best_lineup": {
-      "points": 0,
+      "points": 0.0,
       "description": "Theoretical Week 1 maximum"
     },
     "league_average": {
@@ -291,14 +442,165 @@
     }
   ],
   "leaders": {
-    "QB": [],
-    "RB": [],
-    "WR": [],
-    "TE": [],
-    "K": [],
-    "D/ST": []
+    "QB": [
+      [
+        "Caleb Williams",
+        0.0,
+        "FREE AGENT"
+      ],
+      [
+        "Josh Allen",
+        0.0,
+        "FREE AGENT"
+      ],
+      [
+        "Bryce Young",
+        0.0,
+        "FREE AGENT"
+      ]
+    ],
+    "RB": [
+      [
+        "Derrick Henry",
+        0.0,
+        "FREE AGENT"
+      ],
+      [
+        "Kenneth Walker",
+        0.0,
+        "FREE AGENT"
+      ],
+      [
+        "Jahmyr Gibbs",
+        0.0,
+        "FREE AGENT"
+      ]
+    ],
+    "WR": [
+      [
+        "Jalen Coker",
+        0.0,
+        "FREE AGENT"
+      ],
+      [
+        "Christian Watson",
+        0.0,
+        "FREE AGENT"
+      ],
+      [
+        "Justin Jefferson",
+        0.0,
+        "FREE AGENT"
+      ]
+    ],
+    "TE": [
+      [
+        "Isaiah Likely",
+        0.0,
+        "FREE AGENT"
+      ],
+      [
+        "Trey McBride",
+        0.0,
+        "FREE AGENT"
+      ],
+      [
+        "Dallas Goedert",
+        0.0,
+        "FREE AGENT"
+      ]
+    ],
+    "K": [
+      [
+        "Evan McPherson",
+        0.0,
+        "FREE AGENT"
+      ],
+      [
+        "Chad Ryland",
+        0.0,
+        "FREE AGENT"
+      ],
+      [
+        "Jason Sanders",
+        0.0,
+        "FREE AGENT"
+      ]
+    ],
+    "D/ST": [
+      [
+        "Raiders",
+        0.0,
+        "FREE AGENT"
+      ],
+      [
+        "Steelers",
+        0.0,
+        "FREE AGENT"
+      ],
+      [
+        "Vikings",
+        0.0,
+        "FREE AGENT"
+      ]
+    ]
   },
-  "best_lineup": [],
+  "best_lineup": [
+    [
+      "QB",
+      "Caleb Williams",
+      0.0,
+      "FREE AGENT"
+    ],
+    [
+      "RB",
+      "Derrick Henry",
+      0.0,
+      "FREE AGENT"
+    ],
+    [
+      "RB",
+      "Kenneth Walker",
+      0.0,
+      "FREE AGENT"
+    ],
+    [
+      "WR",
+      "Jalen Coker",
+      0.0,
+      "FREE AGENT"
+    ],
+    [
+      "WR",
+      "Christian Watson",
+      0.0,
+      "FREE AGENT"
+    ],
+    [
+      "TE",
+      "Isaiah Likely",
+      0.0,
+      "FREE AGENT"
+    ],
+    [
+      "FLEX",
+      "Jahmyr Gibbs",
+      0.0,
+      "FREE AGENT"
+    ],
+    [
+      "K",
+      "Evan McPherson",
+      0.0,
+      "FREE AGENT"
+    ],
+    [
+      "D/ST",
+      "Raiders",
+      0.0,
+      "FREE AGENT"
+    ]
+  ],
   "matchups": [
     [
       "One90",
