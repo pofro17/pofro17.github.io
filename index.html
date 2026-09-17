@@ -144,6 +144,25 @@
   .matchup .score{font-size:18px;font-weight:900}
   .matchup .vs{font-size:10px;color:var(--muted);text-transform:uppercase}
   footer{margin-top:18px;color:var(--muted);font-size:11px;text-align:center}
+  .week-pill select{
+    margin-top:4px;
+    min-width:120px;
+    border:1px solid var(--line);
+    background:var(--panel-2);
+    color:var(--text);
+    border-radius:9px;
+    padding:6px 9px;
+    font:inherit;
+    font-size:14px;
+    font-weight:800;
+    outline:none;
+    cursor:pointer;
+  }
+  .week-pill select:focus{
+    border-color:var(--accent);
+    box-shadow:0 0 0 2px rgba(124,92,255,.15);
+  }
+
   @media (max-width: 960px){
     .grid{grid-template-columns:1fr}
     .stats{grid-template-columns:repeat(2,1fr)}
@@ -170,9 +189,11 @@
       <p id="pageSubtitle">Loading Yahoo Fantasy data…</p>
     </div>
     <div class="week-pill">
-      <div class="label">Latest completed week</div>
-      <div class="value" id="weekValue">Loading…</div>
-      <div id="dataStatus" style="font-size:10px;color:var(--muted);margin-top:4px">Loading live data…</div>
+      <div class="label">Week</div>
+      <select id="weekSelect" aria-label="Select fantasy football week">
+        <option>Loading…</option>
+      </select>
+      <div id="dataStatus" style="font-size:10px;color:var(--muted);margin-top:5px">Loading live data…</div>
     </div>
   </header>
 
@@ -410,67 +431,100 @@ function renderMatchups(data, topTeam) {
   }).join("");
 }
 
+let dashboardData = null;
+
+function populateWeekSelect() {
+  const select = document.getElementById("weekSelect");
+  const weeks = dashboardData.available_weeks || [];
+
+  select.innerHTML = weeks
+    .map(week => `<option value="${week}">Week ${week}</option>`)
+    .join("");
+
+  select.value = String(dashboardData.default_week);
+
+  select.addEventListener("change", () => {
+    renderSelectedWeek(Number(select.value));
+  });
+}
+
+function renderSelectedWeek(week) {
+  const snapshot = dashboardData.weeks[String(week)];
+
+  if (!snapshot) {
+    return;
+  }
+
+  const topTeam =
+    Array.isArray(snapshot.standings) && snapshot.standings.length
+      ? snapshot.standings[0].team
+      : "";
+
+  document.title = `${dashboardData.title || "Poi Bowl XII"} — Fantasy Football`;
+
+  document.getElementById("brandSmall").textContent =
+    dashboardData.title || "Poi Bowl XII";
+
+  document.getElementById("pageTitle").textContent =
+    "Fantasy Football League";
+
+  document.getElementById("pageSubtitle").textContent =
+    `Week ${week} dashboard · Yahoo Fantasy data`;
+
+  document.getElementById("leadersTitle").textContent =
+    `Week ${week} Leaders`;
+
+  document.getElementById("matchupsTitle").textContent =
+    `Week ${week} Matchups`;
+
+  document.getElementById("footerText").textContent =
+    `${dashboardData.title || "Poi Bowl XII"} · Yahoo Fantasy data · Week ${week}`;
+
+  renderStats(snapshot);
+  renderStandings(snapshot, topTeam);
+  renderLeaders(snapshot, topTeam);
+  renderBestLineup(snapshot, topTeam);
+  renderMatchups(snapshot, topTeam);
+
+  document.getElementById("dataStatus").textContent =
+    "Live data connected";
+
+  document.getElementById("dataStatus").style.color =
+    "#39ff14";
+}
+
 async function loadData() {
   const status = document.getElementById("dataStatus");
 
   try {
-    const response = await fetch("./data.json?ts=" + Date.now(), {
-      cache: "no-store"
-    });
+    const response = await fetch(
+      "./data.json?ts=" + Date.now(),
+      { cache: "no-store" }
+    );
 
     if (!response.ok) {
       throw new Error(`HTTP ${response.status}`);
     }
 
-    const data = await response.json();
+    dashboardData = await response.json();
 
-    const week = Number(data.week) || 1;
-    const title = data.title || "Poi Bowl XII";
+    if (
+      !dashboardData.weeks ||
+      !dashboardData.available_weeks ||
+      dashboardData.available_weeks.length === 0
+    ) {
+      throw new Error("data.json does not contain weekly data.");
+    }
 
-    // Current #1 team drives all Matrix-green highlighting.
-    const topTeam =
-      Array.isArray(data.standings) && data.standings.length
-        ? data.standings[0].team
-        : "";
+    populateWeekSelect();
+    renderSelectedWeek(Number(dashboardData.default_week));
 
-    document.title = `${title} — Fantasy Football`;
-    document.getElementById("brandSmall").textContent = title;
-    document.getElementById("pageTitle").textContent = "Fantasy Football League";
-    document.getElementById("pageSubtitle").textContent =
-      `Week ${week} dashboard · Yahoo Fantasy data`;
-    document.getElementById("weekValue").textContent = `Week ${week}`;
+    console.log("Loaded multi-week data:", dashboardData);
 
-    document.getElementById("leadersTitle").textContent =
-      `Week ${week} Leaders`;
-    document.getElementById("matchupsTitle").textContent =
-      `Week ${week} Matchups`;
-    document.getElementById("footerText").textContent =
-      `${title} · Yahoo Fantasy data · Week ${week}`;
-
-    renderStats(data);
-    renderStandings(data, topTeam);
-    renderLeaders(data, topTeam);
-    renderBestLineup(data, topTeam);
-    renderMatchups(data, topTeam);
-
-    // Keep the high-score owner/team highlighting dynamic too.
-    document.getElementById("highScoreTeam").classList.toggle(
-      "matrix-team",
-      String(data.stats.high_score.team) === String(topTeam)
-    );
-
-    document.getElementById("lowScoreTeam").classList.toggle(
-      "matrix-team",
-      String(data.stats.low_score.team) === String(topTeam)
-    );
-
-    status.textContent = "Live data connected";
-    status.style.color = "#39ff14";
-
-    console.log("Loaded data.json:", data);
   } catch (error) {
     status.textContent = "Data connection failed";
     status.style.color = "#ff6b7a";
+
     console.error("Unable to load data.json:", error);
   }
 }
