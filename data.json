@@ -1,119 +1,292 @@
 {
-  "week": 2,
   "title": "Poi Bowl XII",
+  "current_week": 2,
+  "default_week": 1,
+  "available_weeks": [
+    1
+  ],
+  "weeks": {
+    "1": {
+      "week": 1,
+      "stats": {
+        "high_score": {
+          "points": 181.2,
+          "team": "burnIN"
+        },
+        "low_score": {
+          "points": 111.71,
+          "team": "Skip to Malu"
+        },
+        "best_lineup": {
+          "points": 0,
+          "description": "Theoretical Week 1 maximum"
+        },
+        "league_average": {
+          "points": 140.14333333333335,
+          "description": "12-team Week 1 average"
+        }
+      },
+      "standings": [
+        {
+          "team": "burnIN",
+          "record": "1-0",
+          "pf": 181.2,
+          "pa": 111.71,
+          "rank": 1,
+          "movement": "—"
+        },
+        {
+          "team": "De’Strib Club is Closed",
+          "record": "1-0",
+          "pf": 177.19,
+          "pa": 134.79,
+          "rank": 2,
+          "movement": "—"
+        },
+        {
+          "team": "In Mama We Trust",
+          "record": "1-0",
+          "pf": 164.56,
+          "pa": 129.49,
+          "rank": 3,
+          "movement": "—"
+        },
+        {
+          "team": "Heen Machine Poi",
+          "record": "1-0",
+          "pf": 141.63,
+          "pa": 124.89,
+          "rank": 4,
+          "movement": "—"
+        },
+        {
+          "team": "One90",
+          "record": "1-0",
+          "pf": 136.53,
+          "pa": 134.38,
+          "rank": 5,
+          "movement": "—"
+        },
+        {
+          "team": "Maye-N-Skweeze",
+          "record": "1-0",
+          "pf": 124.19,
+          "pa": 121.16,
+          "rank": 6,
+          "movement": "—"
+        },
+        {
+          "team": "Lisan Al-Caleb",
+          "record": "0-1",
+          "pf": 134.79,
+          "pa": 177.19,
+          "rank": 7,
+          "movement": "—"
+        },
+        {
+          "team": "Qook’D",
+          "record": "0-1",
+          "pf": 134.38,
+          "pa": 136.53,
+          "rank": 8,
+          "movement": "—"
+        },
+        {
+          "team": "Johnsama Binharbaugh",
+          "record": "0-1",
+          "pf": 129.49,
+          "pa": 164.56,
+          "rank": 9,
+          "movement": "—"
+        },
+        {
+          "team": "YOU ARE NOT THE FATHER",
+          "record": "0-1",
+          "pf": 124.89,
+          "pa": 141.63,
+          "rank": 10,
+          "movement": "—"
+        },
+        {
+          "team": "Diet Coke Zero",
+          "record": "0-1",
+          "pf": 121.16,
+          "pa": 124.19,
+          "rank": 11,
+          "movement": "—"
+        },
+        {
+          "team": "Skip to Malu",
+          "record": "0-1",
+          "pf": 111.71,
+          "pa": 181.2,
+          "rank": 12,
+          "movement": "—"
+        }
+      ],
+      "leaders": {
+        "QB": [],
+        "RB": [],
+        "WR": [],
+        "TE": [],
+        "K": [],
+        "D/ST": []
+      },
+      "best_lineup": [],
+      "matchups": [
+        [
+          "One90",
+          136.53,
+          "Qook’D",
+          134.38
+        ],
+        [
+          "Diet Coke Zero",
+          121.16,
+          "Maye-N-Skweeze",
+          124.19
+        ],
+        [
+          "In Mama We Trust",
+          164.56,
+          "Johnsama Binharbaugh",
+          129.49
+        ],
+        [
+          "Heen Machine Poi",
+          141.63,
+          "YOU ARE NOT THE FATHER",
+          124.89
+        ],
+        [
+          "Skip to Malu",
+          111.71,
+          "burnIN",
+          181.2
+        ],
+        [
+          "De’Strib Club is Closed",
+          177.19,
+          "Lisan Al-Caleb",
+          134.79
+        ]
+      ]
+    }
+  },
+  "week": 1,
   "stats": {
     "high_score": {
-      "points": 0.0,
-      "team": "—"
+      "points": 181.2,
+      "team": "burnIN"
     },
     "low_score": {
-      "points": 0.0,
-      "team": "—"
-    },
-    "league_average": {
-      "points": 0.0,
-      "description": "12-team Week 2 average"
+      "points": 111.71,
+      "team": "Skip to Malu"
     },
     "best_lineup": {
       "points": 0,
-      "description": "Theoretical Week 2 maximum"
+      "description": "Theoretical Week 1 maximum"
+    },
+    "league_average": {
+      "points": 140.14333333333335,
+      "description": "12-team Week 1 average"
     }
   },
   "standings": [
     {
-      "rank": 1,
       "team": "burnIN",
       "record": "1-0",
       "pf": 181.2,
       "pa": 111.71,
+      "rank": 1,
       "movement": "—"
     },
     {
-      "rank": 2,
       "team": "De’Strib Club is Closed",
       "record": "1-0",
       "pf": 177.19,
       "pa": 134.79,
+      "rank": 2,
       "movement": "—"
     },
     {
-      "rank": 3,
       "team": "In Mama We Trust",
       "record": "1-0",
       "pf": 164.56,
       "pa": 129.49,
+      "rank": 3,
       "movement": "—"
     },
     {
-      "rank": 4,
       "team": "Heen Machine Poi",
       "record": "1-0",
       "pf": 141.63,
       "pa": 124.89,
+      "rank": 4,
       "movement": "—"
     },
     {
-      "rank": 5,
       "team": "One90",
       "record": "1-0",
       "pf": 136.53,
       "pa": 134.38,
+      "rank": 5,
       "movement": "—"
     },
     {
-      "rank": 6,
       "team": "Maye-N-Skweeze",
       "record": "1-0",
       "pf": 124.19,
       "pa": 121.16,
+      "rank": 6,
       "movement": "—"
     },
     {
-      "rank": 7,
       "team": "Lisan Al-Caleb",
       "record": "0-1",
       "pf": 134.79,
       "pa": 177.19,
+      "rank": 7,
       "movement": "—"
     },
     {
-      "rank": 8,
       "team": "Qook’D",
       "record": "0-1",
       "pf": 134.38,
       "pa": 136.53,
+      "rank": 8,
       "movement": "—"
     },
     {
-      "rank": 9,
       "team": "Johnsama Binharbaugh",
       "record": "0-1",
       "pf": 129.49,
       "pa": 164.56,
+      "rank": 9,
       "movement": "—"
     },
     {
-      "rank": 10,
       "team": "YOU ARE NOT THE FATHER",
       "record": "0-1",
       "pf": 124.89,
       "pa": 141.63,
+      "rank": 10,
       "movement": "—"
     },
     {
-      "rank": 11,
       "team": "Diet Coke Zero",
       "record": "0-1",
       "pf": 121.16,
       "pa": 124.19,
+      "rank": 11,
       "movement": "—"
     },
     {
-      "rank": 12,
       "team": "Skip to Malu",
       "record": "0-1",
       "pf": 111.71,
       "pa": 181.2,
+      "rank": 12,
       "movement": "—"
     }
   ],
@@ -126,5 +299,42 @@
     "D/ST": []
   },
   "best_lineup": [],
-  "matchups": []
+  "matchups": [
+    [
+      "One90",
+      136.53,
+      "Qook’D",
+      134.38
+    ],
+    [
+      "Diet Coke Zero",
+      121.16,
+      "Maye-N-Skweeze",
+      124.19
+    ],
+    [
+      "In Mama We Trust",
+      164.56,
+      "Johnsama Binharbaugh",
+      129.49
+    ],
+    [
+      "Heen Machine Poi",
+      141.63,
+      "YOU ARE NOT THE FATHER",
+      124.89
+    ],
+    [
+      "Skip to Malu",
+      111.71,
+      "burnIN",
+      181.2
+    ],
+    [
+      "De’Strib Club is Closed",
+      177.19,
+      "Lisan Al-Caleb",
+      134.79
+    ]
+  ]
 }
