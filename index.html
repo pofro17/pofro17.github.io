@@ -184,8 +184,8 @@
 <div class="wrap">
   <header>
     <div class="brand">
-      <small id="brandSmall">MOTW: The Rams are dooooooomed!</small>
-      <h1 id="pageTitle">Poi Bowl XII</h1>
+      <small id="brandSmall">Poi Bowl XII</small>
+      <h1 id="pageTitle">Fantasy Football League</h1>
       <p id="pageSubtitle">Loading Yahoo Fantasy data…</p>
     </div>
     <div class="week-pill">
@@ -364,8 +364,8 @@ function renderLeaders(data, topTeam) {
         <h3>${escapeHtml(position)}</h3>
         ${entries.map(entry => {
           const player = entry[0];
-          const points = entry[1];
-          const owner = entry[2];
+          const owner = entry[1];
+          const points = entry[2];
 
           return `
             <div class="leader">
@@ -463,10 +463,10 @@ function renderSelectedWeek(week) {
   document.title = `${dashboardData.title || "Poi Bowl XII"} — Fantasy Football`;
 
   document.getElementById("brandSmall").textContent =
-    dashboardData.title || "MOTW: The Rams are doooooomed!";
+    dashboardData.title || "Poi Bowl XII";
 
   document.getElementById("pageTitle").textContent =
-    "Poi Bowl XII";
+    "Fantasy Football League";
 
   document.getElementById("pageSubtitle").textContent =
     `Week ${week} dashboard · Yahoo Fantasy data`;
