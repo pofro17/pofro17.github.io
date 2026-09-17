@@ -6,6 +6,7 @@
 <title>Poi Bowl XII — Fantasy Football</title>
 <style>
 
+
   :root{
     --bg:#0a0d12;
     --panel:#111722;
@@ -157,46 +158,47 @@
     th:nth-child(5),td:nth-child(5){display:none}
   }
 
+
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
     <div class="brand">
-      <small>Poi Bowl XII</small>
-      <h1>Fantasy Football League</h1>
-      <p>Week 1 dashboard · Yahoo Fantasy data</p>
+      <small id="brandSmall">Poi Bowl XII</small>
+      <h1 id="pageTitle">Fantasy Football League</h1>
+      <p id="pageSubtitle">Loading Yahoo Fantasy data…</p>
     </div>
     <div class="week-pill">
       <div class="label">Latest completed week</div>
-      <div class="value" id="weekValue">Week 1</div>
+      <div class="value" id="weekValue">Loading…</div>
       <div id="dataStatus" style="font-size:10px;color:var(--muted);margin-top:4px">Loading live data…</div>
     </div>
   </header>
 
   <section class="stats">
     <div class="stat">
-      <div class="kicker" id="highScoreLabel">WEEK 1 HIGH SCORE</div>
-      <div class="big" id="highScoreValue">181.20</div>
-      <div class="sub matrix-team" id="highScoreTeam">burnIN</div>
+      <div class="kicker" id="highScoreLabel">HIGH SCORE</div>
+      <div class="big" id="highScoreValue">—</div>
+      <div class="sub" id="highScoreTeam">—</div>
     </div>
 
     <div class="stat">
-      <div class="kicker" id="lowScoreLabel">WEEK 1 LOW SCORE</div>
-      <div class="big" id="lowScoreValue">111.71</div>
-      <div class="sub" id="lowScoreTeam">Skip to Malu</div>
+      <div class="kicker" id="lowScoreLabel">LOW SCORE</div>
+      <div class="big" id="lowScoreValue">—</div>
+      <div class="sub" id="lowScoreTeam">—</div>
     </div>
 
     <div class="stat">
       <div class="kicker">BEST POSSIBLE LINEUP</div>
-      <div class="big" id="bestLineupValue">294.89</div>
-      <div class="sub" id="bestLineupDescription">Theoretical Week 1 maximum</div>
+      <div class="big" id="bestLineupValue">—</div>
+      <div class="sub" id="bestLineupDescription">—</div>
     </div>
 
     <div class="stat">
       <div class="kicker">LEAGUE AVERAGE</div>
-      <div class="big" id="leagueAverageValue">144.24</div>
-      <div class="sub" id="leagueAverageDescription">12-team Week 1 average</div>
+      <div class="big" id="leagueAverageValue">—</div>
+      <div class="sub" id="leagueAverageDescription">—</div>
     </div>
   </section>
 
@@ -213,20 +215,7 @@
               <th>#</th><th>Team</th><th>W-L</th><th>PF</th><th>PA</th><th>MOV</th>
             </tr>
           </thead>
-          <tbody>
-            <tr><td>1</td><td class="team matrix-team">burnIN</td><td class="record">1-0</td><td>181.20</td><td>111.71</td><td class="movement flat">—</td></tr>
-            <tr><td>2</td><td class="team">De’Strip Club is Closed</td><td class="record">1-0</td><td>177.19</td><td>134.79</td><td class="movement flat">—</td></tr>
-            <tr><td>3</td><td class="team">In Mama We Trust</td><td class="record">1-0</td><td>164.56</td><td>129.49</td><td class="movement flat">—</td></tr>
-            <tr><td>4</td><td class="team">Heen Machine Poi</td><td class="record">1-0</td><td>141.63</td><td>124.89</td><td class="movement flat">—</td></tr>
-            <tr><td>5</td><td class="team">One90</td><td class="record">1-0</td><td>136.53</td><td>134.38</td><td class="movement flat">—</td></tr>
-            <tr><td>6</td><td class="team">Maye-N-Skweeze</td><td class="record">1-0</td><td>124.19</td><td>121.16</td><td class="movement flat">—</td></tr>
-            <tr><td>7</td><td class="team">Lisan Al-Caleb</td><td class="record">0-1</td><td>134.79</td><td>177.19</td><td class="movement flat">—</td></tr>
-            <tr><td>8</td><td class="team">Qook’D</td><td class="record">0-1</td><td>134.38</td><td>136.53</td><td class="movement flat">—</td></tr>
-            <tr><td>9</td><td class="team">Johnsama Binharbaugh</td><td class="record">0-1</td><td>129.49</td><td>164.56</td><td class="movement flat">—</td></tr>
-            <tr><td>10</td><td class="team">YOU ARE NOT THE FATHER</td><td class="record">0-1</td><td>124.89</td><td>141.63</td><td class="movement flat">—</td></tr>
-            <tr><td>11</td><td class="team">Diet Coke Zero</td><td class="record">0-1</td><td>121.16</td><td>124.19</td><td class="movement flat">—</td></tr>
-            <tr><td>12</td><td class="team">Skip to Malu</td><td class="record">0-1</td><td>111.71</td><td>181.20</td><td class="movement flat">—</td></tr>
-          </tbody>
+          <tbody id="standingsBody"></tbody>
         </table>
       </div>
     </div>
@@ -234,69 +223,30 @@
     <div>
       <div class="panel">
         <div class="panel-head">
-          <h2>Week 1 Leaders</h2>
+          <h2 id="leadersTitle">Week Leaders</h2>
           <span>Top 3 at each position</span>
         </div>
         <div class="panel-body">
-          <div class="leaders">
-            <div class="leader-card">
-              <h3>QB</h3>
-              <div class="leader"><div><div class="name">Caleb Williams</div><div class="meta">Lisan Al-Caleb</div></div><div class="pts">41.26</div></div>
-              <div class="leader"><div><div class="name">Josh Allen</div><div class="meta">YOU ARE NOT THE FATHER</div></div><div class="pts">39.66</div></div>
-              <div class="leader"><div><div class="name">Bryce Young</div><div class="meta">FREE AGENT</div></div><div class="pts">37.44</div></div>
-            </div>
-            <div class="leader-card">
-              <h3>RB</h3>
-              <div class="leader"><div><div class="name">Derrick Henry</div><div class="meta">YOU ARE NOT THE FATHER</div></div><div class="pts">35.30</div></div>
-              <div class="leader"><div><div class="name">Kenneth Walker</div><div class="meta">De’Strip Club is Closed</div></div><div class="pts">34.10</div></div>
-              <div class="leader"><div><div class="name">Jahmyr Gibbs</div><div class="meta">Skip to Malu</div></div><div class="pts">33.60</div></div>
-            </div>
-            <div class="leader-card">
-              <h3>WR</h3>
-              <div class="leader"><div><div class="name">Jalen Coker</div><div class="meta">One90</div></div><div class="pts">33.80</div></div>
-              <div class="leader"><div><div class="name">Christian Watson</div><div class="meta">In Mama We Trust</div></div><div class="pts">32.70</div></div>
-              <div class="leader"><div><div class="name">Justin Jefferson</div><div class="meta">In Mama We Trust</div></div><div class="pts">31.20</div></div>
-            </div>
-            <div class="leader-card">
-              <h3>TE</h3>
-              <div class="leader"><div><div class="name">Isaiah Likely</div><div class="meta">De’Strip Club is Closed</div></div><div class="pts">27.80</div></div>
-              <div class="leader"><div><div class="name">Trey McBride</div><div class="meta matrix-owner">burnIN</div></div><div class="pts">24.50</div></div>
-              <div class="leader"><div><div class="name">Dallas Goedert</div><div class="meta matrix-owner">burnIN</div></div><div class="pts">23.70</div></div>
-            </div>
-            <div class="leader-card">
-              <h3>K</h3>
-              <div class="leader"><div><div class="name">Evan McPherson</div><div class="meta">De’Strip Club is Closed</div></div><div class="pts">22.00</div></div>
-              <div class="leader"><div><div class="name">Chad Ryland</div><div class="meta">FREE AGENT</div></div><div class="pts">19.00</div></div>
-              <div class="leader"><div><div class="name">Jason Sanders</div><div class="meta">FREE AGENT</div></div><div class="pts">18.00</div></div>
-            </div>
-            <div class="leader-card">
-              <h3>D/ST</h3>
-              <div class="leader"><div><div class="name">Raiders</div><div class="meta">FREE AGENT</div></div><div class="pts">34.33</div></div>
-              <div class="leader"><div><div class="name">Steelers</div><div class="meta">Qook’D</div></div><div class="pts">32.90</div></div>
-              <div class="leader"><div><div class="name">Vikings</div><div class="meta">Diet Coke Zero</div></div><div class="pts">32.40</div></div>
-            </div>
-          </div>
+          <div class="leaders" id="leadersGrid"></div>
         </div>
       </div>
 
       <div class="panel best">
         <div class="panel-head">
           <h2>Best Possible Lineup</h2>
-          <span>Week 1 theoretical max</span>
+          <span id="lineupSubtitle">Theoretical max</span>
         </div>
         <div class="panel-body">
-          <div class="lineup">
-            <div class="slot"><div class="pos">QB</div><div class="player">Caleb Williams</div><div class="owner">Lisan Al-Caleb</div><div class="points">41.26</div></div>
-            <div class="slot"><div class="pos">RB</div><div class="player">Derrick Henry</div><div class="owner">YOU ARE NOT THE FATHER</div><div class="points">35.30</div></div>
-            <div class="slot"><div class="pos">RB</div><div class="player">Kenneth Walker</div><div class="owner">De’Strip Club is Closed</div><div class="points">34.10</div></div>
-            <div class="slot"><div class="pos">WR</div><div class="player">Jalen Coker</div><div class="owner">One90</div><div class="points">33.80</div></div>
-            <div class="slot"><div class="pos">WR</div><div class="player">Christian Watson</div><div class="owner">In Mama We Trust</div><div class="points">32.70</div></div>
-            <div class="slot"><div class="pos">TE</div><div class="player">Isaiah Likely</div><div class="owner">De’Strip Club is Closed</div><div class="points">27.80</div></div>
-            <div class="slot"><div class="pos">FLEX</div><div class="player">Jahmyr Gibbs</div><div class="owner">Skip to Malu</div><div class="points">33.60</div></div>
-            <div class="slot"><div class="pos">K</div><div class="player">Evan McPherson</div><div class="owner">De’Strip Club is Closed</div><div class="points">22.00</div></div>
-            <div class="slot"><div class="pos">D/ST</div><div class="player">Raiders</div><div class="owner">FREE AGENT</div><div class="points">34.33</div></div>
+          <div class="lineup" id="lineupGrid"></div>
+          <div class="total">
+            <div>
+              <div class="label">Theoretical total</div>
+              <div style="margin-top:3px;color:var(--muted);font-size:12px">
+                Highest-scoring legal lineup
+              </div>
+            </div>
+            <div class="value" id="lineupTotal">—</div>
           </div>
-          <div class="total"><div><div class="label">Theoretical total</div><div style="margin-top:3px;color:var(--muted);font-size:12px">Highest-scoring legal lineup</div></div><div class="value">294.89</div></div>
         </div>
       </div>
     </div>
@@ -304,25 +254,162 @@
 
   <div class="panel" style="margin-top:12px">
     <div class="panel-head">
-      <h2>Week 1 Matchups</h2>
+      <h2 id="matchupsTitle">Matchups</h2>
       <span>Final scores</span>
     </div>
     <div class="panel-body">
-      <div class="matchups">
-        <div class="matchup"><div class="side matrix-team">burnIN</div><div class="score">181.20 <span class="vs">vs</span> 111.71</div><div class="side right">Skip to Malu</div></div>
-        <div class="matchup"><div class="side">De’Strip Club is Closed</div><div class="score">177.19 <span class="vs">vs</span> 134.79</div><div class="side right">Lisan Al-Caleb</div></div>
-        <div class="matchup"><div class="side">In Mama We Trust</div><div class="score">164.56 <span class="vs">vs</span> 129.49</div><div class="side right">Johnsama Binharbaugh</div></div>
-        <div class="matchup"><div class="side">Heen Machine Poi</div><div class="score">141.63 <span class="vs">vs</span> 124.89</div><div class="side right">YOU ARE NOT THE FATHER</div></div>
-        <div class="matchup"><div class="side">One90</div><div class="score">136.53 <span class="vs">vs</span> 134.38</div><div class="side right">Qook’D</div></div>
-        <div class="matchup"><div class="side">Maye-N-Skweeze</div><div class="score">124.19 <span class="vs">vs</span> 121.16</div><div class="side right">Diet Coke Zero</div></div>
-      </div>
+      <div class="matchups" id="matchupsGrid"></div>
     </div>
   </div>
 
-  <footer>Poi Bowl XII · Prototype dashboard · Built from Yahoo Fantasy Week 1 data</footer>
+  <footer id="footerText">Poi Bowl XII · Yahoo Fantasy data</footer>
 </div>
 
 <script>
+function formatPoints(value) {
+  const n = Number(value);
+  return Number.isFinite(n) ? n.toFixed(2) : "—";
+}
+
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+function teamClass(team, topTeam) {
+  return String(team) === String(topTeam) ? " matrix-team" : "";
+}
+
+function ownerClass(owner, topTeam) {
+  return String(owner) === String(topTeam) ? " matrix-owner" : "";
+}
+
+function renderStats(data) {
+  const week = data.week;
+
+  document.getElementById("highScoreLabel").textContent =
+    `WEEK ${week} HIGH SCORE`;
+  document.getElementById("highScoreValue").textContent =
+    formatPoints(data.stats.high_score.points);
+  document.getElementById("highScoreTeam").textContent =
+    data.stats.high_score.team;
+
+  document.getElementById("lowScoreLabel").textContent =
+    `WEEK ${week} LOW SCORE`;
+  document.getElementById("lowScoreValue").textContent =
+    formatPoints(data.stats.low_score.points);
+  document.getElementById("lowScoreTeam").textContent =
+    data.stats.low_score.team;
+
+  document.getElementById("bestLineupValue").textContent =
+    formatPoints(data.stats.best_lineup.points);
+  document.getElementById("bestLineupDescription").textContent =
+    data.stats.best_lineup.description;
+
+  document.getElementById("leagueAverageValue").textContent =
+    formatPoints(data.stats.league_average.points);
+  document.getElementById("leagueAverageDescription").textContent =
+    data.stats.league_average.description;
+}
+
+function renderStandings(data, topTeam) {
+  const rows = Array.isArray(data.standings) ? data.standings : [];
+
+  document.getElementById("standingsBody").innerHTML = rows.map(row => `
+    <tr>
+      <td>${escapeHtml(row.rank)}</td>
+      <td class="team${teamClass(row.team, topTeam)}">${escapeHtml(row.team)}</td>
+      <td class="record">${escapeHtml(row.record)}</td>
+      <td>${formatPoints(row.pf)}</td>
+      <td>${formatPoints(row.pa)}</td>
+      <td class="movement flat">${escapeHtml(row.movement ?? "—")}</td>
+    </tr>
+  `).join("");
+}
+
+function renderLeaders(data, topTeam) {
+  const leaders = data.leaders || {};
+  const order = ["QB", "RB", "WR", "TE", "K", "D/ST"];
+
+  document.getElementById("leadersGrid").innerHTML = order.map(position => {
+    const entries = Array.isArray(leaders[position]) ? leaders[position] : [];
+
+    return `
+      <div class="leader-card">
+        <h3>${escapeHtml(position)}</h3>
+        ${entries.map(entry => {
+          const player = entry[0];
+          const points = entry[1];
+          const owner = entry[2];
+
+          return `
+            <div class="leader">
+              <div>
+                <div class="name">${escapeHtml(player)}</div>
+                <div class="meta${ownerClass(owner, topTeam)}">${escapeHtml(owner)}</div>
+              </div>
+              <div class="pts">${formatPoints(points)}</div>
+            </div>
+          `;
+        }).join("")}
+      </div>
+    `;
+  }).join("");
+}
+
+function renderBestLineup(data, topTeam) {
+  const lineup = Array.isArray(data.best_lineup) ? data.best_lineup : [];
+
+  document.getElementById("lineupGrid").innerHTML = lineup.map(entry => {
+    const position = entry[0];
+    const player = entry[1];
+    const points = entry[2];
+    const owner = entry[3];
+
+    return `
+      <div class="slot">
+        <div class="pos">${escapeHtml(position)}</div>
+        <div class="player">${escapeHtml(player)}</div>
+        <div class="owner${ownerClass(owner, topTeam)}">${escapeHtml(owner)}</div>
+        <div class="points">${formatPoints(points)}</div>
+      </div>
+    `;
+  }).join("");
+
+  document.getElementById("lineupTotal").textContent =
+    formatPoints(data.stats.best_lineup.points);
+
+  document.getElementById("lineupSubtitle").textContent =
+    `Week ${data.week} theoretical max`;
+}
+
+function renderMatchups(data, topTeam) {
+  const matchups = Array.isArray(data.matchups) ? data.matchups : [];
+
+  document.getElementById("matchupsGrid").innerHTML = matchups.map(game => {
+    const team1 = game[0];
+    const score1 = game[1];
+    const team2 = game[2];
+    const score2 = game[3];
+
+    return `
+      <div class="matchup">
+        <div class="side${teamClass(team1, topTeam)}">${escapeHtml(team1)}</div>
+        <div class="score">
+          ${formatPoints(score1)}
+          <span class="vs">vs</span>
+          ${formatPoints(score2)}
+        </div>
+        <div class="side right${teamClass(team2, topTeam)}">${escapeHtml(team2)}</div>
+      </div>
+    `;
+  }).join("");
+}
+
 async function loadData() {
   const status = document.getElementById("dataStatus");
 
@@ -337,62 +424,58 @@ async function loadData() {
 
     const data = await response.json();
 
-    // Week
-    document.getElementById("weekValue").textContent =
-      `Week ${data.week}`;
+    const week = Number(data.week) || 1;
+    const title = data.title || "Poi Bowl XII";
 
-    document.querySelector(".brand p").textContent =
-      `Week ${data.week} dashboard · Yahoo Fantasy data`;
+    // Current #1 team drives all Matrix-green highlighting.
+    const topTeam =
+      Array.isArray(data.standings) && data.standings.length
+        ? data.standings[0].team
+        : "";
 
-    // High score
-    document.getElementById("highScoreLabel").textContent =
-      `WEEK ${data.week} HIGH SCORE`;
+    document.title = `${title} — Fantasy Football`;
+    document.getElementById("brandSmall").textContent = title;
+    document.getElementById("pageTitle").textContent = "Fantasy Football League";
+    document.getElementById("pageSubtitle").textContent =
+      `Week ${week} dashboard · Yahoo Fantasy data`;
+    document.getElementById("weekValue").textContent = `Week ${week}`;
 
-    document.getElementById("highScoreValue").textContent =
-      Number(data.stats.high_score.points).toFixed(2);
+    document.getElementById("leadersTitle").textContent =
+      `Week ${week} Leaders`;
+    document.getElementById("matchupsTitle").textContent =
+      `Week ${week} Matchups`;
+    document.getElementById("footerText").textContent =
+      `${title} · Yahoo Fantasy data · Week ${week}`;
 
-    document.getElementById("highScoreTeam").textContent =
-      data.stats.high_score.team;
+    renderStats(data);
+    renderStandings(data, topTeam);
+    renderLeaders(data, topTeam);
+    renderBestLineup(data, topTeam);
+    renderMatchups(data, topTeam);
 
-    // Low score
-    document.getElementById("lowScoreLabel").textContent =
-      `WEEK ${data.week} LOW SCORE`;
+    // Keep the high-score owner/team highlighting dynamic too.
+    document.getElementById("highScoreTeam").classList.toggle(
+      "matrix-team",
+      String(data.stats.high_score.team) === String(topTeam)
+    );
 
-    document.getElementById("lowScoreValue").textContent =
-      Number(data.stats.low_score.points).toFixed(2);
-
-    document.getElementById("lowScoreTeam").textContent =
-      data.stats.low_score.team;
-
-    // Best possible lineup
-    document.getElementById("bestLineupValue").textContent =
-      Number(data.stats.best_lineup.points).toFixed(2);
-
-    document.getElementById("bestLineupDescription").textContent =
-      data.stats.best_lineup.description;
-
-    // League average
-    document.getElementById("leagueAverageValue").textContent =
-      Number(data.stats.league_average.points).toFixed(2);
-
-    document.getElementById("leagueAverageDescription").textContent =
-      data.stats.league_average.description;
+    document.getElementById("lowScoreTeam").classList.toggle(
+      "matrix-team",
+      String(data.stats.low_score.team) === String(topTeam)
+    );
 
     status.textContent = "Live data connected";
     status.style.color = "#39ff14";
 
     console.log("Loaded data.json:", data);
-
   } catch (error) {
     status.textContent = "Data connection failed";
     status.style.color = "#ff6b7a";
-
     console.error("Unable to load data.json:", error);
   }
 }
 
 loadData();
 </script>
-
 </body>
 </html>
