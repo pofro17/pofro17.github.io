@@ -1057,63 +1057,63 @@
     ],
     "move_leaderboard": [
       {
-        "team": "De’Strib Club is Closed",
-        "moves": 0,
-        "adds": 0,
-        "drops": 0,
+        "team": "Qook’D",
+        "moves": 8,
+        "adds": 4,
+        "drops": 4,
         "trades": 0
       },
       {
         "team": "Diet Coke Zero",
-        "moves": 0,
-        "adds": 0,
-        "drops": 0,
+        "moves": 7,
+        "adds": 4,
+        "drops": 3,
         "trades": 0
       },
       {
         "team": "Heen Machine Poi",
-        "moves": 0,
-        "adds": 0,
-        "drops": 0,
+        "moves": 7,
+        "adds": 4,
+        "drops": 3,
         "trades": 0
       },
       {
-        "team": "In Mama We Trust",
-        "moves": 0,
-        "adds": 0,
-        "drops": 0,
+        "team": "De’Strib Club is Closed",
+        "moves": 5,
+        "adds": 3,
+        "drops": 2,
         "trades": 0
       },
       {
         "team": "Johnsama Binharbaugh",
-        "moves": 0,
-        "adds": 0,
+        "moves": 4,
+        "adds": 2,
+        "drops": 2,
+        "trades": 0
+      },
+      {
+        "team": "In Mama We Trust",
+        "moves": 2,
+        "adds": 1,
+        "drops": 1,
+        "trades": 0
+      },
+      {
+        "team": "Maye-N-Skweeze",
+        "moves": 2,
+        "adds": 1,
+        "drops": 1,
+        "trades": 0
+      },
+      {
+        "team": "One90",
+        "moves": 1,
+        "adds": 1,
         "drops": 0,
         "trades": 0
       },
       {
         "team": "Lisan Al-Caleb",
-        "moves": 0,
-        "adds": 0,
-        "drops": 0,
-        "trades": 0
-      },
-      {
-        "team": "Maye-N-Skweeze",
-        "moves": 0,
-        "adds": 0,
-        "drops": 0,
-        "trades": 0
-      },
-      {
-        "team": "One90",
-        "moves": 0,
-        "adds": 0,
-        "drops": 0,
-        "trades": 0
-      },
-      {
-        "team": "Qook’D",
         "moves": 0,
         "adds": 0,
         "drops": 0,
@@ -1144,12 +1144,6 @@
     "league_average_score": {
       "points": 134.56125,
       "description": "Average team score across 2 completed week(s)"
-    },
-    "overall_points_leader": {
-      "player": "Josh Allen",
-      "position": "QB",
-      "points": 86.47999999999999,
-      "current_owner": "The Josh All-In Show"
     }
   },
   "week": 2,
