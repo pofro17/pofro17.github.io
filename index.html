@@ -176,7 +176,7 @@
         <div class="value" id="seasonWeek">Week —</div>
         <div class="status" id="dataStatus">Loading live data…</div>
       </div>
-      <a class="week-link" href="./week.html">Weekly Dashboard →</a>
+      <a class="week-link" href="week.html" onclick="window.location.href='week.html'; return false;">Weekly Dashboard →</a>
     </div>
   </header>
 
@@ -321,7 +321,6 @@ function renderPositionLeaders(leaders, topTeam) {
             <div>
               <div class="leader-name">${escapeHtml(entry.player)}</div>
               <div class="leader-owner${teamClass(entry.owner, topTeam)}">${escapeHtml(entry.owner || "FREE AGENT")}</div>
-              <div class="leader-meta">#${index + 1} · season total</div>
             </div>
             <div class="leader-points">${formatPoints(entry.points)}</div>
           </div>
