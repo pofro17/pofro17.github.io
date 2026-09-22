@@ -444,7 +444,7 @@
           "pf": 263.61,
           "pa": 192.51,
           "rank": 3,
-          "movement": "—"
+          "movement": "↑3"
         },
         {
           "team": "Qook’D",
@@ -452,7 +452,7 @@
           "pf": 294.51,
           "pa": 295.36,
           "rank": 4,
-          "movement": "—"
+          "movement": "↑4"
         },
         {
           "team": "In Mama We Trust",
@@ -460,7 +460,7 @@
           "pf": 286.23,
           "pa": 280.98,
           "rank": 5,
-          "movement": "—"
+          "movement": "↓2"
         },
         {
           "team": "The Josh All-In Show",
@@ -468,7 +468,7 @@
           "pf": 276.04,
           "pa": 259.61,
           "rank": 6,
-          "movement": "—"
+          "movement": "↑4"
         },
         {
           "team": "Skip to Malu",
@@ -476,7 +476,7 @@
           "pf": 240.56,
           "pa": 254.29999999999998,
           "rank": 7,
-          "movement": "—"
+          "movement": "↑5"
         },
         {
           "team": "Heen Machine Poi",
@@ -484,7 +484,7 @@
           "pf": 214.73,
           "pa": 253.74,
           "rank": 8,
-          "movement": "—"
+          "movement": "↓4"
         },
         {
           "team": "One90",
@@ -492,7 +492,7 @@
           "pf": 207.88,
           "pa": 273.79999999999995,
           "rank": 9,
-          "movement": "—"
+          "movement": "↓4"
         },
         {
           "team": "Johnsama Binharbaugh",
@@ -500,7 +500,7 @@
           "pf": 288.32000000000005,
           "pa": 324.69,
           "rank": 10,
-          "movement": "—"
+          "movement": "↓1"
         },
         {
           "team": "Lisan Al-Caleb",
@@ -508,7 +508,7 @@
           "pf": 243.44,
           "pa": 342.32,
           "rank": 11,
-          "movement": "—"
+          "movement": "↓4"
         },
         {
           "team": "Diet Coke Zero",
@@ -516,7 +516,7 @@
           "pf": 239.14,
           "pa": 275.34000000000003,
           "rank": 12,
-          "movement": "—"
+          "movement": "↓1"
         }
       ],
       "leaders": {
@@ -845,7 +845,7 @@
       "pf": 263.61,
       "pa": 192.51,
       "rank": 3,
-      "movement": "—"
+      "movement": "↑3"
     },
     {
       "team": "Qook’D",
@@ -853,7 +853,7 @@
       "pf": 294.51,
       "pa": 295.36,
       "rank": 4,
-      "movement": "—"
+      "movement": "↑4"
     },
     {
       "team": "In Mama We Trust",
@@ -861,7 +861,7 @@
       "pf": 286.23,
       "pa": 280.98,
       "rank": 5,
-      "movement": "—"
+      "movement": "↓2"
     },
     {
       "team": "The Josh All-In Show",
@@ -869,7 +869,7 @@
       "pf": 276.04,
       "pa": 259.61,
       "rank": 6,
-      "movement": "—"
+      "movement": "↑4"
     },
     {
       "team": "Skip to Malu",
@@ -877,7 +877,7 @@
       "pf": 240.56,
       "pa": 254.29999999999998,
       "rank": 7,
-      "movement": "—"
+      "movement": "↑5"
     },
     {
       "team": "Heen Machine Poi",
@@ -885,7 +885,7 @@
       "pf": 214.73,
       "pa": 253.74,
       "rank": 8,
-      "movement": "—"
+      "movement": "↓4"
     },
     {
       "team": "One90",
@@ -893,7 +893,7 @@
       "pf": 207.88,
       "pa": 273.79999999999995,
       "rank": 9,
-      "movement": "—"
+      "movement": "↓4"
     },
     {
       "team": "Johnsama Binharbaugh",
@@ -901,7 +901,7 @@
       "pf": 288.32000000000005,
       "pa": 324.69,
       "rank": 10,
-      "movement": "—"
+      "movement": "↓1"
     },
     {
       "team": "Lisan Al-Caleb",
@@ -909,7 +909,7 @@
       "pf": 243.44,
       "pa": 342.32,
       "rank": 11,
-      "movement": "—"
+      "movement": "↓4"
     },
     {
       "team": "Diet Coke Zero",
@@ -917,7 +917,7 @@
       "pf": 239.14,
       "pa": 275.34000000000003,
       "rank": 12,
-      "movement": "—"
+      "movement": "↓1"
     }
   ],
   "leaders": {
