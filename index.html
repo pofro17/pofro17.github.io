@@ -41,7 +41,7 @@
     top:95px;
     transform:translateX(-50%);
     background:url("./poi-bowl-emblem.png") center/contain no-repeat;
-    opacity:.300;
+    opacity:.105;
     pointer-events:none;
     z-index:0;
     filter:saturate(.9);
@@ -127,6 +127,58 @@
   .move-team{font-weight:800;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .move-total{font-size:15px;font-weight:900;text-align:right}
   .move-detail{text-align:right;color:var(--muted)}
+
+  .recent-moves{display:grid;gap:0}
+  .recent-move{
+    display:grid;
+    grid-template-columns:50px minmax(0,1fr) auto;
+    gap:10px;
+    align-items:center;
+    padding:9px 2px;
+    border-top:1px solid rgba(41,56,51,.68);
+  }
+  .recent-move:first-child{border-top:0}
+  .recent-type{
+    font-size:9px;
+    font-weight:900;
+    letter-spacing:.08em;
+    text-align:center;
+    padding:5px 6px;
+    border:1px solid var(--line);
+    border-radius:7px;
+    color:var(--muted);
+    background:rgba(20,29,26,.75);
+  }
+  .recent-type.add{color:var(--green)}
+  .recent-type.drop{color:#c85c6c}
+  .recent-type.trade{color:#d8b24c}
+  .recent-player{
+    font-size:12px;
+    font-weight:850;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  .recent-team{
+    font-size:10px;
+    color:var(--muted);
+    margin-top:2px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  .recent-time{
+    font-size:10px;
+    color:var(--muted);
+    white-space:nowrap;
+    text-align:right;
+  }
+  .recent-empty{
+    color:var(--muted);
+    font-size:12px;
+    padding:18px 2px;
+    text-align:center;
+  }
 
   .leader-stat{display:grid;grid-template-columns:1fr auto;gap:15px;align-items:center;background:linear-gradient(180deg,rgba(22,112,90,.14),rgba(22,112,90,.07));border:1px solid rgba(22,112,90,.42);border-radius:15px;padding:16px}
   .leader-stat .eyebrow{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
@@ -242,16 +294,28 @@
     </div>
   </section>
 
-  <section class="panel">
-    <div class="panel-head">
-      <h2>Move Leaderboard</h2>
-      <span>Season total · adds + drops + trades</span>
-    </div>
-    <div class="panel-body">
-      <div class="move-row header">
-        <div>#</div><div>Team</div><div>Moves</div><div>Adds</div><div>Drops</div><div>Trades</div>
+  <section class="section-grid">
+    <div class="panel">
+      <div class="panel-head">
+        <h2>Move Leaderboard</h2>
+        <span>Season total · adds + drops + trades</span>
       </div>
-      <div id="moveLeaderboard"></div>
+      <div class="panel-body">
+        <div class="move-row header">
+          <div>#</div><div>Team</div><div>Moves</div><div>Adds</div><div>Drops</div><div>Trades</div>
+        </div>
+        <div id="moveLeaderboard"></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">
+        <h2>Last 12 Moves</h2>
+        <span>Most recent league transactions</span>
+      </div>
+      <div class="panel-body">
+        <div id="recentMoves"></div>
+      </div>
     </div>
   </section>
 
@@ -360,6 +424,57 @@ function renderMoves(rows, topTeam) {
   `).join("");
 }
 
+function formatRecentTime(timestamp) {
+  const ts = Number(timestamp);
+  if (!Number.isFinite(ts) || ts <= 0) return "";
+
+  return new Date(ts * 1000).toLocaleString(undefined, {
+    month: "numeric",
+    day: "numeric",
+    hour: "numeric",
+    minute: "2-digit"
+  });
+}
+
+function renderRecentMoves(rows, topTeam) {
+  const list = Array.isArray(rows) ? rows.slice(0, 12) : [];
+  const target = document.getElementById("recentMoves");
+
+  if (!list.length) {
+    target.innerHTML = `
+      <div class="recent-empty">No completed roster moves found.</div>
+    `;
+    return;
+  }
+
+  target.innerHTML = `
+    <div class="recent-moves">
+      ${list.map(row => {
+        const type = String(row.type || "MOVE").toUpperCase();
+        const typeClass =
+          type === "ADD" ? "add" :
+          type === "DROP" ? "drop" :
+          type === "TRADE" ? "trade" : "";
+
+        const player = row.player || "Unknown Player";
+        const team = row.team || "";
+        const time = formatRecentTime(row.timestamp);
+
+        return `
+          <div class="recent-move">
+            <div class="recent-type ${typeClass}">${escapeHtml(type)}</div>
+            <div>
+              <div class="recent-player">${escapeHtml(player)}</div>
+              <div class="recent-team${teamClass(team, topTeam)}">${escapeHtml(team)}</div>
+            </div>
+            <div class="recent-time">${escapeHtml(time)}</div>
+          </div>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
 async function loadData() {
   const status = document.getElementById("dataStatus");
 
@@ -412,6 +527,7 @@ async function loadData() {
     renderPositionLeaders(landing.position_leaders || {}, topTeam);
     renderRosterLeaders(landing.roster_scoring_leaders || [], topTeam);
     renderMoves(landing.move_leaderboard || [], topTeam);
+    renderRecentMoves(landing.recent_moves || [], topTeam);
 
     document.getElementById("footer").textContent =
       `${data.title || "Poi Bowl XII"} · Season dashboard · Through Week ${latestWeek || "—"}`;
