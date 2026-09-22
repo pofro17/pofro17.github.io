@@ -933,85 +933,103 @@
       "QB": [
         {
           "player": "Josh Allen",
-          "points": 86.47999999999999
+          "points": 86.47999999999999,
+          "owner": "The Josh All-In Show"
         },
         {
           "player": "Bryce Young",
-          "points": 67.52
+          "points": 67.52,
+          "owner": null
         },
         {
           "player": "Patrick Mahomes",
-          "points": 60.64
+          "points": 60.64,
+          "owner": "The Josh All-In Show"
         }
       ],
       "RB": [
         {
           "player": "Kenneth Walker III",
-          "points": 57.900000000000006
+          "points": 57.900000000000006,
+          "owner": "De’Strib Club is Closed"
         },
         {
           "player": "Jahmyr Gibbs",
-          "points": 56.900000000000006
+          "points": 56.900000000000006,
+          "owner": "Skip to Malu"
         },
         {
           "player": "Jonathan Taylor",
-          "points": 54.3
+          "points": 54.3,
+          "owner": "Diet Coke Zero"
         }
       ],
       "WR": [
         {
           "player": "Jaxon Smith-Njigba",
-          "points": 68.7
+          "points": 68.7,
+          "owner": "burnIN"
         },
         {
           "player": "Amon-Ra St. Brown",
-          "points": 63.900000000000006
+          "points": 63.900000000000006,
+          "owner": "Johnsama Binharbaugh"
         },
         {
           "player": "Chris Olave",
-          "points": 50.8
+          "points": 50.8,
+          "owner": "Maye-N-Skweeze"
         }
       ],
       "TE": [
         {
           "player": "Trey McBride",
-          "points": 42.6
+          "points": 42.6,
+          "owner": "burnIN"
         },
         {
           "player": "Dalton Kincaid",
-          "points": 40.5
+          "points": 40.5,
+          "owner": "Qook’D"
         },
         {
           "player": "Isaiah Likely",
-          "points": 36.1
+          "points": 36.1,
+          "owner": "De’Strib Club is Closed"
         }
       ],
       "K": [
         {
           "player": "Evan McPherson",
-          "points": 36.0
+          "points": 36.0,
+          "owner": "De’Strib Club is Closed"
         },
         {
           "player": "Chase McLaughlin",
-          "points": 33.0
+          "points": 33.0,
+          "owner": null
         },
         {
           "player": "Harrison Butker",
-          "points": 27.0
+          "points": 27.0,
+          "owner": "burnIN"
         }
       ],
       "D/ST": [
         {
           "player": "Bengals",
-          "points": 71.36
+          "points": 71.36,
+          "owner": null
         },
         {
           "player": "Vikings",
-          "points": 61.17
+          "points": 61.17,
+          "owner": null
         },
         {
           "player": "Steelers",
-          "points": 58.53
+          "points": 58.53,
+          "owner": "Qook’D"
         }
       ]
     },
