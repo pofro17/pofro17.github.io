@@ -98,6 +98,7 @@
   td:first-child{color:var(--muted);width:26px}
   .team{font-weight:750}
   .matrix-team{color:var(--green);font-weight:900;text-shadow:0 0 7px rgba(57,184,107,.18)}
+  .first-place{color:#d8b24c;font-weight:900;text-shadow:0 0 8px rgba(216,178,76,.20)}
   .movement.up{color:var(--green);font-weight:900;text-shadow:0 0 7px rgba(57,184,107,.15)}
   .movement.down{color:var(--red);font-weight:900;text-shadow:0 0 7px rgba(139,38,53,.20)}
   .movement.flat{color:var(--muted)}
@@ -273,12 +274,12 @@ function formatPoints(value) {
 }
 
 function teamClass(team, topTeam) {
-  return String(team) === String(topTeam) ? " matrix-team" : "";
+  return String(team) === String(topTeam) ? " first-place" : "";
 }
 
 function trophyName(team, topTeam) {
   const text = escapeHtml(team);
-  return String(team) === String(topTeam) ? `🏆 ${text}` : text;
+  return text;
 }
 
 function movementClass(movement) {
@@ -385,9 +386,12 @@ async function loadData() {
     document.getElementById("leagueAverageDesc").textContent =
       landing.league_average_score?.description || "—";
 
+    const standings = Array.isArray(landing.overall_standings) ? landing.overall_standings : [];
+    const topTeam = standings.length ? standings[0].team : "";
+
     const topMover = landing.top_mover || {};
-    document.getElementById("topMoverTeam").textContent =
-      topMover.team ? `🏃 ${topMover.team}` : "—";
+    document.getElementById("topMoverTeam").innerHTML =
+      topMover.team ? `<span class="${String(topMover.team) === String(topTeam) ? "first-place" : ""}">${escapeHtml(topMover.team)}</span>` : "—";
     document.getElementById("topMoverDetail").textContent =
       topMover.team
         ? `${topMover.moves ?? 0} moves · ${topMover.adds ?? 0} adds · ${topMover.drops ?? 0} drops · ${topMover.trades ?? 0} trades`
@@ -396,17 +400,14 @@ async function loadData() {
     const bench = landing.most_points_left_on_bench || {};
     document.getElementById("benchPoints").textContent =
       formatPoints(bench.points);
-    document.getElementById("benchTeam").textContent =
-      bench.team ? `${bench.team} · points left on BN` : "—";
+    document.getElementById("benchTeam").innerHTML =
+      bench.team ? `<span class="${String(bench.team) === String(topTeam) ? "first-place" : ""}">${escapeHtml(bench.team)}</span> · points left on BN` : "—";
 
     const added = landing.most_points_from_added_players || {};
     document.getElementById("addedPoints").textContent =
       formatPoints(added.points);
-    document.getElementById("addedTeam").textContent =
-      added.team ? `${added.team} · added players started` : "—";
-
-    const standings = Array.isArray(landing.overall_standings) ? landing.overall_standings : [];
-    const topTeam = standings.length ? standings[0].team : "";
+    document.getElementById("addedTeam").innerHTML =
+      added.team ? `<span class="${String(added.team) === String(topTeam) ? "first-place" : ""}">${escapeHtml(added.team)}</span> · added players started` : "—";
 
     renderStandings(standings);
     renderPositionLeaders(landing.position_leaders || {}, topTeam);
