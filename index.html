@@ -52,7 +52,7 @@
   .week-link{display:inline-flex;align-items:center;justify-content:center;padding:13px 15px;color:var(--text);text-decoration:none;font-weight:800;font-size:13px}
   .week-link:hover{border-color:var(--accent);background:rgba(124,92,255,.10)}
 
-  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:16px}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:16px}
   .stat{
     background:linear-gradient(180deg,rgba(21,28,40,.96),rgba(17,23,34,.96));
     border:1px solid var(--line);border-radius:16px;padding:17px;box-shadow:var(--shadow);
@@ -71,7 +71,7 @@
   .panel-head span{font-size:11px;color:var(--muted);text-align:right}
   .panel-body{padding:16px 18px}
 
-  .top-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:16px;align-items:start;margin-bottom:16px}
+  .top-grid{display:grid;grid-template-columns:1fr;gap:16px;align-items:start;margin-bottom:16px}
   .section-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
 
   table{width:100%;border-collapse:collapse;font-size:13px}
@@ -163,11 +163,6 @@
 
   <section class="stats">
     <div class="stat">
-      <div class="kicker">OVERALL POINTS LEADER</div>
-      <div class="big" id="overallLeader">—</div>
-      <div class="sub green" id="overallLeaderPoints">—</div>
-    </div>
-    <div class="stat">
       <div class="kicker">LEAGUE AVERAGE SCORE</div>
       <div class="big" id="leagueAverage">—</div>
       <div class="sub" id="leagueAverageDesc">—</div>
@@ -197,23 +192,6 @@
           </thead>
           <tbody id="standingsBody"></tbody>
         </table>
-      </div>
-    </div>
-
-    <div class="panel">
-      <div class="panel-head">
-        <h2>Overall Points Leader</h2>
-        <span>All completed weeks</span>
-      </div>
-      <div class="panel-body">
-        <div class="leader-stat">
-          <div>
-            <div class="eyebrow">Season points</div>
-            <div class="player" id="leaderPlayer">—</div>
-            <div class="meta" id="leaderMeta">—</div>
-          </div>
-          <div class="points" id="leaderPoints">—<small>PTS</small></div>
-        </div>
       </div>
     </div>
   </section>
@@ -388,19 +366,6 @@ async function loadData() {
 
     document.getElementById("leagueAverageDesc").textContent =
       landing.league_average_score?.description || "—";
-
-    const overallLeader = landing.overall_points_leader || {};
-    document.getElementById("overallLeader").textContent =
-      overallLeader.player || "—";
-    document.getElementById("overallLeaderPoints").textContent =
-      `${formatPoints(overallLeader.points)} points`;
-
-    document.getElementById("leaderPlayer").textContent =
-      overallLeader.player || "—";
-    document.getElementById("leaderMeta").textContent =
-      [overallLeader.position, overallLeader.current_owner].filter(Boolean).join(" · ") || "Season total";
-    document.getElementById("leaderPoints").innerHTML =
-      `${formatPoints(overallLeader.points)}<small>PTS</small>`;
 
     renderStandings(landing.overall_standings || []);
     renderPositionLeaders(landing.position_leaders || {});
