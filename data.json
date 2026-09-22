@@ -625,6 +625,12 @@
       },
       "best_players": [
         {
+          "team": "One90",
+          "player": "Jalen Coker",
+          "position": "WR",
+          "points": 16.23
+        },
+        {
           "team": "Qook’D",
           "player": "CeeDee Lamb",
           "position": "WR",
@@ -641,6 +647,12 @@
           "player": "Brock Purdy",
           "position": "QB",
           "points": 32.48
+        },
+        {
+          "team": "Heen Machine Poi",
+          "player": "Ravens",
+          "position": "D/ST",
+          "points": 17.6
         },
         {
           "team": "Johnsama Binharbaugh",
@@ -661,10 +673,22 @@
           "points": 42.5
         },
         {
+          "team": "De’Strib Club is Closed",
+          "player": "Tyler Shough",
+          "position": "QB",
+          "points": 24.38
+        },
+        {
           "team": "Maye-N-Skweeze",
           "player": "Patriots",
           "position": "D/ST",
           "points": 35.3
+        },
+        {
+          "team": "Lisan Al-Caleb",
+          "player": "Christian McCaffrey",
+          "position": "RB",
+          "points": 22.6
         },
         {
           "team": "The Josh All-In Show",
@@ -916,45 +940,66 @@
           "points": 67.52
         },
         {
-          "player": "Caleb Williams",
-          "points": 41.26
+          "player": "Patrick Mahomes",
+          "points": 60.64
         }
       ],
       "RB": [
         {
-          "player": "Derrick Henry",
-          "points": 35.3
-        },
-        {
           "player": "Kenneth Walker III",
-          "points": 34.1
+          "points": 57.900000000000006
         },
         {
           "player": "Jahmyr Gibbs",
-          "points": 33.6
+          "points": 56.900000000000006
+        },
+        {
+          "player": "Jonathan Taylor",
+          "points": 54.3
         }
       ],
       "WR": [
+        {
+          "player": "Jaxon Smith-Njigba",
+          "points": 68.7
+        },
         {
           "player": "Amon-Ra St. Brown",
           "points": 63.900000000000006
         },
         {
-          "player": "Jaxon Smith-Njigba",
-          "points": 42.5
-        },
-        {
-          "player": "Davante Adams",
-          "points": 39.5
+          "player": "Chris Olave",
+          "points": 50.8
         }
       ],
       "TE": [
         {
-          "player": "Dalton Schultz",
-          "points": 26.0
+          "player": "Trey McBride",
+          "points": 42.6
+        },
+        {
+          "player": "Dalton Kincaid",
+          "points": 40.5
+        },
+        {
+          "player": "Isaiah Likely",
+          "points": 36.1
         }
       ],
-      "K": [],
+      "K": [
+        {
+          "player": "Evan McPherson",
+          "points": 36.0
+        },
+        {
+          "player": "Chase McLaughlin",
+          "points": 33.0
+        },
+        {
+          "player": "Harrison Butker",
+          "points": 27.0
+        }
+      ],
       "D/ST": [
         {
           "player": "Bengals",
@@ -965,8 +1010,8 @@
           "points": 61.17
         },
         {
-          "player": "Patriots",
-          "points": 35.3
+          "player": "Steelers",
+          "points": 58.53
         }
       ]
     },
@@ -978,70 +1023,70 @@
         "points": 86.47999999999999
       },
       {
+        "team": "burnIN",
+        "player": "Jaxon Smith-Njigba",
+        "position": "WR",
+        "points": 68.7
+      },
+      {
         "team": "Johnsama Binharbaugh",
         "player": "Amon-Ra St. Brown",
         "position": "WR",
         "points": 63.900000000000006
       },
       {
-        "team": "burnIN",
-        "player": "Jaxon Smith-Njigba",
-        "position": "WR",
-        "points": 42.5
-      },
-      {
-        "team": "Lisan Al-Caleb",
-        "player": "Caleb Williams",
+        "team": "In Mama We Trust",
+        "player": "Brock Purdy",
         "position": "QB",
-        "points": 41.26
-      },
-      {
-        "team": "Skip to Malu",
-        "player": "Davante Adams",
-        "position": "WR",
-        "points": 39.5
-      },
-      {
-        "team": "Diet Coke Zero",
-        "player": "Jared Goff",
-        "position": "QB",
-        "points": 37.78
-      },
-      {
-        "team": "Maye-N-Skweeze",
-        "player": "Patriots",
-        "position": "D/ST",
-        "points": 35.3
+        "points": 59.58
       },
       {
         "team": "Qook’D",
-        "player": "CeeDee Lamb",
-        "position": "WR",
-        "points": 35.3
+        "player": "Steelers",
+        "position": "D/ST",
+        "points": 58.53
       },
       {
         "team": "De’Strib Club is Closed",
         "player": "Kenneth Walker III",
         "position": "RB",
-        "points": 34.1
+        "points": 57.900000000000006
+      },
+      {
+        "team": "Skip to Malu",
+        "player": "Jahmyr Gibbs",
+        "position": "RB",
+        "points": 56.900000000000006
+      },
+      {
+        "team": "Diet Coke Zero",
+        "player": "Jonathan Taylor",
+        "position": "RB",
+        "points": 54.3
+      },
+      {
+        "team": "Maye-N-Skweeze",
+        "player": "Chris Olave",
+        "position": "WR",
+        "points": 50.8
       },
       {
         "team": "One90",
         "player": "Jalen Coker",
         "position": "WR",
-        "points": 33.8
+        "points": 50.03
+      },
+      {
+        "team": "Lisan Al-Caleb",
+        "player": "Caleb Williams",
+        "position": "QB",
+        "points": 48.98
       },
       {
         "team": "Heen Machine Poi",
-        "player": "Ashton Jeanty",
-        "position": "RB",
-        "points": 32.7
-      },
-      {
-        "team": "In Mama We Trust",
-        "player": "Christian Watson",
-        "position": "WR",
-        "points": 32.7
+        "player": "Ravens",
+        "position": "D/ST",
+        "points": 43.63
       }
     ],
     "move_leaderboard": [
@@ -1130,6 +1175,21 @@
         "trades": 0
       }
     ],
+    "top_mover": {
+      "team": "Qook’D",
+      "moves": 8,
+      "adds": 4,
+      "drops": 4,
+      "trades": 0
+    },
+    "most_points_left_on_bench": {
+      "team": "The Josh All-In Show",
+      "points": 125.44
+    },
+    "most_points_from_added_players": {
+      "team": "Diet Coke Zero",
+      "points": 29.93
+    },
     "league_average_score": {
       "points": 134.56125,
       "description": "Average team score across 2 completed week(s)"
@@ -1358,6 +1418,12 @@
   },
   "best_players": [
     {
+      "team": "One90",
+      "player": "Jalen Coker",
+      "position": "WR",
+      "points": 16.23
+    },
+    {
       "team": "Qook’D",
       "player": "CeeDee Lamb",
       "position": "WR",
@@ -1374,6 +1440,12 @@
       "player": "Brock Purdy",
       "position": "QB",
       "points": 32.48
+    },
+    {
+      "team": "Heen Machine Poi",
+      "player": "Ravens",
+      "position": "D/ST",
+      "points": 17.6
     },
     {
       "team": "Johnsama Binharbaugh",
@@ -1394,10 +1466,22 @@
       "points": 42.5
     },
     {
+      "team": "De’Strib Club is Closed",
+      "player": "Tyler Shough",
+      "position": "QB",
+      "points": 24.38
+    },
+    {
       "team": "Maye-N-Skweeze",
       "player": "Patriots",
       "position": "D/ST",
       "points": 35.3
+    },
+    {
+      "team": "Lisan Al-Caleb",
+      "player": "Christian McCaffrey",
+      "position": "RB",
+      "points": 22.6
     },
     {
       "team": "The Josh All-In Show",
