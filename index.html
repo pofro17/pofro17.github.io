@@ -98,8 +98,8 @@
   .roster-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 10px}
   .roster-row{display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:10px;align-items:center;background:var(--panel-2);border:1px solid var(--line);border-radius:12px;padding:10px 11px}
   .roster-rank{color:var(--muted);font-size:11px;font-weight:800}
-  .roster-team{font-weight:800;font-size:12px;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .roster-player{font-size:10px;color:var(--muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .roster-player{font-weight:900;font-size:13px;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .roster-team{font-size:10px;color:var(--muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .roster-points{font-size:14px;font-weight:900;white-space:nowrap}
 
   .move-row{display:grid;grid-template-columns:30px minmax(0,1fr) 65px 62px 62px 62px;gap:8px;align-items:center;padding:10px 7px;border-top:1px solid rgba(39,49,66,.62);font-size:12px}
@@ -308,16 +308,15 @@ function renderPositionLeaders(leaders) {
   }).join("");
 }
 
-function renderRosterLeaders(rows) {
+function renderRosterLeaders(rows, topTeam) {
   const list = Array.isArray(rows) ? rows : [];
-  const topTeam = list.length ? list[0].team : "";
 
   document.getElementById("rosterLeaders").innerHTML = list.map((row, index) => `
     <div class="roster-row">
       <div class="roster-rank">${index + 1}</div>
       <div>
-        <div class="roster-team${teamClass(row.team, topTeam)}">${trophyName(row.team, topTeam)}</div>
         <div class="roster-player">${escapeHtml(row.player)} · ${escapeHtml(row.position)}</div>
+        <div class="roster-team${teamClass(row.team, topTeam)}">${trophyName(row.team, topTeam)}</div>
       </div>
       <div class="roster-points">${formatPoints(row.points)}</div>
     </div>
@@ -367,12 +366,12 @@ async function loadData() {
     document.getElementById("leagueAverageDesc").textContent =
       landing.league_average_score?.description || "—";
 
-    renderStandings(landing.overall_standings || []);
-    renderPositionLeaders(landing.position_leaders || {});
-    renderRosterLeaders(landing.roster_scoring_leaders || []);
-
     const standings = Array.isArray(landing.overall_standings) ? landing.overall_standings : [];
     const topTeam = standings.length ? standings[0].team : "";
+
+    renderStandings(standings);
+    renderPositionLeaders(landing.position_leaders || {});
+    renderRosterLeaders(landing.roster_scoring_leaders || [], topTeam);
     renderMoves(landing.move_leaderboard || [], topTeam);
 
     document.getElementById("footer").textContent =
