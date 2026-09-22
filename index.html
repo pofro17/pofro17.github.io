@@ -52,7 +52,7 @@
   .week-link{display:inline-flex;align-items:center;justify-content:center;padding:13px 15px;color:var(--text);text-decoration:none;font-weight:800;font-size:13px}
   .week-link:hover{border-color:var(--accent);background:rgba(124,92,255,.10)}
 
-  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:16px}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:16px}
   .stat{
     background:linear-gradient(180deg,rgba(21,28,40,.96),rgba(17,23,34,.96));
     border:1px solid var(--line);border-radius:16px;padding:17px;box-shadow:var(--shadow);
@@ -168,14 +168,19 @@
       <div class="sub" id="leagueAverageDesc">—</div>
     </div>
     <div class="stat">
-      <div class="kicker">WEEKS COUNTED</div>
-      <div class="big" id="weeksCounted">—</div>
-      <div class="sub">Completed scoring weeks</div>
+      <div class="kicker">TOP MOVER</div>
+      <div class="big" id="topMoverTeam">—</div>
+      <div class="sub" id="topMoverDetail">—</div>
     </div>
     <div class="stat">
-      <div class="kicker">CURRENT #1 TEAM</div>
-      <div class="big" id="currentLeader">—</div>
-      <div class="sub green">🏆 Overall standings leader</div>
+      <div class="kicker">MOST POINTS LEFT ON BENCH</div>
+      <div class="big" id="benchPoints">—</div>
+      <div class="sub" id="benchTeam">—</div>
+    </div>
+    <div class="stat">
+      <div class="kicker">MOST POINTS FROM ADDED PLAYERS</div>
+      <div class="big" id="addedPoints">—</div>
+      <div class="sub" id="addedTeam">—</div>
     </div>
   </section>
 
@@ -280,8 +285,6 @@ function renderStandings(standings) {
     </tr>
   `).join("");
 
-  document.getElementById("currentLeader").textContent =
-    rows.length ? `🏆 ${rows[0].team}` : "—";
 }
 
 function renderPositionLeaders(leaders) {
@@ -357,14 +360,31 @@ async function loadData() {
     document.getElementById("subtitle").textContent =
       `Season-to-date Yahoo Fantasy league analytics · Current Yahoo week ${currentWeek}`;
 
-    document.getElementById("weeksCounted").textContent =
-      landing.weeks_counted ?? "—";
-
     document.getElementById("leagueAverage").textContent =
       formatPoints(landing.league_average_score?.points);
 
     document.getElementById("leagueAverageDesc").textContent =
       landing.league_average_score?.description || "—";
+
+    const topMover = landing.top_mover || {};
+    document.getElementById("topMoverTeam").textContent =
+      topMover.team ? `🏃 ${topMover.team}` : "—";
+    document.getElementById("topMoverDetail").textContent =
+      topMover.team
+        ? `${topMover.moves ?? 0} moves · ${topMover.adds ?? 0} adds · ${topMover.drops ?? 0} drops · ${topMover.trades ?? 0} trades`
+        : "—";
+
+    const bench = landing.most_points_left_on_bench || {};
+    document.getElementById("benchPoints").textContent =
+      formatPoints(bench.points);
+    document.getElementById("benchTeam").textContent =
+      bench.team ? `${bench.team} · points left on BN` : "—";
+
+    const added = landing.most_points_from_added_players || {};
+    document.getElementById("addedPoints").textContent =
+      formatPoints(added.points);
+    document.getElementById("addedTeam").textContent =
+      added.team ? `${added.team} · added players started` : "—";
 
     const standings = Array.isArray(landing.overall_standings) ? landing.overall_standings : [];
     const topTeam = standings.length ? standings[0].team : "";
