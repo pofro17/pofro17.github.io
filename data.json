@@ -803,6 +803,355 @@
       "matchups": []
     }
   },
+  "landing": {
+    "current_week": 3,
+    "latest_completed_week": 2,
+    "weeks_counted": 2,
+    "overall_standings": [
+      {
+        "team": "burnIN",
+        "record": "2-0",
+        "pf": 346.33,
+        "pa": 220.36,
+        "rank": 1,
+        "movement": "—"
+      },
+      {
+        "team": "De’Strib Club is Closed",
+        "record": "2-0",
+        "pf": 328.68,
+        "pa": 256.46,
+        "rank": 2,
+        "movement": "—"
+      },
+      {
+        "team": "Maye-N-Skweeze",
+        "record": "2-0",
+        "pf": 263.61,
+        "pa": 192.51,
+        "rank": 3,
+        "movement": "↑3"
+      },
+      {
+        "team": "Qook’D",
+        "record": "1-1",
+        "pf": 294.51,
+        "pa": 295.36,
+        "rank": 4,
+        "movement": "↑4"
+      },
+      {
+        "team": "In Mama We Trust",
+        "record": "1-1",
+        "pf": 286.23,
+        "pa": 280.98,
+        "rank": 5,
+        "movement": "↓2"
+      },
+      {
+        "team": "The Josh All-In Show",
+        "record": "1-1",
+        "pf": 276.04,
+        "pa": 259.61,
+        "rank": 6,
+        "movement": "↑4"
+      },
+      {
+        "team": "Skip to Malu",
+        "record": "1-1",
+        "pf": 240.56,
+        "pa": 254.29999999999998,
+        "rank": 7,
+        "movement": "↑5"
+      },
+      {
+        "team": "Heen Machine Poi",
+        "record": "1-1",
+        "pf": 214.73,
+        "pa": 253.74,
+        "rank": 8,
+        "movement": "↓4"
+      },
+      {
+        "team": "One90",
+        "record": "1-1",
+        "pf": 207.88,
+        "pa": 273.79999999999995,
+        "rank": 9,
+        "movement": "↓4"
+      },
+      {
+        "team": "Johnsama Binharbaugh",
+        "record": "0-2",
+        "pf": 288.32000000000005,
+        "pa": 324.69,
+        "rank": 10,
+        "movement": "↓1"
+      },
+      {
+        "team": "Lisan Al-Caleb",
+        "record": "0-2",
+        "pf": 243.44,
+        "pa": 342.32,
+        "rank": 11,
+        "movement": "↓4"
+      },
+      {
+        "team": "Diet Coke Zero",
+        "record": "0-2",
+        "pf": 239.14,
+        "pa": 275.34000000000003,
+        "rank": 12,
+        "movement": "↓1"
+      }
+    ],
+    "position_leaders": {
+      "QB": [
+        {
+          "player": "Josh Allen",
+          "points": 86.47999999999999
+        },
+        {
+          "player": "Bryce Young",
+          "points": 67.52
+        },
+        {
+          "player": "Caleb Williams",
+          "points": 41.26
+        },
+        {
+          "player": "Jared Goff",
+          "points": 37.78
+        },
+        {
+          "player": "Dak Prescott",
+          "points": 37.76
+        }
+      ],
+      "RB": [
+        {
+          "player": "Derrick Henry",
+          "points": 35.3
+        },
+        {
+          "player": "Kenneth Walker III",
+          "points": 34.1
+        },
+        {
+          "player": "Jahmyr Gibbs",
+          "points": 33.6
+        },
+        {
+          "player": "Ashton Jeanty",
+          "points": 32.7
+        },
+        {
+          "player": "D'Andre Swift",
+          "points": 32.4
+        }
+      ],
+      "WR": [
+        {
+          "player": "Amon-Ra St. Brown",
+          "points": 63.900000000000006
+        },
+        {
+          "player": "Jaxon Smith-Njigba",
+          "points": 42.5
+        },
+        {
+          "player": "Davante Adams",
+          "points": 39.5
+        },
+        {
+          "player": "CeeDee Lamb",
+          "points": 35.3
+        },
+        {
+          "player": "Jalen Coker",
+          "points": 33.8
+        }
+      ],
+      "TE": [
+        {
+          "player": "Dalton Schultz",
+          "points": 26.0
+        }
+      ],
+      "K": [],
+      "D/ST": []
+    },
+    "roster_scoring_leaders": [
+      {
+        "team": "The Josh All-In Show",
+        "player": "Josh Allen",
+        "position": "QB",
+        "points": 86.47999999999999
+      },
+      {
+        "team": "Johnsama Binharbaugh",
+        "player": "Amon-Ra St. Brown",
+        "position": "WR",
+        "points": 63.900000000000006
+      },
+      {
+        "team": "burnIN",
+        "player": "Jaxon Smith-Njigba",
+        "position": "WR",
+        "points": 42.5
+      },
+      {
+        "team": "Lisan Al-Caleb",
+        "player": "Caleb Williams",
+        "position": "QB",
+        "points": 41.26
+      },
+      {
+        "team": "Skip to Malu",
+        "player": "Davante Adams",
+        "position": "WR",
+        "points": 39.5
+      },
+      {
+        "team": "Diet Coke Zero",
+        "player": "Jared Goff",
+        "position": "QB",
+        "points": 37.78
+      },
+      {
+        "team": "Maye-N-Skweeze",
+        "player": "Patriots",
+        "position": "DEF",
+        "points": 35.3
+      },
+      {
+        "team": "Qook’D",
+        "player": "CeeDee Lamb",
+        "position": "WR",
+        "points": 35.3
+      },
+      {
+        "team": "De’Strib Club is Closed",
+        "player": "Kenneth Walker III",
+        "position": "RB",
+        "points": 34.1
+      },
+      {
+        "team": "One90",
+        "player": "Jalen Coker",
+        "position": "WR",
+        "points": 33.8
+      },
+      {
+        "team": "Heen Machine Poi",
+        "player": "Ashton Jeanty",
+        "position": "RB",
+        "points": 32.7
+      },
+      {
+        "team": "In Mama We Trust",
+        "player": "Christian Watson",
+        "position": "WR",
+        "points": 32.7
+      }
+    ],
+    "move_leaderboard": [
+      {
+        "team": "De’Strib Club is Closed",
+        "moves": 0,
+        "adds": 0,
+        "drops": 0,
+        "trades": 0
+      },
+      {
+        "team": "Diet Coke Zero",
+        "moves": 0,
+        "adds": 0,
+        "drops": 0,
+        "trades": 0
+      },
+      {
+        "team": "Heen Machine Poi",
+        "moves": 0,
+        "adds": 0,
+        "drops": 0,
+        "trades": 0
+      },
+      {
+        "team": "In Mama We Trust",
+        "moves": 0,
+        "adds": 0,
+        "drops": 0,
+        "trades": 0
+      },
+      {
+        "team": "Johnsama Binharbaugh",
+        "moves": 0,
+        "adds": 0,
+        "drops": 0,
+        "trades": 0
+      },
+      {
+        "team": "Lisan Al-Caleb",
+        "moves": 0,
+        "adds": 0,
+        "drops": 0,
+        "trades": 0
+      },
+      {
+        "team": "Maye-N-Skweeze",
+        "moves": 0,
+        "adds": 0,
+        "drops": 0,
+        "trades": 0
+      },
+      {
+        "team": "One90",
+        "moves": 0,
+        "adds": 0,
+        "drops": 0,
+        "trades": 0
+      },
+      {
+        "team": "Qook’D",
+        "moves": 0,
+        "adds": 0,
+        "drops": 0,
+        "trades": 0
+      },
+      {
+        "team": "Skip to Malu",
+        "moves": 0,
+        "adds": 0,
+        "drops": 0,
+        "trades": 0
+      },
+      {
+        "team": "The Josh All-In Show",
+        "moves": 0,
+        "adds": 0,
+        "drops": 0,
+        "trades": 0
+      },
+      {
+        "team": "burnIN",
+        "moves": 0,
+        "adds": 0,
+        "drops": 0,
+        "trades": 0
+      }
+    ],
+    "league_average_score": {
+      "points": 134.56125,
+      "description": "Average team score across 2 completed week(s)"
+    },
+    "overall_points_leader": {
+      "player": "Josh Allen",
+      "position": "QB",
+      "points": 86.47999999999999,
+      "current_owner": "The Josh All-In Show"
+    }
+  },
   "week": 2,
   "stats": {
     "high_score": {
