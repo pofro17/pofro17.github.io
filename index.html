@@ -93,8 +93,9 @@
     font-weight:850;
     text-shadow:0 0 7px rgba(57,255,20,.18);
   }
-  .movement.up{color:var(--accent-2)}
-  .movement.down{color:var(--red)}
+  .movement{font-weight:850;white-space:nowrap}
+  .movement.up{color:#39ff14;text-shadow:0 0 7px rgba(57,255,20,.18)}
+  .movement.down{color:#ff4d5f;text-shadow:0 0 7px rgba(255,77,95,.16)}
   .movement.flat{color:var(--muted)}
   .leaders{
     display:grid;grid-template-columns:1fr 1fr;gap:12px
@@ -370,6 +371,14 @@ function renderStats(data, topTeam) {
     data.stats.league_average.description;
 }
 
+function movementClass(movement) {
+  const value = String(movement ?? "—").trim();
+
+  if (value.startsWith("↑")) return "up";
+  if (value.startsWith("↓")) return "down";
+  return "flat";
+}
+
 function renderStandings(data, topTeam) {
   const rows = Array.isArray(data.standings) ? data.standings : [];
 
@@ -380,7 +389,7 @@ function renderStandings(data, topTeam) {
       <td class="record">${escapeHtml(row.record)}</td>
       <td>${formatPoints(row.pf)}</td>
       <td>${formatPoints(row.pa)}</td>
-      <td class="movement flat">${escapeHtml(row.movement ?? "—")}</td>
+      <td class="movement ${movementClass(row.movement)}">${escapeHtml(row.movement ?? "—")}</td>
     </tr>
   `).join("");
 }
