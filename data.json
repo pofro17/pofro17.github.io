@@ -241,13 +241,13 @@
         {
           "team": "Qook’D",
           "player": "Steelers",
-          "position": "DEF",
+          "position": "D/ST",
           "points": 32.9
         },
         {
           "team": "Diet Coke Zero",
           "player": "Vikings",
-          "position": "DEF",
+          "position": "D/ST",
           "points": 32.4
         },
         {
@@ -663,7 +663,7 @@
         {
           "team": "Maye-N-Skweeze",
           "player": "Patriots",
-          "position": "DEF",
+          "position": "D/ST",
           "points": 35.3
         },
         {
@@ -918,14 +918,6 @@
         {
           "player": "Caleb Williams",
           "points": 41.26
-        },
-        {
-          "player": "Jared Goff",
-          "points": 37.78
-        },
-        {
-          "player": "Dak Prescott",
-          "points": 37.76
         }
       ],
       "RB": [
@@ -940,14 +932,6 @@
         {
           "player": "Jahmyr Gibbs",
           "points": 33.6
-        },
-        {
-          "player": "Ashton Jeanty",
-          "points": 32.7
-        },
-        {
-          "player": "D'Andre Swift",
-          "points": 32.4
         }
       ],
       "WR": [
@@ -962,14 +946,6 @@
         {
           "player": "Davante Adams",
           "points": 39.5
-        },
-        {
-          "player": "CeeDee Lamb",
-          "points": 35.3
-        },
-        {
-          "player": "Jalen Coker",
-          "points": 33.8
         }
       ],
       "TE": [
@@ -979,7 +955,20 @@
         }
       ],
       "K": [],
-      "D/ST": []
+      "D/ST": [
+        {
+          "player": "Bengals",
+          "points": 71.36
+        },
+        {
+          "player": "Vikings",
+          "points": 61.17
+        },
+        {
+          "player": "Patriots",
+          "points": 35.3
+        }
+      ]
     },
     "roster_scoring_leaders": [
       {
@@ -1021,7 +1010,7 @@
       {
         "team": "Maye-N-Skweeze",
         "player": "Patriots",
-        "position": "DEF",
+        "position": "D/ST",
         "points": 35.3
       },
       {
@@ -1407,7 +1396,7 @@
     {
       "team": "Maye-N-Skweeze",
       "player": "Patriots",
-      "position": "DEF",
+      "position": "D/ST",
       "points": 35.3
     },
     {
