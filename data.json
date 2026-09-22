@@ -1,10 +1,11 @@
 {
   "title": "Poi Bowl XII",
-  "current_week": 2,
+  "current_week": 3,
   "default_week": 2,
   "available_weeks": [
     1,
-    2
+    2,
+    3
   ],
   "weeks": {
     "1": {
@@ -151,7 +152,7 @@
             35.3
           ],
           [
-            "Kenneth Walker",
+            "Kenneth Walker III",
             "De’Strib Club is Closed",
             34.1
           ],
@@ -281,7 +282,7 @@
         },
         {
           "team": "De’Strib Club is Closed",
-          "player": "Kenneth Walker",
+          "player": "Kenneth Walker III",
           "position": "RB",
           "points": 34.1
         },
@@ -319,7 +320,7 @@
         ],
         [
           "RB",
-          "Kenneth Walker",
+          "Kenneth Walker III",
           34.1,
           "De’Strib Club is Closed"
         ],
@@ -404,117 +405,117 @@
       "status": "complete",
       "stats": {
         "high_score": {
-          "points": 46.82,
-          "team": "The Josh All-In Show"
+          "points": 165.13,
+          "team": "burnIN"
         },
         "low_score": {
-          "points": -0.1,
+          "points": 71.35,
           "team": "One90"
         },
         "best_lineup": {
-          "points": 204.52,
+          "points": 302.75,
           "description": "Theoretical Week 2 maximum"
         },
         "league_average": {
-          "points": 16.21,
+          "points": 128.97916666666666,
           "description": "12-team Week 2 average"
         }
       },
       "standings": [
         {
-          "rank": 1,
           "team": "burnIN",
           "record": "1-0",
-          "pf": 181.2,
-          "pa": 111.71,
+          "pf": 165.13,
+          "pa": 108.65,
+          "rank": 1,
           "movement": "—"
         },
         {
+          "team": "Qook’D",
+          "record": "1-0",
+          "pf": 160.13,
+          "pa": 158.83,
           "rank": 2,
+          "movement": "—"
+        },
+        {
           "team": "De’Strib Club is Closed",
           "record": "1-0",
-          "pf": 177.19,
-          "pa": 134.79,
-          "movement": "—"
-        },
-        {
+          "pf": 151.49,
+          "pa": 121.67,
           "rank": 3,
-          "team": "In Mama We Trust",
-          "record": "1-0",
-          "pf": 164.56,
-          "pa": 129.49,
           "movement": "—"
         },
         {
+          "team": "The Josh All-In Show",
+          "record": "1-0",
+          "pf": 151.15,
+          "pa": 117.98,
           "rank": 4,
-          "team": "Heen Machine Poi",
-          "record": "1-0",
-          "pf": 141.63,
-          "pa": 124.89,
           "movement": "—"
         },
         {
-          "rank": 5,
-          "team": "One90",
-          "record": "1-0",
-          "pf": 136.53,
-          "pa": 134.38,
-          "movement": "—"
-        },
-        {
-          "rank": 6,
           "team": "Maye-N-Skweeze",
           "record": "1-0",
-          "pf": 124.19,
-          "pa": 121.16,
+          "pf": 139.42,
+          "pa": 71.35,
+          "rank": 5,
           "movement": "—"
         },
         {
-          "rank": 7,
-          "team": "Lisan Al-Caleb",
-          "record": "0-1",
-          "pf": 134.79,
-          "pa": 177.19,
+          "team": "Skip to Malu",
+          "record": "1-0",
+          "pf": 128.85,
+          "pa": 73.1,
+          "rank": 6,
           "movement": "—"
         },
         {
-          "rank": 8,
-          "team": "Qook’D",
-          "record": "0-1",
-          "pf": 134.38,
-          "pa": 136.53,
-          "movement": "—"
-        },
-        {
-          "rank": 9,
           "team": "Johnsama Binharbaugh",
           "record": "0-1",
-          "pf": 129.49,
-          "pa": 164.56,
+          "pf": 158.83,
+          "pa": 160.13,
+          "rank": 7,
           "movement": "—"
         },
         {
-          "rank": 10,
-          "team": "The Josh All-In Show",
+          "team": "In Mama We Trust",
           "record": "0-1",
-          "pf": 124.89,
-          "pa": 141.63,
+          "pf": 121.67,
+          "pa": 151.49,
+          "rank": 8,
           "movement": "—"
         },
         {
-          "rank": 11,
           "team": "Diet Coke Zero",
           "record": "0-1",
-          "pf": 121.16,
-          "pa": 124.19,
+          "pf": 117.98,
+          "pa": 151.15,
+          "rank": 9,
           "movement": "—"
         },
         {
-          "rank": 12,
-          "team": "Skip to Malu",
+          "team": "Lisan Al-Caleb",
           "record": "0-1",
-          "pf": 111.71,
-          "pa": 181.2,
+          "pf": 108.65,
+          "pa": 165.13,
+          "rank": 10,
+          "movement": "—"
+        },
+        {
+          "team": "Heen Machine Poi",
+          "record": "0-1",
+          "pf": 73.1,
+          "pa": 128.85,
+          "rank": 11,
+          "movement": "—"
+        },
+        {
+          "team": "One90",
+          "record": "0-1",
+          "pf": 71.35,
+          "pa": 139.42,
+          "rank": 12,
           "movement": "—"
         }
       ],
@@ -531,109 +532,115 @@
             37.78
           ],
           [
-            "Aaron Rodgers",
-            "FREE AGENT",
-            0.0
+            "Dak Prescott",
+            "burnIN",
+            37.76
           ]
         ],
         "RB": [
           [
+            "Jonathan Taylor",
+            "Diet Coke Zero",
+            29.2
+          ],
+          [
+            "Kenneth Walker III",
+            "De’Strib Club is Closed",
+            23.8
+          ],
+          [
             "Jahmyr Gibbs",
             "Skip to Malu",
             23.3
-          ],
-          [
-            "James Cook III",
-            "Maye-N-Skweeze",
-            20.9
-          ],
-          [
-            "Sione Vaki",
-            "FREE AGENT",
-            3.0
           ]
         ],
         "WR": [
           [
-            "Amon-Ra St. Brown",
-            "Johnsama Binharbaugh",
-            35.2
+            "Jaxon Smith-Njigba",
+            "burnIN",
+            42.5
           ],
           [
-            "Keon Coleman",
-            "FREE AGENT",
-            12.3
+            "Davante Adams",
+            "Skip to Malu",
+            39.5
           ],
           [
-            "Joshua Palmer",
-            "FREE AGENT",
-            11.3
+            "CeeDee Lamb",
+            "Qook’D",
+            35.3
           ]
         ],
         "TE": [
           [
+            "Dalton Schultz",
+            "FREE AGENT",
+            26.0
+          ],
+          [
+            "Travis Kelce",
+            "The Josh All-In Show",
+            25.1
+          ],
+          [
             "Dalton Kincaid",
             "Qook’D",
             22.5
-          ],
-          [
-            "Sam LaPorta",
-            "Lisan Al-Caleb",
-            17.2
-          ],
-          [
-            "Dawson Knox",
-            "FREE AGENT",
-            8.5
           ]
         ],
         "K": [
           [
-            "Jake Bates",
-            "Qook’D",
-            8.0
+            "Harrison Butker",
+            "burnIN",
+            20.0
           ],
           [
-            "Tyler Bass",
+            "Chase McLaughlin",
             "FREE AGENT",
-            4.0
+            20.0
           ],
           [
-            "Nick Folk",
-            "FREE AGENT",
-            0.0
+            "Brandon Aubrey",
+            "In Mama We Trust",
+            18.0
           ]
         ],
         "D/ST": [
           [
-            "Bills",
+            "Bengals",
             "FREE AGENT",
-            18.3
+            39.63
           ],
           [
-            "Lions",
-            "Skip to Malu",
-            8.23
+            "Patriots",
+            "Maye-N-Skweeze",
+            35.3
           ],
           [
-            "Falcons",
+            "Panthers",
             "FREE AGENT",
-            0.0
+            34.4
           ]
         ]
       },
       "best_players": [
         {
           "team": "Qook’D",
-          "player": "Dalton Kincaid",
-          "position": "TE",
-          "points": 22.5
+          "player": "CeeDee Lamb",
+          "position": "WR",
+          "points": 35.3
         },
         {
           "team": "Diet Coke Zero",
           "player": "Jared Goff",
           "position": "QB",
           "points": 37.78
+        },
+        {
+          "team": "In Mama We Trust",
+          "player": "Brock Purdy",
+          "position": "QB",
+          "points": 32.48
         },
         {
           "team": "Johnsama Binharbaugh",
@@ -643,21 +650,21 @@
         },
         {
           "team": "Skip to Malu",
-          "player": "Jahmyr Gibbs",
-          "position": "RB",
-          "points": 23.3
+          "player": "Davante Adams",
+          "position": "WR",
+          "points": 39.5
+        },
+        {
+          "team": "burnIN",
+          "player": "Jaxon Smith-Njigba",
+          "position": "WR",
+          "points": 42.5
         },
         {
           "team": "Maye-N-Skweeze",
-          "player": "James Cook III",
-          "position": "RB",
-          "points": 20.9
-        },
-        {
-          "team": "Lisan Al-Caleb",
-          "player": "Sam LaPorta",
-          "position": "TE",
-          "points": 17.2
+          "player": "Patriots",
+          "position": "DEF",
+          "points": 35.3
         },
         {
           "team": "The Josh All-In Show",
@@ -675,207 +682,241 @@
         ],
         [
           "RB",
-          "Jahmyr Gibbs",
-          23.3,
-          "Skip to Malu"
+          "Jonathan Taylor",
+          29.2,
+          "Diet Coke Zero"
         ],
         [
           "RB",
-          "James Cook III",
-          20.9,
-          "Maye-N-Skweeze"
+          "Kenneth Walker III",
+          23.8,
+          "De’Strib Club is Closed"
         ],
         [
           "WR",
-          "Amon-Ra St. Brown",
-          35.2,
-          "Johnsama Binharbaugh"
+          "Jaxon Smith-Njigba",
+          42.5,
+          "burnIN"
         ],
         [
           "WR",
-          "Keon Coleman",
-          12.3,
-          "FREE AGENT"
+          "Davante Adams",
+          39.5,
+          "Skip to Malu"
         ],
         [
           "TE",
-          "Dalton Kincaid",
-          22.5,
-          "Qook’D"
+          "Dalton Schultz",
+          26.0,
+          "FREE AGENT"
         ],
         [
           "FLEX",
-          "Sam LaPorta",
-          17.2,
-          "Lisan Al-Caleb"
-        ],
-        [
-          "K",
-          "Jake Bates",
-          8.0,
+          "CeeDee Lamb",
+          35.3,
           "Qook’D"
         ],
         [
+          "K",
+          "Harrison Butker",
+          20.0,
+          "burnIN"
+        ],
+        [
           "D/ST",
-          "Bills",
-          18.3,
+          "Bengals",
+          39.63,
           "FREE AGENT"
         ]
       ],
       "matchups": [
         [
           "One90",
-          -0.1,
+          71.35,
           "Maye-N-Skweeze",
-          20.9
+          139.42
         ],
         [
           "Qook’D",
-          35.8,
+          160.13,
           "Johnsama Binharbaugh",
-          35.2
+          158.83
         ],
         [
           "Diet Coke Zero",
-          7.17,
+          117.98,
           "The Josh All-In Show",
-          46.82
+          151.15
         ],
         [
           "In Mama We Trust",
-          0.0,
+          121.67,
           "De’Strib Club is Closed",
-          0.0
+          151.49
         ],
         [
           "Heen Machine Poi",
-          0.0,
+          73.1,
           "Skip to Malu",
-          31.53
+          128.85
         ],
         [
           "burnIN",
-          0.0,
+          165.13,
           "Lisan Al-Caleb",
-          17.2
+          108.65
         ]
       ]
+    },
+    "3": {
+      "week": 3,
+      "status": "pending",
+      "stats": {
+        "high_score": {
+          "points": 0.0,
+          "team": "—"
+        },
+        "low_score": {
+          "points": 0.0,
+          "team": "—"
+        },
+        "best_lineup": {
+          "points": 0.0,
+          "description": "Week 3 data not available yet"
+        },
+        "league_average": {
+          "points": 0.0,
+          "description": "12-team Week 3 average — awaiting scores"
+        }
+      },
+      "standings": [],
+      "leaders": {
+        "QB": [],
+        "RB": [],
+        "WR": [],
+        "TE": [],
+        "K": [],
+        "D/ST": []
+      },
+      "best_players": [],
+      "best_lineup": [],
+      "matchups": []
     }
   },
   "week": 2,
   "stats": {
     "high_score": {
-      "points": 46.82,
-      "team": "The Josh All-In Show"
+      "points": 165.13,
+      "team": "burnIN"
     },
     "low_score": {
-      "points": -0.1,
+      "points": 71.35,
       "team": "One90"
     },
     "best_lineup": {
-      "points": 204.52,
+      "points": 302.75,
       "description": "Theoretical Week 2 maximum"
     },
     "league_average": {
-      "points": 16.21,
+      "points": 128.97916666666666,
       "description": "12-team Week 2 average"
     }
   },
   "standings": [
     {
-      "rank": 1,
       "team": "burnIN",
       "record": "1-0",
-      "pf": 181.2,
-      "pa": 111.71,
+      "pf": 165.13,
+      "pa": 108.65,
+      "rank": 1,
       "movement": "—"
     },
     {
+      "team": "Qook’D",
+      "record": "1-0",
+      "pf": 160.13,
+      "pa": 158.83,
       "rank": 2,
+      "movement": "—"
+    },
+    {
       "team": "De’Strib Club is Closed",
       "record": "1-0",
-      "pf": 177.19,
-      "pa": 134.79,
-      "movement": "—"
-    },
-    {
+      "pf": 151.49,
+      "pa": 121.67,
       "rank": 3,
-      "team": "In Mama We Trust",
-      "record": "1-0",
-      "pf": 164.56,
-      "pa": 129.49,
       "movement": "—"
     },
     {
+      "team": "The Josh All-In Show",
+      "record": "1-0",
+      "pf": 151.15,
+      "pa": 117.98,
       "rank": 4,
-      "team": "Heen Machine Poi",
-      "record": "1-0",
-      "pf": 141.63,
-      "pa": 124.89,
       "movement": "—"
     },
     {
-      "rank": 5,
-      "team": "One90",
-      "record": "1-0",
-      "pf": 136.53,
-      "pa": 134.38,
-      "movement": "—"
-    },
-    {
-      "rank": 6,
       "team": "Maye-N-Skweeze",
       "record": "1-0",
-      "pf": 124.19,
-      "pa": 121.16,
+      "pf": 139.42,
+      "pa": 71.35,
+      "rank": 5,
       "movement": "—"
     },
     {
-      "rank": 7,
-      "team": "Lisan Al-Caleb",
-      "record": "0-1",
-      "pf": 134.79,
-      "pa": 177.19,
+      "team": "Skip to Malu",
+      "record": "1-0",
+      "pf": 128.85,
+      "pa": 73.1,
+      "rank": 6,
       "movement": "—"
     },
     {
-      "rank": 8,
-      "team": "Qook’D",
-      "record": "0-1",
-      "pf": 134.38,
-      "pa": 136.53,
-      "movement": "—"
-    },
-    {
-      "rank": 9,
       "team": "Johnsama Binharbaugh",
       "record": "0-1",
-      "pf": 129.49,
-      "pa": 164.56,
+      "pf": 158.83,
+      "pa": 160.13,
+      "rank": 7,
       "movement": "—"
     },
     {
-      "rank": 10,
-      "team": "The Josh All-In Show",
+      "team": "In Mama We Trust",
       "record": "0-1",
-      "pf": 124.89,
-      "pa": 141.63,
+      "pf": 121.67,
+      "pa": 151.49,
+      "rank": 8,
       "movement": "—"
     },
     {
-      "rank": 11,
       "team": "Diet Coke Zero",
       "record": "0-1",
-      "pf": 121.16,
-      "pa": 124.19,
+      "pf": 117.98,
+      "pa": 151.15,
+      "rank": 9,
       "movement": "—"
     },
     {
-      "rank": 12,
-      "team": "Skip to Malu",
+      "team": "Lisan Al-Caleb",
       "record": "0-1",
-      "pf": 111.71,
-      "pa": 181.2,
+      "pf": 108.65,
+      "pa": 165.13,
+      "rank": 10,
+      "movement": "—"
+    },
+    {
+      "team": "Heen Machine Poi",
+      "record": "0-1",
+      "pf": 73.1,
+      "pa": 128.85,
+      "rank": 11,
+      "movement": "—"
+    },
+    {
+      "team": "One90",
+      "record": "0-1",
+      "pf": 71.35,
+      "pa": 139.42,
+      "rank": 12,
       "movement": "—"
     }
   ],
@@ -892,109 +933,115 @@
         37.78
       ],
       [
-        "Aaron Rodgers",
-        "FREE AGENT",
-        0.0
+        "Dak Prescott",
+        "burnIN",
+        37.76
       ]
     ],
     "RB": [
       [
+        "Jonathan Taylor",
+        "Diet Coke Zero",
+        29.2
+      ],
+      [
+        "Kenneth Walker III",
+        "De’Strib Club is Closed",
+        23.8
+      ],
+      [
         "Jahmyr Gibbs",
         "Skip to Malu",
         23.3
-      ],
-      [
-        "James Cook III",
-        "Maye-N-Skweeze",
-        20.9
-      ],
-      [
-        "Sione Vaki",
-        "FREE AGENT",
-        3.0
       ]
     ],
     "WR": [
       [
-        "Amon-Ra St. Brown",
-        "Johnsama Binharbaugh",
-        35.2
+        "Jaxon Smith-Njigba",
+        "burnIN",
+        42.5
       ],
       [
-        "Keon Coleman",
-        "FREE AGENT",
-        12.3
+        "Davante Adams",
+        "Skip to Malu",
+        39.5
       ],
       [
-        "Joshua Palmer",
-        "FREE AGENT",
-        11.3
+        "CeeDee Lamb",
+        "Qook’D",
+        35.3
       ]
     ],
     "TE": [
       [
+        "Dalton Schultz",
+        "FREE AGENT",
+        26.0
+      ],
+      [
+        "Travis Kelce",
+        "The Josh All-In Show",
+        25.1
+      ],
+      [
         "Dalton Kincaid",
         "Qook’D",
         22.5
-      ],
-      [
-        "Sam LaPorta",
-        "Lisan Al-Caleb",
-        17.2
-      ],
-      [
-        "Dawson Knox",
-        "FREE AGENT",
-        8.5
       ]
     ],
     "K": [
       [
-        "Jake Bates",
-        "Qook’D",
-        8.0
+        "Harrison Butker",
+        "burnIN",
+        20.0
       ],
       [
-        "Tyler Bass",
+        "Chase McLaughlin",
         "FREE AGENT",
-        4.0
+        20.0
       ],
       [
-        "Nick Folk",
-        "FREE AGENT",
-        0.0
+        "Brandon Aubrey",
+        "In Mama We Trust",
+        18.0
       ]
     ],
     "D/ST": [
       [
-        "Bills",
+        "Bengals",
         "FREE AGENT",
-        18.3
+        39.63
       ],
       [
-        "Lions",
-        "Skip to Malu",
-        8.23
+        "Patriots",
+        "Maye-N-Skweeze",
+        35.3
       ],
       [
-        "Falcons",
+        "Panthers",
         "FREE AGENT",
-        0.0
+        34.4
       ]
     ]
   },
   "best_players": [
     {
       "team": "Qook’D",
-      "player": "Dalton Kincaid",
-      "position": "TE",
-      "points": 22.5
+      "player": "CeeDee Lamb",
+      "position": "WR",
+      "points": 35.3
     },
     {
       "team": "Diet Coke Zero",
       "player": "Jared Goff",
       "position": "QB",
       "points": 37.78
+    },
+    {
+      "team": "In Mama We Trust",
+      "player": "Brock Purdy",
+      "position": "QB",
+      "points": 32.48
     },
     {
       "team": "Johnsama Binharbaugh",
@@ -1004,21 +1051,21 @@
     },
     {
       "team": "Skip to Malu",
-      "player": "Jahmyr Gibbs",
-      "position": "RB",
-      "points": 23.3
+      "player": "Davante Adams",
+      "position": "WR",
+      "points": 39.5
+    },
+    {
+      "team": "burnIN",
+      "player": "Jaxon Smith-Njigba",
+      "position": "WR",
+      "points": 42.5
     },
     {
       "team": "Maye-N-Skweeze",
-      "player": "James Cook III",
-      "position": "RB",
-      "points": 20.9
-    },
-    {
-      "team": "Lisan Al-Caleb",
-      "player": "Sam LaPorta",
-      "position": "TE",
-      "points": 17.2
+      "player": "Patriots",
+      "position": "DEF",
+      "points": 35.3
     },
     {
       "team": "The Josh All-In Show",
@@ -1036,89 +1083,89 @@
     ],
     [
       "RB",
-      "Jahmyr Gibbs",
-      23.3,
-      "Skip to Malu"
+      "Jonathan Taylor",
+      29.2,
+      "Diet Coke Zero"
     ],
     [
       "RB",
-      "James Cook III",
-      20.9,
-      "Maye-N-Skweeze"
+      "Kenneth Walker III",
+      23.8,
+      "De’Strib Club is Closed"
     ],
     [
       "WR",
-      "Amon-Ra St. Brown",
-      35.2,
-      "Johnsama Binharbaugh"
+      "Jaxon Smith-Njigba",
+      42.5,
+      "burnIN"
     ],
     [
       "WR",
-      "Keon Coleman",
-      12.3,
-      "FREE AGENT"
+      "Davante Adams",
+      39.5,
+      "Skip to Malu"
     ],
     [
       "TE",
-      "Dalton Kincaid",
-      22.5,
-      "Qook’D"
+      "Dalton Schultz",
+      26.0,
+      "FREE AGENT"
     ],
     [
       "FLEX",
-      "Sam LaPorta",
-      17.2,
-      "Lisan Al-Caleb"
-    ],
-    [
-      "K",
-      "Jake Bates",
-      8.0,
+      "CeeDee Lamb",
+      35.3,
       "Qook’D"
     ],
     [
+      "K",
+      "Harrison Butker",
+      20.0,
+      "burnIN"
+    ],
+    [
       "D/ST",
-      "Bills",
-      18.3,
+      "Bengals",
+      39.63,
       "FREE AGENT"
     ]
   ],
   "matchups": [
     [
       "One90",
-      -0.1,
+      71.35,
       "Maye-N-Skweeze",
-      20.9
+      139.42
     ],
     [
       "Qook’D",
-      35.8,
+      160.13,
       "Johnsama Binharbaugh",
-      35.2
+      158.83
     ],
     [
       "Diet Coke Zero",
-      7.17,
+      117.98,
       "The Josh All-In Show",
-      46.82
+      151.15
     ],
     [
       "In Mama We Trust",
-      0.0,
+      121.67,
       "De’Strib Club is Closed",
-      0.0
+      151.49
     ],
     [
       "Heen Machine Poi",
-      0.0,
+      73.1,
       "Skip to Malu",
-      31.53
+      128.85
     ],
     [
       "burnIN",
-      0.0,
+      165.13,
       "Lisan Al-Caleb",
-      17.2
+      108.65
     ]
   ]
 }
