@@ -178,6 +178,8 @@
   }
   @media (max-width: 640px){
     .wrap{padding:20px 14px 40px}
+    .header-actions{align-items:stretch;flex-direction:column-reverse}
+    .nav-back{width:100%}
     .brand h1{font-size:31px}
     .stats{grid-template-columns:1fr 1fr}
     .leaders{grid-template-columns:1fr}
@@ -187,6 +189,8 @@
   }
 
 
+.nav-back{display:inline-flex;align-items:center;justify-content:center;padding:11px 14px;border:1px solid var(--line);background:rgba(16,22,20,.92);border-radius:14px;box-shadow:var(--shadow);color:var(--text);text-decoration:none;font-weight:800;font-size:13px;white-space:nowrap}.nav-back:hover{border-color:var(--accent);background:rgba(22,112,90,.12)}
+  .header-actions{display:flex;align-items:flex-end;gap:12px}
 </style>
 </head>
 <body>
@@ -197,12 +201,15 @@
       <h1 id="pageTitle">Fantasy Football League</h1>
       <p id="pageSubtitle">Loading Yahoo Fantasy data…</p>
     </div>
-    <div class="week-pill">
-      <div class="label">Week</div>
-      <select id="weekSelect" aria-label="Select fantasy football week">
-        <option>Loading…</option>
-      </select>
-      <div id="dataStatus" style="font-size:10px;color:var(--muted);margin-top:5px">Loading live data…</div>
+    <div class="header-actions">
+      <a class="nav-back" href="./index.html">← Season Dashboard</a>
+      <div class="week-pill">
+        <div class="label">Week</div>
+        <select id="weekSelect" aria-label="Select fantasy football week">
+          <option>Loading…</option>
+        </select>
+        <div id="dataStatus" style="font-size:10px;color:var(--muted);margin-top:5px">Loading live data…</div>
+      </div>
     </div>
   </header>
 
@@ -372,15 +379,22 @@ function renderLeaders(data, topTeam) {
       <div class="leader-card">
         <h3>${escapeHtml(position)}</h3>
         ${entries.map(entry => {
+          // Support both formats used by data.json:
+          // [player, owner, points] and the older [player, points, owner].
           const player = entry[0];
-          const points = entry[1];
-          const owner = entry[2];
+          let owner = entry[1];
+          let points = entry[2];
+
+          if (typeof entry[1] === "number" && typeof entry[2] === "string") {
+            points = entry[1];
+            owner = entry[2];
+          }
 
           return `
             <div class="leader">
               <div class="leader-info">
                 <div class="name">${escapeHtml(player)}</div>
-                <div class="meta${ownerClass(owner, topTeam)}">${escapeHtml(owner)}</div>
+                <div class="meta${ownerClass(owner, topTeam)}">${escapeHtml(owner ?? "FREE AGENT")}</div>
                 <div class="pts">${formatPoints(points)}</div>
               </div>
             </div>
