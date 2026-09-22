@@ -39,11 +39,8 @@
     height:min(980px,78vw);
     right:-230px;
     top:70px;
-    background-image:url("./poi-bowl-emblem.png");
-    background-position:center;
-    background-size:contain;
-    background-repeat:no-repeat;
-    opacity:.12;
+    background:url("poi-bowl-emblem.png") center/contain no-repeat;
+    opacity:.045;
     pointer-events:none;
     z-index:0;
     filter:saturate(.8);
@@ -110,7 +107,9 @@
   .leader-row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 0;border-top:1px solid rgba(39,49,66,.55)}
   .leader-row:first-of-type{border-top:0}
   .leader-name{font-weight:750;font-size:12px}
-  .leader-meta{font-size:10px;color:var(--muted);margin-top:2px}
+  .leader-owner{font-size:10px;color:var(--muted);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .leader-owner.matrix-owner{color:var(--green);font-weight:900;text-shadow:0 0 7px rgba(57,255,20,.18)}
+  .leader-meta{font-size:9px;color:var(--muted);margin-top:1px}
   .leader-points{font-weight:900;font-size:14px;white-space:nowrap}
 
   .roster-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 10px}
@@ -305,7 +304,7 @@ function renderStandings(standings) {
 
 }
 
-function renderPositionLeaders(leaders) {
+function renderPositionLeaders(leaders, topTeam) {
   const order = ["QB", "RB", "WR", "TE", "K", "D/ST"];
   const grid = document.getElementById("positionLeaders");
 
@@ -319,6 +318,7 @@ function renderPositionLeaders(leaders) {
           <div class="leader-row">
             <div>
               <div class="leader-name">${escapeHtml(entry.player)}</div>
+              <div class="leader-owner${teamClass(entry.owner, topTeam)}">${escapeHtml(entry.owner || "FREE AGENT")}</div>
               <div class="leader-meta">#${index + 1} · season total</div>
             </div>
             <div class="leader-points">${formatPoints(entry.points)}</div>
@@ -408,7 +408,7 @@ async function loadData() {
     const topTeam = standings.length ? standings[0].team : "";
 
     renderStandings(standings);
-    renderPositionLeaders(landing.position_leaders || {});
+    renderPositionLeaders(landing.position_leaders || {}, topTeam);
     renderRosterLeaders(landing.roster_scoring_leaders || [], topTeam);
     renderMoves(landing.move_leaderboard || [], topTeam);
 
