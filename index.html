@@ -3,10 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Poi Bowl XII — Fantasy Football</title>
+<title>Poi Bowl XII — Season Dashboard</title>
 <style>
-
-
   :root{
     --bg:#0a0d12;
     --panel:#111722;
@@ -18,6 +16,7 @@
     --accent-2:#23c7a8;
     --gold:#f4c95d;
     --red:#ff6b7a;
+    --green:#39ff14;
     --shadow:0 18px 50px rgba(0,0,0,.28);
     --radius:18px;
   }
@@ -34,291 +33,230 @@
   .wrap{max-width:1320px;margin:0 auto;padding:28px 22px 56px}
   header{
     display:flex;justify-content:space-between;align-items:flex-end;gap:20px;
-    margin-bottom:26px;
+    margin-bottom:22px;
   }
   .brand small{
-    color:var(--accent-2);font-weight:800;letter-spacing:.14em;text-transform:uppercase;
-    font-size:11px;
+    color:var(--accent-2);font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:11px;
   }
-  .brand h1{margin:6px 0 4px;font-size:38px;line-height:1.05}
+  .brand h1{margin:6px 0 4px;font-size:42px;line-height:1.03;letter-spacing:-1px}
   .brand p{margin:0;color:var(--muted)}
-  .week-pill{
+  .header-actions{display:flex;align-items:center;gap:10px}
+  .week-pill,.week-link{
     border:1px solid var(--line);background:rgba(17,23,34,.9);
-    padding:12px 15px;border-radius:14px;box-shadow:var(--shadow);text-align:right;
+    border-radius:14px;box-shadow:var(--shadow);
   }
-  .week-pill .label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}
-  .week-pill .value{font-size:20px;font-weight:800;margin-top:3px}
-  .stats{
-    display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px;
-  }
+  .week-pill{padding:12px 15px;text-align:right;min-width:155px}
+  .week-pill .label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}
+  .week-pill .value{font-size:19px;font-weight:850;margin-top:3px}
+  .week-pill .status{font-size:10px;color:var(--green);margin-top:3px}
+  .week-link{display:inline-flex;align-items:center;justify-content:center;padding:13px 15px;color:var(--text);text-decoration:none;font-weight:800;font-size:13px}
+  .week-link:hover{border-color:var(--accent);background:rgba(124,92,255,.10)}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:16px}
   .stat{
     background:linear-gradient(180deg,rgba(21,28,40,.96),rgba(17,23,34,.96));
-    border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow);
+    border:1px solid var(--line);border-radius:16px;padding:17px;box-shadow:var(--shadow);
   }
-  .stat .kicker{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.11em}
-  .stat .big{font-size:25px;font-weight:850;margin-top:5px}
+  .stat .kicker{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.11em}
+  .stat .big{font-size:25px;font-weight:900;margin-top:5px}
   .stat .sub{font-size:12px;color:var(--muted);margin-top:3px}
-  .stat .sub.matrix-team{
-    color:#39ff14;
-    font-weight:850;
-    text-shadow:0 0 7px rgba(57,255,20,.18);
-  }
-  .grid{
-    display:grid;grid-template-columns:1.12fr .88fr;gap:16px;align-items:start;
-  }
+  .stat .sub.green{color:var(--green);font-weight:850;text-shadow:0 0 7px rgba(57,255,20,.18)}
+
   .panel{
-    background:rgba(17,23,34,.92);
-    border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);
-    overflow:hidden;
+    background:rgba(17,23,34,.92);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);overflow:hidden;
   }
-  .panel-head{
-    display:flex;justify-content:space-between;align-items:center;
-    padding:17px 19px;border-bottom:1px solid var(--line);
-  }
+  .panel-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:17px 19px;border-bottom:1px solid var(--line)}
   .panel-head h2{font-size:16px;margin:0}
-  .panel-head span{font-size:12px;color:var(--muted)}
+  .panel-head span{font-size:11px;color:var(--muted);text-align:right}
   .panel-body{padding:16px 18px}
+
+  .top-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:16px;align-items:start;margin-bottom:16px}
+  .section-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+
   table{width:100%;border-collapse:collapse;font-size:13px}
-  th{
-    color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.09em;
-    font-weight:700;text-align:right;padding:5px 7px 9px;
-  }
+  th{color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.09em;font-weight:700;text-align:right;padding:5px 7px 9px}
   th:first-child,th:nth-child(2){text-align:left}
   td{padding:10px 7px;border-top:1px solid rgba(39,49,66,.62);text-align:right}
   td:first-child,td:nth-child(2){text-align:left}
   td:first-child{color:var(--muted);width:26px}
-  .team{font-weight:700}
-  .matrix-team{
-    color:#39ff14;
-    font-weight:850;
-    text-shadow:0 0 7px rgba(57,255,20,.18);
-  }
-  .movement{font-weight:850;white-space:nowrap}
-  .movement.up{color:#39ff14;text-shadow:0 0 7px rgba(57,255,20,.18)}
-  .movement.down{color:#ff4d5f;text-shadow:0 0 7px rgba(255,77,95,.16)}
+  .team{font-weight:750}
+  .matrix-team{color:var(--green);font-weight:900;text-shadow:0 0 7px rgba(57,255,20,.18)}
+  .movement.up{color:var(--green);font-weight:900;text-shadow:0 0 7px rgba(57,255,20,.15)}
+  .movement.down{color:var(--red);font-weight:900;text-shadow:0 0 7px rgba(255,107,122,.15)}
   .movement.flat{color:var(--muted)}
-  .leaders{
-    display:grid;grid-template-columns:1fr 1fr;gap:12px
-  }
-  .leader-card{
-    background:var(--panel-2);border:1px solid var(--line);border-radius:14px;padding:13px
-  }
-  .leader-card h3{font-size:12px;color:var(--muted);margin:0 0 10px;text-transform:uppercase;letter-spacing:.08em}
-  .leader{
-    display:flex;justify-content:space-between;align-items:center;gap:10px;
-    padding:8px 0;border-top:1px solid rgba(39,49,66,.55)
-  }
-  .leader:first-of-type{border-top:0}
-  .leader .name{font-weight:700}
-  .leader .meta{font-size:11px;color:var(--muted);margin-top:2px}
-  .leader .meta.matrix-owner{
-    color:#39ff14;
-    font-weight:800;
-    text-shadow:0 0 7px rgba(57,255,20,.18);
-  }
-  .pts{font-weight:850}
-  .best{margin-top:14px}
-  .lineup{
-    display:grid;grid-template-columns:repeat(3,1fr);gap:10px
-  }
-  .best-players{
-    display:grid;grid-template-columns:1fr 1fr;gap:8px 10px;
-  }
-  .best-player-row{
-    display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.5fr) auto;
-    gap:10px;align-items:center;
-    border:1px solid var(--line);background:var(--panel-2);
-    border-radius:12px;padding:10px 11px;
-  }
-  .best-player-team{font-size:12px;font-weight:800;min-width:0}
-  .best-player-name{font-size:12px;font-weight:700;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .best-player-meta{font-size:10px;color:var(--muted);margin-top:2px}
-  .best-player-points{font-size:15px;font-weight:900;text-align:right;white-space:nowrap}
-  @media (max-width: 760px){
-    .best-players{grid-template-columns:1fr}
-  }
-  .slot{
-    border:1px solid var(--line);background:var(--panel-2);border-radius:13px;padding:12px
-  }
-  .slot .pos{font-size:10px;color:var(--muted);font-weight:800;letter-spacing:.1em;text-transform:uppercase}
-  .slot .player{font-weight:800;margin-top:4px}
-  .slot .owner{font-size:11px;color:var(--muted);margin-top:2px}
-  .slot .points{margin-top:7px;font-size:17px;font-weight:900}
-  .total{
-    margin-top:12px;border:1px solid rgba(124,92,255,.45);
-    background:linear-gradient(180deg,rgba(124,92,255,.16),rgba(124,92,255,.08));
-    border-radius:13px;padding:14px 15px;display:flex;justify-content:space-between;align-items:center
-  }
-  .total .label{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.1em}
-  .total .value{font-size:26px;font-weight:900}
-  .matchups{display:grid;gap:10px}
-  .matchup{
-    display:grid;grid-template-columns:1fr auto 1fr;gap:9px;align-items:center;
-    border:1px solid var(--line);background:var(--panel-2);border-radius:13px;padding:12px
-  }
-  .matchup .side{font-weight:700}
-  .matchup .right{text-align:right}
-  .matchup .score{font-size:18px;font-weight:900}
-  .matchup .vs{font-size:10px;color:var(--muted);text-transform:uppercase}
-  footer{margin-top:18px;color:var(--muted);font-size:11px;text-align:center}
-  .week-pill select{
-    margin-top:4px;
-    min-width:120px;
-    border:1px solid var(--line);
-    background:var(--panel-2);
-    color:var(--text);
-    border-radius:9px;
-    padding:6px 9px;
-    font:inherit;
-    font-size:14px;
-    font-weight:800;
-    outline:none;
-    cursor:pointer;
-  }
-  .week-pill select:focus{
-    border-color:var(--accent);
-    box-shadow:0 0 0 2px rgba(124,92,255,.15);
-  }
 
-  @media (max-width: 960px){
-    .grid{grid-template-columns:1fr}
-    .stats{grid-template-columns:repeat(2,1fr)}
-  }
-  @media (max-width: 640px){
-    .wrap{padding:20px 14px 40px}
-    .brand h1{font-size:31px}
+  .leader-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+  .leader-card{background:var(--panel-2);border:1px solid var(--line);border-radius:14px;padding:12px}
+  .leader-card h3{font-size:11px;color:var(--muted);margin:0 0 8px;text-transform:uppercase;letter-spacing:.09em}
+  .leader-row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 0;border-top:1px solid rgba(39,49,66,.55)}
+  .leader-row:first-of-type{border-top:0}
+  .leader-name{font-weight:750;font-size:12px}
+  .leader-meta{font-size:10px;color:var(--muted);margin-top:2px}
+  .leader-points{font-weight:900;font-size:14px;white-space:nowrap}
+
+  .roster-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 10px}
+  .roster-row{display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:10px;align-items:center;background:var(--panel-2);border:1px solid var(--line);border-radius:12px;padding:10px 11px}
+  .roster-rank{color:var(--muted);font-size:11px;font-weight:800}
+  .roster-team{font-weight:800;font-size:12px;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .roster-player{font-size:10px;color:var(--muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .roster-points{font-size:14px;font-weight:900;white-space:nowrap}
+
+  .move-row{display:grid;grid-template-columns:30px minmax(0,1fr) 65px 62px 62px 62px;gap:8px;align-items:center;padding:10px 7px;border-top:1px solid rgba(39,49,66,.62);font-size:12px}
+  .move-row.header{border-top:0;padding-top:0;color:var(--muted);font-size:9px;text-transform:uppercase;letter-spacing:.08em;font-weight:800}
+  .move-rank{color:var(--muted)}
+  .move-team{font-weight:800;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .move-total{font-size:15px;font-weight:900;text-align:right}
+  .move-detail{text-align:right;color:var(--muted)}
+
+  .leader-stat{display:grid;grid-template-columns:1fr auto;gap:15px;align-items:center;background:linear-gradient(180deg,rgba(124,92,255,.14),rgba(124,92,255,.07));border:1px solid rgba(124,92,255,.42);border-radius:15px;padding:16px}
+  .leader-stat .eyebrow{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+  .leader-stat .player{font-size:21px;font-weight:900;margin-top:4px}
+  .leader-stat .meta{font-size:11px;color:var(--muted);margin-top:3px}
+  .leader-stat .points{font-size:28px;font-weight:950;text-align:right}
+  .leader-stat .points small{display:block;font-size:10px;color:var(--muted);font-weight:700;margin-top:2px}
+
+  footer{margin-top:18px;color:var(--muted);font-size:11px;text-align:center}
+
+  @media (max-width: 1050px){
     .stats{grid-template-columns:1fr 1fr}
-    .leaders{grid-template-columns:1fr}
-    .lineup{grid-template-columns:1fr 1fr}
+    .top-grid,.section-grid{grid-template-columns:1fr}
+  }
+  @media (max-width: 760px){
+    .wrap{padding:20px 14px 40px}
+    header{align-items:flex-start;flex-direction:column}
+    .brand h1{font-size:33px}
+    .header-actions{width:100%}
+    .week-pill{flex:1;text-align:left}
+    .leader-grid{grid-template-columns:1fr 1fr}
+    .roster-grid{grid-template-columns:1fr}
+    .move-row{grid-template-columns:25px minmax(0,1fr) 50px 50px 50px 50px;font-size:11px}
+    .move-row.header{font-size:8px}
+  }
+  @media (max-width: 520px){
+    .stats{grid-template-columns:1fr 1fr}
+    .leader-grid{grid-template-columns:1fr}
+    .move-row{grid-template-columns:22px minmax(0,1fr) 42px 42px 42px 42px;gap:5px}
+    .move-detail{font-size:10px}
     table{font-size:12px}
     th:nth-child(5),td:nth-child(5){display:none}
   }
-
-
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
     <div class="brand">
-      <small id="brandSmall">Poi Bowl XII</small>
-      <h1 id="pageTitle">Fantasy Football League</h1>
-      <p id="pageSubtitle">Loading Yahoo Fantasy data…</p>
+      <small>Poi Bowl XII</small>
+      <h1>Season Dashboard</h1>
+      <p id="subtitle">Season-to-date Yahoo Fantasy league analytics</p>
     </div>
-    <div class="week-pill">
-      <div class="label">Week</div>
-      <select id="weekSelect" aria-label="Select fantasy football week">
-        <option>Loading…</option>
-      </select>
-      <div id="dataStatus" style="font-size:10px;color:var(--muted);margin-top:5px">Loading live data…</div>
+    <div class="header-actions">
+      <div class="week-pill">
+        <div class="label">Season status</div>
+        <div class="value" id="seasonWeek">Week —</div>
+        <div class="status" id="dataStatus">Loading live data…</div>
+      </div>
+      <a class="week-link" href="./week.html">Weekly Dashboard →</a>
     </div>
   </header>
 
   <section class="stats">
     <div class="stat">
-      <div class="kicker" id="highScoreLabel">HIGH SCORE</div>
-      <div class="big" id="highScoreValue">—</div>
-      <div class="sub" id="highScoreTeam">—</div>
+      <div class="kicker">OVERALL POINTS LEADER</div>
+      <div class="big" id="overallLeader">—</div>
+      <div class="sub green" id="overallLeaderPoints">—</div>
     </div>
-
     <div class="stat">
-      <div class="kicker" id="lowScoreLabel">LOW SCORE</div>
-      <div class="big" id="lowScoreValue">—</div>
-      <div class="sub" id="lowScoreTeam">—</div>
+      <div class="kicker">LEAGUE AVERAGE SCORE</div>
+      <div class="big" id="leagueAverage">—</div>
+      <div class="sub" id="leagueAverageDesc">—</div>
     </div>
-
     <div class="stat">
-      <div class="kicker">BEST POSSIBLE LINEUP</div>
-      <div class="big" id="bestLineupValue">—</div>
-      <div class="sub" id="bestLineupDescription">—</div>
+      <div class="kicker">WEEKS COUNTED</div>
+      <div class="big" id="weeksCounted">—</div>
+      <div class="sub">Completed scoring weeks</div>
     </div>
-
     <div class="stat">
-      <div class="kicker">LEAGUE AVERAGE</div>
-      <div class="big" id="leagueAverageValue">—</div>
-      <div class="sub" id="leagueAverageDescription">—</div>
+      <div class="kicker">CURRENT #1 TEAM</div>
+      <div class="big" id="currentLeader">—</div>
+      <div class="sub green">🏆 Overall standings leader</div>
     </div>
   </section>
 
-  <section class="grid">
+  <section class="top-grid">
     <div class="panel">
       <div class="panel-head">
-        <h2>Standings</h2>
-        <span>W-L · PF · PA</span>
+        <h2>Overall Standings</h2>
+        <span>Cumulative through latest completed week</span>
       </div>
       <div class="panel-body">
         <table>
           <thead>
-            <tr>
-              <th>#</th><th>Team</th><th>W-L</th><th>PF</th><th>PA</th><th>MOV</th>
-            </tr>
+            <tr><th>#</th><th>Team</th><th>W-L</th><th>PF</th><th>PA</th><th>MOV</th></tr>
           </thead>
           <tbody id="standingsBody"></tbody>
         </table>
       </div>
-
-      <div class="panel best" style="margin-top:12px">
-        <div class="panel-head">
-          <h2>Best Player by Team</h2>
-          <span>Top scorer on each roster</span>
-        </div>
-        <div class="panel-body">
-          <div class="best-players" id="bestPlayersGrid"></div>
-        </div>
-      </div>
     </div>
 
-    <div>
-      <div class="panel">
-        <div class="panel-head">
-          <h2 id="leadersTitle">Week Leaders</h2>
-          <span>Top 3 at each position</span>
-        </div>
-        <div class="panel-body">
-          <div class="leaders" id="leadersGrid"></div>
-        </div>
+    <div class="panel">
+      <div class="panel-head">
+        <h2>Overall Points Leader</h2>
+        <span>All completed weeks</span>
       </div>
-
-      <div class="panel best">
-        <div class="panel-head">
-          <h2>Best Possible Lineup</h2>
-          <span id="lineupSubtitle">Theoretical max</span>
-        </div>
-        <div class="panel-body">
-          <div class="lineup" id="lineupGrid"></div>
-          <div class="total">
-            <div>
-              <div class="label">Theoretical total</div>
-              <div style="margin-top:3px;color:var(--muted);font-size:12px">
-                Highest-scoring legal lineup
-              </div>
-            </div>
-            <div class="value" id="lineupTotal">—</div>
+      <div class="panel-body">
+        <div class="leader-stat">
+          <div>
+            <div class="eyebrow">Season points</div>
+            <div class="player" id="leaderPlayer">—</div>
+            <div class="meta" id="leaderMeta">—</div>
           </div>
+          <div class="points" id="leaderPoints">—<small>PTS</small></div>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="panel" style="margin-top:12px">
+  <section class="section-grid">
+    <div class="panel">
+      <div class="panel-head">
+        <h2>Best Players in the League</h2>
+        <span>Cumulative points by position</span>
+      </div>
+      <div class="panel-body">
+        <div class="leader-grid" id="positionLeaders"></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">
+        <h2>Top Scorer on Each Roster</h2>
+        <span>Only points earned while owned by that team</span>
+      </div>
+      <div class="panel-body">
+        <div class="roster-grid" id="rosterLeaders"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel">
     <div class="panel-head">
-      <h2 id="matchupsTitle">Matchups</h2>
-      <span>Final scores</span>
+      <h2>Move Leaderboard</h2>
+      <span>Season total · adds + drops + trades</span>
     </div>
     <div class="panel-body">
-      <div class="matchups" id="matchupsGrid"></div>
+      <div class="move-row header">
+        <div>#</div><div>Team</div><div>Moves</div><div>Adds</div><div>Drops</div><div>Trades</div>
+      </div>
+      <div id="moveLeaderboard"></div>
     </div>
-  </div>
+  </section>
 
-  <footer id="footerText">Poi Bowl XII · Yahoo Fantasy data</footer>
+  <footer id="footer">Poi Bowl XII · Season dashboard · Yahoo Fantasy data</footer>
 </div>
 
 <script>
-function formatPoints(value) {
-  const n = Number(value);
-  return Number.isFinite(n) ? n.toFixed(2) : "—";
-}
-
 function escapeHtml(value) {
   return String(value ?? "")
     .replace(/&/g, "&amp;")
@@ -328,280 +266,158 @@ function escapeHtml(value) {
     .replace(/'/g, "&#039;");
 }
 
+function formatPoints(value) {
+  const n = Number(value);
+  return Number.isFinite(n) ? n.toFixed(2) : "—";
+}
+
 function teamClass(team, topTeam) {
   return String(team) === String(topTeam) ? " matrix-team" : "";
 }
 
-function ownerClass(owner, topTeam) {
-  return String(owner) === String(topTeam) ? " matrix-owner" : "";
-}
-
-function trophyName(value, topTeam) {
-  const text = escapeHtml(value);
-  return String(value) === String(topTeam) ? `🏆 ${text}` : text;
-}
-
-function renderStats(data, topTeam) {
-  const week = data.week;
-
-  document.getElementById("highScoreLabel").textContent =
-    `WEEK ${week} HIGH SCORE`;
-  document.getElementById("highScoreValue").textContent =
-    formatPoints(data.stats.high_score.points);
-  const highScoreTeam = document.getElementById("highScoreTeam");
-  highScoreTeam.innerHTML = trophyName(data.stats.high_score.team, topTeam);
-  highScoreTeam.className = `sub${teamClass(data.stats.high_score.team, topTeam)}`;
-
-  document.getElementById("lowScoreLabel").textContent =
-    `WEEK ${week} LOW SCORE`;
-  document.getElementById("lowScoreValue").textContent =
-    formatPoints(data.stats.low_score.points);
-  const lowScoreTeam = document.getElementById("lowScoreTeam");
-  lowScoreTeam.innerHTML = trophyName(data.stats.low_score.team, topTeam);
-  lowScoreTeam.className = `sub${teamClass(data.stats.low_score.team, topTeam)}`;
-
-  document.getElementById("bestLineupValue").textContent =
-    formatPoints(data.stats.best_lineup.points);
-  document.getElementById("bestLineupDescription").textContent =
-    data.stats.best_lineup.description;
-
-  document.getElementById("leagueAverageValue").textContent =
-    formatPoints(data.stats.league_average.points);
-  document.getElementById("leagueAverageDescription").textContent =
-    data.stats.league_average.description;
+function trophyName(team, topTeam) {
+  const text = escapeHtml(team);
+  return String(team) === String(topTeam) ? `🏆 ${text}` : text;
 }
 
 function movementClass(movement) {
-  const value = String(movement ?? "—").trim();
-
-  if (value.startsWith("↑")) return "up";
-  if (value.startsWith("↓")) return "down";
+  const text = String(movement ?? "—");
+  if (text.startsWith("↑")) return "up";
+  if (text.startsWith("↓")) return "down";
   return "flat";
 }
 
-function renderStandings(data, topTeam) {
-  const rows = Array.isArray(data.standings) ? data.standings : [];
+function renderStandings(standings) {
+  const rows = Array.isArray(standings) ? standings : [];
+  const topTeam = rows.length ? rows[0].team : "";
 
   document.getElementById("standingsBody").innerHTML = rows.map(row => `
     <tr>
       <td>${escapeHtml(row.rank)}</td>
       <td class="team${teamClass(row.team, topTeam)}">${trophyName(row.team, topTeam)}</td>
-      <td class="record">${escapeHtml(row.record)}</td>
+      <td>${escapeHtml(row.record)}</td>
       <td>${formatPoints(row.pf)}</td>
       <td>${formatPoints(row.pa)}</td>
       <td class="movement ${movementClass(row.movement)}">${escapeHtml(row.movement ?? "—")}</td>
     </tr>
   `).join("");
+
+  document.getElementById("currentLeader").textContent =
+    rows.length ? `🏆 ${rows[0].team}` : "—";
 }
 
-function renderLeaders(data, topTeam) {
-  const leaders = data.leaders || {};
+function renderPositionLeaders(leaders) {
   const order = ["QB", "RB", "WR", "TE", "K", "D/ST"];
+  const grid = document.getElementById("positionLeaders");
 
-  document.getElementById("leadersGrid").innerHTML = order.map(position => {
-    const entries = Array.isArray(leaders[position]) ? leaders[position] : [];
+  grid.innerHTML = order.map(position => {
+    const entries = Array.isArray(leaders?.[position]) ? leaders[position] : [];
 
     return `
       <div class="leader-card">
         <h3>${escapeHtml(position)}</h3>
-        ${entries.map(entry => {
-          const player = entry[0];
-          const owner = entry[1];
-          const points = entry[2];
-
-          return `
-            <div class="leader">
-              <div>
-                <div class="name">${escapeHtml(player)}</div>
-                <div class="meta${ownerClass(owner, topTeam)}">${trophyName(owner, topTeam)}</div>
-              </div>
-              <div class="pts">${formatPoints(points)}</div>
+        ${entries.map((entry, index) => `
+          <div class="leader-row">
+            <div>
+              <div class="leader-name">${escapeHtml(entry.player)}</div>
+              <div class="leader-meta">#${index + 1} · season total</div>
             </div>
-          `;
-        }).join("")}
+            <div class="leader-points">${formatPoints(entry.points)}</div>
+          </div>
+        `).join("")}
       </div>
     `;
   }).join("");
 }
 
-function renderBestPlayers(data, topTeam) {
-  const players = Array.isArray(data.best_players) ? data.best_players : [];
-  const grid = document.getElementById("bestPlayersGrid");
+function renderRosterLeaders(rows) {
+  const list = Array.isArray(rows) ? rows : [];
+  const topTeam = list.length ? list[0].team : "";
 
-  if (!players.length) {
-    grid.innerHTML = `
-      <div style="grid-column:1/-1;color:var(--muted);font-size:12px">
-        No weekly player scoring data available yet.
+  document.getElementById("rosterLeaders").innerHTML = list.map((row, index) => `
+    <div class="roster-row">
+      <div class="roster-rank">${index + 1}</div>
+      <div>
+        <div class="roster-team${teamClass(row.team, topTeam)}">${trophyName(row.team, topTeam)}</div>
+        <div class="roster-player">${escapeHtml(row.player)} · ${escapeHtml(row.position)}</div>
       </div>
-    `;
-    return;
-  }
-
-  grid.innerHTML = players.map(item => {
-    const team = item.team;
-    const player = item.player;
-    const position = item.position || "—";
-    const points = item.points;
-
-    return `
-      <div class="best-player-row">
-        <div class="best-player-team${teamClass(team, topTeam)}">
-          ${trophyName(team, topTeam)}
-        </div>
-        <div>
-          <div class="best-player-name">${escapeHtml(player)}</div>
-          <div class="best-player-meta">${escapeHtml(position)}</div>
-        </div>
-        <div class="best-player-points">${formatPoints(points)}</div>
-      </div>
-    `;
-  }).join("");
+      <div class="roster-points">${formatPoints(row.points)}</div>
+    </div>
+  `).join("");
 }
 
-function renderBestLineup(data, topTeam) {
-  const lineup = Array.isArray(data.best_lineup) ? data.best_lineup : [];
+function renderMoves(rows, topTeam) {
+  const list = Array.isArray(rows) ? rows : [];
 
-  document.getElementById("lineupGrid").innerHTML = lineup.map(entry => {
-    const position = entry[0];
-    const player = entry[1];
-    const points = entry[2];
-    const owner = entry[3];
-
-    return `
-      <div class="slot">
-        <div class="pos">${escapeHtml(position)}</div>
-        <div class="player">${escapeHtml(player)}</div>
-        <div class="owner${ownerClass(owner, topTeam)}">${trophyName(owner, topTeam)}</div>
-        <div class="points">${formatPoints(points)}</div>
-      </div>
-    `;
-  }).join("");
-
-  document.getElementById("lineupTotal").textContent =
-    formatPoints(data.stats.best_lineup.points);
-
-  document.getElementById("lineupSubtitle").textContent =
-    `Week ${data.week} theoretical max`;
-}
-
-function renderMatchups(data, topTeam) {
-  const matchups = Array.isArray(data.matchups) ? data.matchups : [];
-
-  document.getElementById("matchupsGrid").innerHTML = matchups.map(game => {
-    const team1 = game[0];
-    const score1 = game[1];
-    const team2 = game[2];
-    const score2 = game[3];
-
-    return `
-      <div class="matchup">
-        <div class="side${teamClass(team1, topTeam)}">${trophyName(team1, topTeam)}</div>
-        <div class="score">
-          ${formatPoints(score1)}
-          <span class="vs">vs</span>
-          ${formatPoints(score2)}
-        </div>
-        <div class="side right${teamClass(team2, topTeam)}">${trophyName(team2, topTeam)}</div>
-      </div>
-    `;
-  }).join("");
-}
-
-let dashboardData = null;
-
-function populateWeekSelect() {
-  const select = document.getElementById("weekSelect");
-  const weeks = dashboardData.available_weeks || [];
-
-  select.innerHTML = weeks
-    .map(week => `<option value="${week}">Week ${week}</option>`)
-    .join("");
-
-  select.value = String(dashboardData.default_week);
-
-  select.addEventListener("change", () => {
-    renderSelectedWeek(Number(select.value));
-  });
-}
-
-function renderSelectedWeek(week) {
-  const snapshot = dashboardData.weeks[String(week)];
-
-  if (!snapshot) {
-    return;
-  }
-
-  const topTeam =
-    Array.isArray(snapshot.standings) && snapshot.standings.length
-      ? snapshot.standings[0].team
-      : "";
-
-  document.title = `${dashboardData.title || "Poi Bowl XII"} — Fantasy Football`;
-
-  document.getElementById("brandSmall").textContent =
-    dashboardData.title || "Poi Bowl XII";
-
-  document.getElementById("pageTitle").textContent =
-    "Fantasy Football League";
-
-  document.getElementById("pageSubtitle").textContent =
-    `Week ${week} dashboard · Yahoo Fantasy data`;
-
-  document.getElementById("leadersTitle").textContent =
-    `Week ${week} Leaders`;
-
-  document.getElementById("matchupsTitle").textContent =
-    `Week ${week} Matchups`;
-
-  document.getElementById("footerText").textContent =
-    `${dashboardData.title || "Poi Bowl XII"} · Yahoo Fantasy data · Week ${week}`;
-
-  renderStats(snapshot, topTeam);
-  renderStandings(snapshot, topTeam);
-  renderBestPlayers(snapshot, topTeam);
-  renderLeaders(snapshot, topTeam);
-  renderBestLineup(snapshot, topTeam);
-  renderMatchups(snapshot, topTeam);
-
-  document.getElementById("dataStatus").textContent =
-    "Live data connected";
-
-  document.getElementById("dataStatus").style.color =
-    "#39ff14";
+  document.getElementById("moveLeaderboard").innerHTML = list.map((row, index) => `
+    <div class="move-row">
+      <div class="move-rank">${index + 1}</div>
+      <div class="move-team${teamClass(row.team, topTeam)}">${trophyName(row.team, topTeam)}</div>
+      <div class="move-total">${escapeHtml(row.moves)}</div>
+      <div class="move-detail">${escapeHtml(row.adds)}</div>
+      <div class="move-detail">${escapeHtml(row.drops)}</div>
+      <div class="move-detail">${escapeHtml(row.trades)}</div>
+    </div>
+  `).join("");
 }
 
 async function loadData() {
   const status = document.getElementById("dataStatus");
 
   try {
-    const response = await fetch(
-      "./data.json?ts=" + Date.now(),
-      { cache: "no-store" }
-    );
+    const response = await fetch("./data.json?ts=" + Date.now(), { cache: "no-store" });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status}`);
-    }
+    const data = await response.json();
+    const landing = data.landing || {};
 
-    dashboardData = await response.json();
+    const latestWeek = Number(landing.latest_completed_week || data.default_week || 0);
+    const currentWeek = Number(landing.current_week || data.current_week || latestWeek);
 
-    if (
-      !dashboardData.weeks ||
-      !dashboardData.available_weeks ||
-      dashboardData.available_weeks.length === 0
-    ) {
-      throw new Error("data.json does not contain weekly data.");
-    }
+    document.getElementById("seasonWeek").textContent =
+      latestWeek ? `Week ${latestWeek} complete` : `Week ${currentWeek}`;
 
-    populateWeekSelect();
-    renderSelectedWeek(Number(dashboardData.default_week));
+    document.getElementById("subtitle").textContent =
+      `Season-to-date Yahoo Fantasy league analytics · Current Yahoo week ${currentWeek}`;
 
-    console.log("Loaded multi-week data:", dashboardData);
+    document.getElementById("weeksCounted").textContent =
+      landing.weeks_counted ?? "—";
 
+    document.getElementById("leagueAverage").textContent =
+      formatPoints(landing.league_average_score?.points);
+
+    document.getElementById("leagueAverageDesc").textContent =
+      landing.league_average_score?.description || "—";
+
+    const overallLeader = landing.overall_points_leader || {};
+    document.getElementById("overallLeader").textContent =
+      overallLeader.player || "—";
+    document.getElementById("overallLeaderPoints").textContent =
+      `${formatPoints(overallLeader.points)} points`;
+
+    document.getElementById("leaderPlayer").textContent =
+      overallLeader.player || "—";
+    document.getElementById("leaderMeta").textContent =
+      [overallLeader.position, overallLeader.current_owner].filter(Boolean).join(" · ") || "Season total";
+    document.getElementById("leaderPoints").innerHTML =
+      `${formatPoints(overallLeader.points)}<small>PTS</small>`;
+
+    renderStandings(landing.overall_standings || []);
+    renderPositionLeaders(landing.position_leaders || {});
+    renderRosterLeaders(landing.roster_scoring_leaders || []);
+
+    const standings = Array.isArray(landing.overall_standings) ? landing.overall_standings : [];
+    const topTeam = standings.length ? standings[0].team : "";
+    renderMoves(landing.move_leaderboard || [], topTeam);
+
+    document.getElementById("footer").textContent =
+      `${data.title || "Poi Bowl XII"} · Season dashboard · Through Week ${latestWeek || "—"}`;
+
+    status.textContent = "Live data connected";
+    status.style.color = "#39ff14";
   } catch (error) {
     status.textContent = "Data connection failed";
     status.style.color = "#ff6b7a";
-
     console.error("Unable to load data.json:", error);
   }
 }
